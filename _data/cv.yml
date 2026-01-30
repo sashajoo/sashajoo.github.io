@@ -1,0 +1,89 @@
+cv:
+  name: Sha Zhu
+  label: Postdoctoral Scholar (Urology, UCSF)
+  email: sha.zhu@ucsf.edu
+  location: San Francisco, CA
+  image: ""
+  summary: MD-PhD scientist bridging cancer research and patient care; focused on advanced prostate cancer, CRISPR functional genomics, and translational multi-omics.
+
+  social_networks:
+    - network: Google Scholar
+      username: jxET6tQAAAAJ
+    - network: LinkedIn
+      username: sha-zhu-39b355237
+
+  sections:
+    Education:
+      - institution: Sichuan University (West China School of Medicine)
+        location: Chengdu, China
+        studyType: Doctor of Medicine (MD)
+        area: Clinical Medicine
+        start_date: 2014
+        end_date: 2019
+        highlights:
+          - Ranked 1st–3rd in a class of 226 throughout medical school.
+          - National Scholarship (2015–2018).
+
+      - institution: Sichuan University & Netherlands Cancer Institute
+        location: Chengdu, China / Amsterdam, Netherlands
+        studyType: Doctor of Philosophy (PhD)
+        area: Oncogenomics and Urology (Joint PhD)
+        start_date: 2019
+        end_date: 2023
+        highlights:
+          - "Dissertation: Decoding the Complexity of Intraductal Carcinoma of the Prostate."
+          - "Advisors: Dr. Hao Zeng and Dr. Jacqueline Jacobs."
+
+    Experience:
+      - company: University of California, San Francisco (UCSF)
+        position: Postdoctoral Scholar, Department of Urology
+        location: San Francisco, CA
+        start_date: 2023-12
+        end_date: present
+        highlights:
+          - Conducting genome-scale CRISPR functional screens to identify regulators of surface antigens in prostate cancer.
+          - Developing combination strategies to enhance STEAP1-directed immunotherapy.
+          - Awarded UCSF Prostate Cancer Program Pilot Research Award (2025).
+
+    Volunteer: []
+
+    Certifications:
+      - name: USMLE Step 1
+        date: passed
+        issuer: USMLE
+
+      - name: USMLE Step 2 CK
+        date: Scheduled Jan 2026
+        issuer: USMLE
+
+      - name: ECFMG Certification
+        date: In progress
+        issuer: ECFMG
+
+    Awards:
+      - title: Pilot Research Award, UCSF Prostate Cancer Program
+        date: 2025
+        summary: $50,000
+
+      - title: Excellent Postgraduate Award, Sichuan University
+        date: 2020
+
+      - title: Outstanding Graduate, Sichuan University & Sichuan Province
+        date: 2019
+
+    Service:
+      - bullet: "Mentored medical students in clinical research methodology"
+
+    Skills:
+      - name: Laboratory
+        keywords: "CRISPR/Cas9, genome-scale CRISPR screening, flow cytometry (FACS), NGS, multi-omics analysis, liquid biopsy, cell culture, molecular cloning"
+
+      - name: Programming
+        keywords: "R, Python (basic)"
+
+    Languages:
+      - name: English
+        summary: Fluent
+
+      - name: Mandarin Chinese
+        summary: Native
