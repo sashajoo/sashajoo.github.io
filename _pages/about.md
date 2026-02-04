@@ -23,6 +23,6 @@ latest_posts:
   enabled: false
 ---
 
-I’m **Sha (Sasha) Zhu (MD, PhD)**, a Postdoctoral Scholar in the **Department of Urology at UCSF**.
+I’m **Sasha Zhu, MD, PhD** (also known as Sha Zhu), a Postdoctoral Scholar in the [Chu Lab](https://urology.ucsf.edu/research/chu-lab), Department of Urology at UCSF.
 
 My research focuses on the **molecular and genomic mechanisms of advanced prostate cancer**, leveraging **genome-scale CRISPR functional genomics**, **multi-omics profiling**, and **translational approaches** to identify new therapeutic strategies.

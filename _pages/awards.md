@@ -13,6 +13,6 @@ nav_order: 3
 
 ## Scholarships & Academic Recognition
 
-- National Scholarship of China (2015–2018)
 - **Outstanding Graduate**, Sichuan University & Sichuan Province (2019)
+- **Chinese National Scholarship**, Ministry of Education of China (2015–2018)
 
