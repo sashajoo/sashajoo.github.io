@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Joined UCSF as a Postdoctoral Scholar in the Department of Urology (Dec 2023).
+Joined UCSF as a Postdoctoral Scholar in the Department of Urology.
