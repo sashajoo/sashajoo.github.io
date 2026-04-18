@@ -23,13 +23,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/awards/";
           },
-        },{id: "nav-cv",
-          title: "CV",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/cv/";
-          },
         },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
         
           title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
@@ -52,8 +45,24 @@ ninja.data = [{
             window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
           
         },
-      },{id: "news-joined-ucsf-as-a-postdoctoral-scholar-in-the-department-of-urology-dec-2023",
-          title: 'Joined UCSF as a Postdoctoral Scholar in the Department of Urology (Dec 2023)....',
+      },{id: "news-joined-ucsf-as-a-postdoctoral-scholar-in-the-department-of-urology",
+          title: 'Joined UCSF as a Postdoctoral Scholar in the Department of Urology.',
+          description: "",
+          section: "News",},{id: "news-awarded-the-ucsf-prostate-cancer-program-pilot-research-award-50-000-to-support-ongoing-research-in-prostate-cancer-immunotherapy",
+          title: 'Awarded the UCSF Prostate Cancer Program Pilot Research Award ($50,000) to support ongoing...',
+          description: "",
+          section: "News",},{id: "news-podium-presentation-at-aua-annual-meeting-las-vegas-nv",
+          title: 'Podium presentation at AUA Annual Meeting, Las Vegas, NV',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_4/";
+            },},{id: "news-presentation-at-prostate-cancer-foundation-scientific-retreat-carlsbad-ca",
+          title: 'Presentation at Prostate Cancer Foundation Scientific Retreat, Carlsbad, CA',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_5/";
+            },},{id: "news-started-clinical-observership-in-the-department-of-urology-at-the-university-of-michigan-ann-arbor-mi",
+          title: 'Started clinical observership in the Department of Urology at the University of Michigan,...',
           description: "",
           section: "News",},{
         id: 'social-cv',
