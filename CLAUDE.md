@@ -43,10 +43,12 @@ All personal content lives in these directories — edit these to update the sit
 | Directory / File | Purpose |
 |---|---|
 | `_pages/about.md` | Homepage bio and profile configuration |
+| `_pages/beyond_work*.md` | "Beyond Work" dropdown: parent + child pages (`My cat`, `Travel`) |
 | `_bibliography/papers.bib` | All publications in BibTeX format |
 | `_news/` | News items shown on the homepage |
 | `_data/` | Structured data (CV, social links, etc.) |
 | `assets/` | Images, PDFs, JSON resume |
+| `assets/img/beyond_work/` | Photos shown on the Beyond Work child pages |
 
 ## Publications (`papers.bib`)
 
@@ -76,6 +78,24 @@ Pages in `_pages/` use Jekyll front matter. The `about.md` page controls:
 - `selected_papers: true` — show selected publications section
 - `announcements.enabled` — show news feed
 - Profile image is `assets/img/prof_pic.jpg`
+
+## Navbar and page visibility
+
+Top-nav entries are driven by `nav: true` + `nav_order: N` in page frontmatter; the renderer is `_includes/header.liquid`. A page can exist without appearing in nav (`nav: false`, e.g. `_pages/cv.md` is hidden while still reachable at `/cv/`). Dropdowns use `dropdown: true` + a `children:` list of `{title, permalink}` on a parent page — see `_pages/beyond_work.md`. For dropdown active-state highlighting to work, the child page's own `title` frontmatter must match the parent's `children.*.title` exactly.
+
+## Images
+
+Photos live under `assets/img/`. The `jekyll-imagemagick` plugin (configured in `_config.yml`) auto-generates responsive WebP variants at 480/800/1400 px — but **only for lowercase extensions** (`.jpg`, `.jpeg`, `.png`, `.tiff`, `.gif`). A file named `IMG_0001.JPG` will be served at full resolution with no variants; rename to lowercase before committing. On the case-insensitive macOS filesystem a direct `mv foo.JPG foo.jpg` is a no-op — rename via a temp name (`mv foo.JPG foo.tmp && mv foo.tmp foo.jpg`).
+
+Camera originals are often 8–15 MB each. Downsize to ~2400 px on the long edge before committing to keep the repo lean:
+```bash
+sips -Z 2400 source.JPG --out assets/img/beyond_work/python/source.jpg
+```
+
+Embed photos in markdown pages with the theme's include inside Bootstrap rows/cols:
+```liquid
+{% include figure.liquid path="assets/img/..." class="img-fluid rounded z-depth-1" zoomable=true %}
+```
 
 ## Deployment
 
