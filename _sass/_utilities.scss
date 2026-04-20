@@ -577,14 +577,15 @@ html[data-theme="dark"] .map {
     width: 100%;
     height: auto;
     max-height: 520px;
+    background: #bcd4e4; // classic atlas ocean blue
+    border-radius: 6px;
   }
 
   .travel-map__countries path {
-    fill: var(--global-divider-color);
-    stroke: var(--global-bg-color);
+    fill: #cfe4b5; // soft sage land green
+    stroke: #96b58a; // muted country border
     stroke-width: 0.5;
     vector-effect: non-scaling-stroke;
-    opacity: 0.55;
   }
 }
 
@@ -626,9 +627,13 @@ html[data-theme="dark"] .map {
 }
 
 html[data-theme="dark"] .travel-map {
+  svg {
+    background: #14283a; // deep ocean navy
+  }
+
   .travel-map__countries path {
-    fill: rgba(255, 255, 255, 0.13);
-    stroke: var(--global-bg-color);
+    fill: #2e4a36; // deep forest land
+    stroke: #4e6c54;
   }
 }
 
