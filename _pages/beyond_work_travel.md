@@ -7,7 +7,17 @@ nav: false
 ---
 
 Outside the lab and the clinic, I like putting miles on my boots — new cities,
-old trails, and the quiet stretches in between. A few recent favorites:
+old trails, and the quiet stretches in between.
+
+## Places I've been
+
+A running map of the cities I've set foot in — hover a dot for the name.
+
+{% include travel_map.liquid %}
+
+## Photos
+
+A few recent favorites:
 
 <div class="row mt-3">
   <div class="col-sm-4 mt-3 mt-md-0">
