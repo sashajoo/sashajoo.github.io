@@ -1,0 +1,144 @@
+- name: "Zurich, Switzerland"
+  lat: 47.3769
+  lon: 8.5417
+- name: "Black Forest, Germany"
+  lat: 48.0667
+  lon: 8.2039
+- name: "Cologne, Germany"
+  lat: 50.9375
+  lon: 6.9603
+- name: "Düsseldorf, Germany"
+  lat: 51.2277
+  lon: 6.7735
+- name: "Aachen, Germany"
+  lat: 50.7753
+  lon: 6.0839
+- name: "Berlin, Germany"
+  lat: 52.5200
+  lon: 13.4050
+- name: "Belgrade, Serbia"
+  lat: 44.7866
+  lon: 20.4489
+- name: "Budapest, Hungary"
+  lat: 47.4979
+  lon: 19.0402
+- name: "Milan, Italy"
+  lat: 45.4642
+  lon: 9.1900
+- name: "Lake Como, Italy"
+  lat: 45.9876
+  lon: 9.2599
+- name: "Venice, Italy"
+  lat: 45.4408
+  lon: 12.3155
+- name: "Cortina d'Ampezzo, Italy"
+  lat: 46.5405
+  lon: 12.1357
+- name: "Rome, Italy"
+  lat: 41.9028
+  lon: 12.4964
+- name: "Florence, Italy"
+  lat: 43.7696
+  lon: 11.2558
+- name: "Warsaw, Poland"
+  lat: 52.2297
+  lon: 21.0122
+- name: "Ghent, Belgium"
+  lat: 51.0543
+  lon: 3.7174
+- name: "Bruges, Belgium"
+  lat: 51.2093
+  lon: 3.2247
+- name: "Paris, France"
+  lat: 48.8566
+  lon: 2.3522
+- name: "Marseille, France"
+  lat: 43.2965
+  lon: 5.3698
+- name: "Nice, France"
+  lat: 43.7102
+  lon: 7.2620
+- name: "Reykjavik, Iceland"
+  lat: 64.1466
+  lon: -21.9426
+- name: "Prague, Czech Republic"
+  lat: 50.0755
+  lon: 14.4378
+- name: "Athens, Greece"
+  lat: 37.9838
+  lon: 23.7275
+- name: "Santorini, Greece"
+  lat: 36.3932
+  lon: 25.3962
+- name: "Amsterdam, Netherlands"
+  lat: 52.3676
+  lon: 4.9041
+- name: "Yantai, China"
+  lat: 37.4638
+  lon: 121.4476
+- name: "Jinan, China"
+  lat: 36.6512
+  lon: 117.0009
+- name: "Guangzhou, China"
+  lat: 23.1291
+  lon: 113.2644
+- name: "Beijing, China"
+  lat: 39.9042
+  lon: 116.4074
+- name: "Kunming, China"
+  lat: 24.8801
+  lon: 102.8329
+- name: "Leshan, China"
+  lat: 29.5522
+  lon: 103.7551
+- name: "Emei Mountain, China"
+  lat: 29.5208
+  lon: 103.4840
+- name: "Aksu, China"
+  lat: 41.1682
+  lon: 80.2654
+- name: "Wensu Grand Canyon, China"
+  lat: 41.8900
+  lon: 80.2700
+- name: "Seoul, South Korea"
+  lat: 37.5665
+  lon: 126.9780
+- name: "Bali, Indonesia"
+  lat: -8.4095
+  lon: 115.1889
+- name: "Brisbane, Australia"
+  lat: -27.4698
+  lon: 153.0251
+- name: "Santa Cruz, USA"
+  lat: 36.9741
+  lon: -122.0308
+- name: "Mount Tamalpais, USA"
+  lat: 37.9235
+  lon: -122.5960
+- name: "Hearst Castle, USA"
+  lat: 35.6852
+  lon: -121.1685
+- name: "New Orleans, USA"
+  lat: 29.9511
+  lon: -90.0715
+- name: "San Francisco, USA"
+  lat: 37.7749
+  lon: -122.4194
+- name: "Honolulu, USA"
+  lat: 21.3099
+  lon: -157.8583
+- name: "Texas, USA"
+  lat: 30.2672
+  lon: -97.7431
+- name: "Ann Arbor, USA"
+  lat: 42.2808
+  lon: -83.7430
+- name: "Los Angeles, USA"
+  lat: 34.0522
+  lon: -118.2437
+- name: "Las Vegas, USA"
+  lat: 36.1699
+  lon: -115.1398
+- name: "Lake Tahoe, USA"
+  lat: 39.0968
+  lon: -120.0324
