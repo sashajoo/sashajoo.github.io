@@ -1,0 +1,8 @@
+<figure class="travel-map" role="img" aria-label="World map of places Sasha has visited">
+  {% include travel_map_world.svg %}
+  <div class="travel-map__tooltip" aria-hidden="true"></div>
+</figure>
+<script id="travel-cities-data" type="application/json">
+{{ site.data.travel_cities | jsonify }}
+</script>
+<script defer src="{{ '/assets/js/travel-map.js' | relative_url }}"></script>
