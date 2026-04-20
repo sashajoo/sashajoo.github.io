@@ -127,9 +127,18 @@
 - name: "Honolulu, USA"
   lat: 21.3099
   lon: -157.8583
-- name: "Texas, USA"
+- name: "Austin, USA"
   lat: 30.2672
   lon: -97.7431
+- name: "Dallas, USA"
+  lat: 32.7767
+  lon: -96.7970
+- name: "Houston, USA"
+  lat: 29.7604
+  lon: -95.3698
+- name: "San Antonio, USA"
+  lat: 29.4241
+  lon: -98.4936
 - name: "Ann Arbor, USA"
   lat: 42.2808
   lon: -83.7430
