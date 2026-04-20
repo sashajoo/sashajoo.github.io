@@ -151,3 +151,15 @@
 - name: "Lake Tahoe, USA"
   lat: 39.0968
   lon: -120.0324
+- name: "Yosemite, USA"
+  lat: 37.8651
+  lon: -119.5383
+- name: "Grand Canyon, USA"
+  lat: 36.0544
+  lon: -112.1401
+- name: "Page, USA"
+  lat: 36.9147
+  lon: -111.4558
+- name: "Bryce Canyon, USA"
+  lat: 37.5930
+  lon: -112.1871
