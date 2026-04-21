@@ -88,18 +88,15 @@
 - name: "Kunming, China"
   lat: 24.8801
   lon: 102.8329
+- name: "Chengdu, China"
+  lat: 30.5728
+  lon: 104.0668
 - name: "Leshan, China"
   lat: 29.5522
   lon: 103.7551
 - name: "Emei Mountain, China"
   lat: 29.5208
   lon: 103.4840
-- name: "Aksu, China"
-  lat: 41.1682
-  lon: 80.2654
-- name: "Wensu Grand Canyon, China"
-  lat: 41.8900
-  lon: 80.2700
 - name: "Seoul, South Korea"
   lat: 37.5665
   lon: 126.9780
