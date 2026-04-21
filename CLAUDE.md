@@ -11,18 +11,22 @@ This is the personal academic homepage of **Sasha Zhu, MD, PhD** (Sha Zhu), a Po
 **Recommended (Docker):**
 
 The Docker image has a git-based gem (`jekyll-terser`) that must be installed at runtime. Use this instead of plain `docker compose up`:
+
 ```bash
 docker compose down  # stop any running instance first
 docker compose run --rm --service-ports jekyll bash -c "bundle install && bundle exec jekyll serve --livereload --port 8080 --host 0.0.0.0"
 ```
+
 Site runs at `http://localhost:8080` with live reload. The build takes ~30–60 s before the server starts.
 
 **Slim image (faster startup):**
+
 ```bash
 docker compose -f docker-compose-slim.yml up
 ```
 
 **Without Docker (requires Ruby + Bundler + Python/pip):**
+
 ```bash
 bundle install
 pip install jupyter
@@ -31,6 +35,7 @@ bundle exec jekyll serve
 ```
 
 **Build only (no server):**
+
 ```bash
 bundle exec jekyll build
 # Output in _site/
@@ -40,15 +45,15 @@ bundle exec jekyll build
 
 All personal content lives in these directories — edit these to update the site:
 
-| Directory / File | Purpose |
-|---|---|
-| `_pages/about.md` | Homepage bio and profile configuration |
-| `_pages/beyond_work*.md` | "Beyond Work" dropdown: parent + child pages (`My cat`, `Travel`) |
-| `_bibliography/papers.bib` | All publications in BibTeX format |
-| `_news/` | News items shown on the homepage |
-| `_data/` | Structured data (CV, social links, etc.) |
-| `assets/` | Images, PDFs, JSON resume |
-| `assets/img/beyond_work/` | Photos shown on the Beyond Work child pages |
+| Directory / File           | Purpose                                                           |
+| -------------------------- | ----------------------------------------------------------------- |
+| `_pages/about.md`          | Homepage bio and profile configuration                            |
+| `_pages/beyond_work*.md`   | "Beyond Work" dropdown: parent + child pages (`My cat`, `Travel`) |
+| `_bibliography/papers.bib` | All publications in BibTeX format                                 |
+| `_news/`                   | News items shown on the homepage                                  |
+| `_data/`                   | Structured data (CV, social links, etc.)                          |
+| `assets/`                  | Images, PDFs, JSON resume                                         |
+| `assets/img/beyond_work/`  | Photos shown on the Beyond Work child pages                       |
 
 ## Publications (`papers.bib`)
 
@@ -67,6 +72,7 @@ The scholar name matching for bold author highlighting is configured in `_config
 ## Site Configuration (`_config.yml`)
 
 Key settings to be aware of:
+
 - `url` and `baseurl` — must be set correctly for deployment (left blank for local dev)
 - `scholar.last_name` / `scholar.first_name` — controls which author name is bolded in publication lists
 - `enable_publication_badges` — toggles Altmetric, Dimensions, Google Scholar badges
@@ -75,6 +81,7 @@ Key settings to be aware of:
 ## Pages
 
 Pages in `_pages/` use Jekyll front matter. The `about.md` page controls:
+
 - `selected_papers: true` — show selected publications section
 - `announcements.enabled` — show news feed
 - Profile image is `assets/img/prof_pic.jpg`
@@ -88,11 +95,13 @@ Top-nav entries are driven by `nav: true` + `nav_order: N` in page frontmatter; 
 Photos live under `assets/img/`. The `jekyll-imagemagick` plugin (configured in `_config.yml`) auto-generates responsive WebP variants at 480/800/1400 px — but **only for lowercase extensions** (`.jpg`, `.jpeg`, `.png`, `.tiff`, `.gif`). A file named `IMG_0001.JPG` will be served at full resolution with no variants; rename to lowercase before committing. On the case-insensitive macOS filesystem a direct `mv foo.JPG foo.jpg` is a no-op — rename via a temp name (`mv foo.JPG foo.tmp && mv foo.tmp foo.jpg`).
 
 Camera originals are often 8–15 MB each. Downsize to ~2400 px on the long edge before committing to keep the repo lean:
+
 ```bash
 sips -Z 2400 source.JPG --out assets/img/beyond_work/python/source.jpg
 ```
 
 Embed photos in markdown pages with the theme's include inside Bootstrap rows/cols:
+
 ```liquid
 {% include figure.liquid path="assets/img/..." class="img-fluid rounded z-depth-1" zoomable=true %}
 ```

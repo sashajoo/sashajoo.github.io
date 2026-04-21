@@ -9,14 +9,12 @@ document.addEventListener("readystatechange", () => {
     /* Render a single non-wrapping world so tiles don't duplicate into gaps
        when the viewport is wider than the world at low zoom levels. */
     noWrap: true,
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   };
 
   const isDark = () =>
     document.documentElement.getAttribute("data-theme") === "dark" ||
-    (!document.documentElement.hasAttribute("data-theme") &&
-      window.matchMedia?.("(prefers-color-scheme: dark)")?.matches);
+    (!document.documentElement.hasAttribute("data-theme") && window.matchMedia?.("(prefers-color-scheme: dark)")?.matches);
 
   const markerBase = {
     radius: 6,
@@ -27,11 +25,7 @@ document.addEventListener("readystatechange", () => {
   };
   const markerHover = { radius: 8, fillOpacity: 1 };
 
-  const escapeHtml = (s) =>
-    String(s).replace(
-      /[&<>"']/g,
-      (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]
-    );
+  const escapeHtml = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
   document.querySelectorAll("pre>code.language-geojson").forEach((elem) => {
     const jsonData = elem.textContent;
@@ -53,10 +47,7 @@ document.addEventListener("readystatechange", () => {
       pointToLayer: (_, latlng) => L.circleMarker(latlng, markerBase),
       onEachFeature: (feature, layer) => {
         if (!feature.properties?.name) return;
-        layer.bindPopup(
-          `<span class="map-popup-name">${escapeHtml(feature.properties.name)}</span>`,
-          { closeButton: false, offset: L.point(0, -2) }
-        );
+        layer.bindPopup(`<span class="map-popup-name">${escapeHtml(feature.properties.name)}</span>`, { closeButton: false, offset: L.point(0, -2) });
         layer.on?.("mouseover", () => layer.setStyle(markerHover));
         layer.on?.("mouseout", () => layer.setStyle(markerBase));
       },
@@ -79,9 +70,9 @@ document.addEventListener("readystatechange", () => {
     }
     window.addEventListener("resize", invalidate);
 
-    new MutationObserver(() => tiles.setUrl(isDark() ? DARK_TILES : LIGHT_TILES)).observe(
-      document.documentElement,
-      { attributes: true, attributeFilter: ["data-theme"] }
-    );
+    new MutationObserver(() => tiles.setUrl(isDark() ? DARK_TILES : LIGHT_TILES)).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
   });
 });

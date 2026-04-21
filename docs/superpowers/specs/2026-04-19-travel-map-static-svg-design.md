@@ -119,13 +119,16 @@ verbatim, giving us single-request delivery with no FOUC.
 ### `_includes/travel_map.liquid` (new)
 
 ```liquid
-<figure class="travel-map" role="img"
-        aria-label="World map of places Sasha has visited">
+<figure
+  class="travel-map"
+  role="img"
+  aria-label="World map of places Sasha has visited"
+>
   {% include travel_map_world.svg %}
   <div class="travel-map__tooltip" aria-hidden="true"></div>
 </figure>
 <script id="travel-cities-data" type="application/json">
-{{ site.data.travel_cities | jsonify }}
+  {{ site.data.travel_cities | jsonify }}
 </script>
 <script defer src="{{ '/assets/js/travel-map.js' | relative_url }}"></script>
 ```
@@ -158,10 +161,7 @@ no CORS concerns.
 
   /* Equirectangular projection: lon in [-180,180] maps linearly across W,
      lat in [-90,90] maps linearly (inverted) down H. */
-  const project = (lat, lon) => [
-    ((lon + 180) / 360) * W,
-    ((90 - lat) / 180) * H,
-  ];
+  const project = (lat, lon) => [((lon + 180) / 360) * W, ((90 - lat) / 180) * H];
 
   const markers = document.createElementNS(ns, "g");
   markers.setAttribute("class", "travel-map__markers");
@@ -272,7 +272,9 @@ still used by `_posts.disabled/2024-01-26-geojson-map.md` and any future
   border-radius: 6px;
   opacity: 0;
   transform: translateY(2px);
-  transition: opacity 120ms, transform 120ms;
+  transition:
+    opacity 120ms,
+    transform 120ms;
   white-space: nowrap;
   z-index: 10;
 
@@ -299,7 +301,7 @@ grid below untouched.
 
 Before (abridged):
 
-```markdown
+````markdown
 ---
 … nav: false
 map: true
@@ -314,6 +316,7 @@ A running map of the cities I've set foot in. Click a marker for the name.
 ```geojson
 { …48 features… }
 ```
+````
 
 ## Photos
 
@@ -375,13 +378,13 @@ block) need reverting. They stay useful for any future `map: true` page.
 
 ## Risks & mitigations
 
-| Risk | Mitigation |
-|---|---|
-| FOUC: markers appear ~50–100 ms after the SVG | Accept. The base map alone is still a meaningful rendering; markers pop in almost instantly on cached loads. |
-| Source SVG has unexpected viewBox or nested transforms | Resolved during preprocessing. Spec requires `viewBox="0 0 1000 500"` after cleanup. |
-| `vector-effect: non-scaling-stroke` is a progressive enhancement | Gracefully degrades to scaled strokes in old browsers; purely cosmetic. |
-| Editor copies YAML with tabs (Jekyll rejects tabs) | Standard — authors use spaces; we're not introducing a new convention. |
-| User toggles dark mode after page loads | CSS `html[data-theme="dark"]` selector handles it reactively. No JS needed. |
+| Risk                                                             | Mitigation                                                                                                   |
+| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| FOUC: markers appear ~50–100 ms after the SVG                    | Accept. The base map alone is still a meaningful rendering; markers pop in almost instantly on cached loads. |
+| Source SVG has unexpected viewBox or nested transforms           | Resolved during preprocessing. Spec requires `viewBox="0 0 1000 500"` after cleanup.                         |
+| `vector-effect: non-scaling-stroke` is a progressive enhancement | Gracefully degrades to scaled strokes in old browsers; purely cosmetic.                                      |
+| Editor copies YAML with tabs (Jekyll rejects tabs)               | Standard — authors use spaces; we're not introducing a new convention.                                       |
+| User toggles dark mode after page loads                          | CSS `html[data-theme="dark"]` selector handles it reactively. No JS needed.                                  |
 
 ## Out of scope (explicit non-goals for this change; candidates for future work)
 

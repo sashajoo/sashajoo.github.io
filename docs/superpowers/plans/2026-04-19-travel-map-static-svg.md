@@ -11,31 +11,34 @@
 **Approved spec:** `docs/superpowers/specs/2026-04-19-travel-map-static-svg-design.md` (commit `3c853a6`).
 
 **Constraints carried in from brainstorming:**
+
 - Do NOT modify `assets/js/leaflet-setup.js` — it stays to support any future `map: true` page.
 - Do NOT touch the existing `.map { … }` block in `_sass/_utilities.scss` (lines 456–559) — same reason.
 - Reuse the 48 city coordinates already in the fenced `geojson` block of `_pages/beyond_work_travel.md` **verbatim**. (Coordinates are embedded directly in Task 1 below so the execution agent doesn't need to re-extract them.)
 
 **Dev server (run once at the start, leave running in a second terminal):**
+
 ```bash
 cd /Users/neogong/Documents/Misc/Homepage/homepage_zhu_sha
 docker compose down
 docker compose run --rm --service-ports jekyll bash -c "bundle install && bundle exec jekyll serve --livereload --port 8080 --host 0.0.0.0"
 ```
+
 Site serves at `http://localhost:8080`. Wait ~30–60 s for the first build. Live-reload picks up subsequent file edits.
 
 ---
 
 ## File structure
 
-| File | Action | Purpose |
-|---|---|---|
-| `_data/travel_cities.yml` | **create** | Single source of truth: 48 `{name, lat, lon}` entries |
-| `_includes/travel_map_world.svg` | **create** (generated, then committed) | Cleaned equirectangular world outline, `viewBox="0 0 1000 500"`, ~80 KB |
-| `_includes/travel_map.liquid` | **create** | Wrapper `<figure>` + inline SVG + JSON data script + JS tag |
-| `assets/js/travel-map.js` | **create** | Projects coords → adds `<circle>` markers → runs tooltip |
-| `_sass/_utilities.scss` | **edit** (append only) | New `.travel-map`, `.travel-map__marker`, `.travel-map__tooltip` blocks |
-| `_pages/beyond_work_travel.md` | **edit** | Remove `map: true`, replace geojson block with the Liquid include |
-| `_scripts/build_world_svg.rb` | **create** (one-off generator, kept for future refresh) | Downloads Natural Earth 110m GeoJSON and emits the cleaned SVG |
+| File                             | Action                                                  | Purpose                                                                 |
+| -------------------------------- | ------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `_data/travel_cities.yml`        | **create**                                              | Single source of truth: 48 `{name, lat, lon}` entries                   |
+| `_includes/travel_map_world.svg` | **create** (generated, then committed)                  | Cleaned equirectangular world outline, `viewBox="0 0 1000 500"`, ~80 KB |
+| `_includes/travel_map.liquid`    | **create**                                              | Wrapper `<figure>` + inline SVG + JSON data script + JS tag             |
+| `assets/js/travel-map.js`        | **create**                                              | Projects coords → adds `<circle>` markers → runs tooltip                |
+| `_sass/_utilities.scss`          | **edit** (append only)                                  | New `.travel-map`, `.travel-map__marker`, `.travel-map__tooltip` blocks |
+| `_pages/beyond_work_travel.md`   | **edit**                                                | Remove `map: true`, replace geojson block with the Liquid include       |
+| `_scripts/build_world_svg.rb`    | **create** (one-off generator, kept for future refresh) | Downloads Natural Earth 110m GeoJSON and emits the cleaned SVG          |
 
 All seven tasks below are additive or localized edits; none touch Leaflet, the existing `.map` block, or any page other than the travel page.
 
@@ -44,6 +47,7 @@ All seven tasks below are additive or localized edits; none touch Leaflet, the e
 ## Task 1: Create `_data/travel_cities.yml`
 
 **Files:**
+
 - Create: `_data/travel_cities.yml`
 
 Migrate the 48 city entries from the existing geojson block at `_pages/beyond_work_travel.md:17-70` into a flat YAML list. GeoJSON is `[lon, lat]`; YAML is `{lat, lon}` — don't swap them.
@@ -202,10 +206,13 @@ Create `_data/travel_cities.yml` with exactly this content:
 - [ ] **Step 2: Verify YAML parses and the count is 48**
 
 Run from project root:
+
 ```bash
 ruby -ryaml -e 'd = YAML.load_file("_data/travel_cities.yml"); puts d.length; puts d.all? { |c| c.key?("name") && c["lat"].is_a?(Numeric) && c["lon"].is_a?(Numeric) }'
 ```
+
 Expected output:
+
 ```
 48
 true
@@ -231,6 +238,7 @@ EOF
 ## Task 2: Generate `_includes/travel_map_world.svg` via a one-off Ruby script
 
 **Files:**
+
 - Create: `_scripts/build_world_svg.rb`
 - Create: `_includes/travel_map_world.svg` (the generator's output, committed)
 
@@ -297,14 +305,18 @@ puts "Wrote #{OUT} (#{File.size(OUT)} bytes, #{paths.length} country paths)"
 - [ ] **Step 2: Run the generator**
 
 Run from project root:
+
 ```bash
 ruby _scripts/build_world_svg.rb
 ```
+
 Expected output (approximate):
+
 ```
 Fetching https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson
 Wrote _includes/travel_map_world.svg (NNNNN bytes, 177 country paths)
 ```
+
 Byte size should be between 40 KB and 150 KB. Path count should be between ~170 and ~260. If fetch fails with a TLS or HTTP error, retry once; if it still fails, abort and report back — we need the source to proceed.
 
 - [ ] **Step 3: Sanity-check the generated SVG**
@@ -312,16 +324,21 @@ Byte size should be between 40 KB and 150 KB. Path count should be between ~170 
 ```bash
 head -c 200 _includes/travel_map_world.svg
 ```
+
 Expected first line (exact):
+
 ```
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
 ```
+
 Also confirm the file has both opening and closing `<svg>` and the `<g class="travel-map__countries">` wrapper:
+
 ```bash
 grep -c '^<svg' _includes/travel_map_world.svg
 grep -c 'travel-map__countries' _includes/travel_map_world.svg
 grep -c '</svg>' _includes/travel_map_world.svg
 ```
+
 Expected: `1`, `1`, `1`.
 
 - [ ] **Step 4: Commit**
@@ -346,6 +363,7 @@ EOF
 ## Task 3: Create the Liquid include
 
 **Files:**
+
 - Create: `_includes/travel_map.liquid`
 
 The include does three things: inlines the SVG, serializes the city data into a JSON script tag, and loads the JS with `defer` so execution waits for the DOM (the SVG element it targets is rendered earlier in the same include).
@@ -360,7 +378,7 @@ Create `_includes/travel_map.liquid`:
   <div class="travel-map__tooltip" aria-hidden="true"></div>
 </figure>
 <script id="travel-cities-data" type="application/json">
-{{ site.data.travel_cities | jsonify }}
+  {{ site.data.travel_cities | jsonify }}
 </script>
 <script defer src="{{ '/assets/js/travel-map.js' | relative_url }}"></script>
 ```
@@ -385,6 +403,7 @@ EOF
 ## Task 4: Create `assets/js/travel-map.js`
 
 **Files:**
+
 - Create: `assets/js/travel-map.js`
 
 Vanilla JS — no framework, no libraries. Runs once on load (`defer`), projects each city to viewBox coordinates, creates a `<g class="travel-map__markers">` and one `<circle>` per city (each with a child `<title>` for screen readers and hover handlers driving the HTML tooltip). Hover scales the radius via `setAttribute` so we don't depend on the `r` CSS property (inconsistent browser support).
@@ -418,10 +437,7 @@ Create `assets/js/travel-map.js`:
   const W = viewBox.width || 1000;
   const H = viewBox.height || 500;
 
-  const project = (lat, lon) => [
-    ((lon + 180) / 360) * W,
-    ((90 - lat) / 180) * H,
-  ];
+  const project = (lat, lon) => [((lon + 180) / 360) * W, ((90 - lat) / 180) * H];
 
   const markers = document.createElementNS(ns, "g");
   markers.setAttribute("class", "travel-map__markers");
@@ -469,15 +485,19 @@ Create `assets/js/travel-map.js`:
 - [ ] **Step 2: Syntax-check the JS**
 
 Run from project root:
+
 ```bash
 node --check assets/js/travel-map.js
 ```
+
 Expected output: (empty, exit code 0)
 
 If `node` isn't available, substitute:
+
 ```bash
 ruby -e 'content = File.read("assets/js/travel-map.js"); raise "unbalanced braces" unless content.count("{") == content.count("}"); raise "unbalanced parens" unless content.count("(") == content.count(")"); puts "ok"'
 ```
+
 Expected output: `ok`
 
 - [ ] **Step 3: Commit**
@@ -502,6 +522,7 @@ EOF
 ## Task 5: Add `.travel-map` styles to `_sass/_utilities.scss`
 
 **Files:**
+
 - Modify: `_sass/_utilities.scss` — append a new block. **Do NOT edit** the existing `.map` block at lines 456–559 or the `html[data-theme="dark"] .map` block at 541–559.
 
 Insert the new styles **after** the existing `html[data-theme="dark"] .map { … }` block (ends at line 559, just before `swiper-container` at line 561). This keeps the map-related rules grouped without altering the Leaflet block.
@@ -511,6 +532,7 @@ Insert the new styles **after** the existing `html[data-theme="dark"] .map { …
 Apply this edit to `_sass/_utilities.scss`. Use Edit tool with `old_string` set to the line break between the dark-mode `.map` block and `swiper-container`:
 
 Find this exact sequence in the file:
+
 ```scss
   .leaflet-control-zoom a {
     background: rgba(30, 41, 59, 0.94);
@@ -525,6 +547,7 @@ swiper-container {
 ```
 
 Replace with:
+
 ```scss
   .leaflet-control-zoom a {
     background: rgba(30, 41, 59, 0.94);
@@ -615,12 +638,15 @@ swiper-container {
 - [ ] **Step 2: Verify the existing `.map` block is untouched**
 
 Run:
+
 ```bash
 grep -n "^\.map {" _sass/_utilities.scss
 grep -n "^\.travel-map {" _sass/_utilities.scss
 grep -c "leaflet-control-attribution" _sass/_utilities.scss
 ```
+
 Expected:
+
 - `.map {` still at line 456 (or very close — live-reload may have shifted nothing here)
 - `.travel-map {` exists at a higher line number than 456
 - `leaflet-control-attribution` count = 2 (unchanged — one rule, one dark-mode override)
@@ -628,9 +654,11 @@ Expected:
 - [ ] **Step 3: Verify Jekyll still builds the stylesheet**
 
 If the dev server is running, watch its log for "done in … seconds" after the file save. If you see a Sass compilation error ("Undefined variable", "Invalid CSS", etc.), fix it in place before proceeding. If no dev server, run a one-off build:
+
 ```bash
 docker compose run --rm jekyll bash -c "bundle install && bundle exec jekyll build"
 ```
+
 Expected: exits 0 with no Sass errors.
 
 - [ ] **Step 4: Commit**
@@ -654,11 +682,13 @@ EOF
 ## Task 6: Wire the map into `_pages/beyond_work_travel.md`
 
 **Files:**
+
 - Modify: `_pages/beyond_work_travel.md`
 
 Two changes:
+
 1. Remove `map: true` from frontmatter (prevents `leaflet-setup.js` + Leaflet CSS from loading on this page — they're gated on `page.map` via `_includes/head.liquid` and `_includes/scripts.liquid`).
-2. Replace the entire fenced ```` ```geojson … ``` ```` block with `{% include travel_map.liquid %}`.
+2. Replace the entire fenced ` ```geojson … ``` ` block with `{% include travel_map.liquid %}`.
 
 The intro paragraph above the block stays (lightly rewritten to match the new interaction). Everything under `## Photos` stays untouched.
 
@@ -667,6 +697,7 @@ The intro paragraph above the block stays (lightly rewritten to match the new in
 Apply this edit:
 
 Find (lines 1–8):
+
 ```yaml
 ---
 layout: page
@@ -679,6 +710,7 @@ map: true
 ```
 
 Replace with:
+
 ```yaml
 ---
 layout: page
@@ -692,7 +724,8 @@ nav: false
 - [ ] **Step 2: Replace the intro + geojson block with the include**
 
 Find this block (line 14 through line 71 — the intro sentence, the fenced geojson, and its closing fence):
-```markdown
+
+````markdown
 A running map of the cities I've set foot in. Click a marker for the name.
 
 ```geojson
@@ -700,21 +733,25 @@ A running map of the cities I've set foot in. Click a marker for the name.
   "type": "FeatureCollection",
   "features": [
 ```
+````
 
 …through the closing backtick-fence at line 71:
+
 ```markdown
     { "type": "Feature", "properties": { "name": "Lake Tahoe, USA" }, "geometry": { "type": "Point", "coordinates": [-120.0324, 39.0968] } }
-  ]
+
+]
 }
 ```
-```
+
+````
 
 Replace the entire span (one-liner intro + fenced block) with:
 ```markdown
 A running map of the cities I've set foot in — hover a dot for the name.
 
 {% include travel_map.liquid %}
-```
+````
 
 Use the Edit tool with `old_string` containing the full intro line + the full geojson fenced block including the closing three backticks, and `new_string` as the two lines above.
 
@@ -726,6 +763,7 @@ grep -c "language-geojson\|\`\`\`geojson" _pages/beyond_work_travel.md
 grep -c "{% include travel_map.liquid %}" _pages/beyond_work_travel.md
 grep -c "^## Photos" _pages/beyond_work_travel.md
 ```
+
 Expected: `0`, `0`, `1`, `1`.
 
 - [ ] **Step 4: Commit**
@@ -761,6 +799,7 @@ curl -s http://localhost:8080/beyond-work/travel/ | grep -c 'travel-map__countri
 curl -s http://localhost:8080/beyond-work/travel/ | grep -c 'src="/assets/js/travel-map.js"'
 curl -s http://localhost:8080/beyond-work/travel/ | grep -c 'leaflet'
 ```
+
 Expected: `1`, `1`, `1`, `1`, `0` (no `leaflet` references — confirms `map: true` was really removed).
 
 - [ ] **Step 2: Confirm all 48 cities are serialized into the JSON script tag**
@@ -769,7 +808,9 @@ Expected: `1`, `1`, `1`, `1`, `0` (no `leaflet` references — confirms `map: tr
 curl -s http://localhost:8080/beyond-work/travel/ \
   | ruby -e 'html = STDIN.read; m = html.match(/<script id="travel-cities-data"[^>]*>(.+?)<\/script>/m); raise "no data script" unless m; data = JSON.parse(m[1]); puts data.length; puts data.first.inspect'
 ```
+
 Expected:
+
 ```
 48
 {"name"=>"Zurich, Switzerland", "lat"=>47.3769, "lon"=>8.5417}
@@ -780,11 +821,13 @@ Expected:
 ```bash
 curl -s http://localhost:8080/beyond-work/travel/ | grep -o '<path d=' | wc -l
 ```
+
 Expected: between 170 and 260 (matches the `NNN country paths` message from Task 2 step 2).
 
 - [ ] **Step 4: Open the page in a browser and eyeball it**
 
 Browser: open `http://localhost:8080/beyond-work/travel/` and verify:
+
 1. A world map renders above the Photos grid — clean equirectangular outlines, no tile grid, no broken-image icons, no blank columns.
 2. 48 crimson dots distributed across 5 continents (Europe clusters dense; one dot in Brisbane; US dots from Hawaii across to Michigan; China + Southeast Asia dots; etc.).
 3. Hover three sample markers: Reykjavik (top-left of Europe), Beijing (middle of China), Brisbane (bottom-right of Australia) — each shows a dark tooltip bubble with the "City, Country" label; the dot visibly grows.
@@ -803,6 +846,7 @@ Same caveat as Step 4 — if browser access isn't available, flag the skipped st
 - [ ] **Step 6: Final confirmation — summarize the result**
 
 Report back to the user:
+
 - All 7 tasks complete.
 - Commits created: one per task (6 real commits; Task 7 has no code changes).
 - Remaining: any visual/dark-mode checks that had to be deferred to the user.

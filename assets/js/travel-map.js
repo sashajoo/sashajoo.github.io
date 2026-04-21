@@ -22,10 +22,7 @@
   const W = viewBox.width || 1000;
   const H = viewBox.height || 500;
 
-  const project = (lat, lon) => [
-    ((lon + 180) / 360) * W,
-    ((90 - lat) / 180) * H,
-  ];
+  const project = (lat, lon) => [((lon + 180) / 360) * W, ((90 - lat) / 180) * H];
 
   const markers = document.createElementNS(ns, "g");
   markers.setAttribute("class", "travel-map__markers");
