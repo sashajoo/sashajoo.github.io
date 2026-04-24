@@ -79,13 +79,6 @@ ninja.data = [{
           title: 'Started clinical observership in the Department of Urology at the University of Michigan,...',
           description: "",
           section: "News",},{
-        id: 'social-cv',
-        title: 'CV',
-        section: 'Socials',
-        handler: () => {
-          window.open("/assets/pdf/sha_zhu_cv.pdf", "_blank");
-        },
-      },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
