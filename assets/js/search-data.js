@@ -78,6 +78,9 @@ ninja.data = [{
             },},{id: "news-started-clinical-observership-in-the-department-of-urology-at-the-university-of-michigan-ann-arbor-mi",
           title: 'Started clinical observership in the Department of Urology at the University of Michigan,...',
           description: "",
+          section: "News",},{id: "news-started-clinical-observership-in-the-department-of-urology-at-the-university-of-washington-seattle-wa",
+          title: 'Started clinical observership in the Department of Urology at the University of Washington,...',
+          description: "",
           section: "News",},{
         id: 'social-email',
         title: 'email',
