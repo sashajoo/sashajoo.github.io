@@ -96,6 +96,13 @@ ninja.data = [{
           window.open("https://scholar.google.com/citations?user=jxET6tQAAAAJ", "_blank");
         },
       },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/sashajoo", "_blank");
+        },
+      },{
         id: 'social-linkedin',
         title: 'LinkedIn',
         section: 'Socials',
