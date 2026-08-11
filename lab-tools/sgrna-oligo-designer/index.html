@@ -1,39 +1,46 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>减重打卡 · 新网址</title>
+<title>Moved</title>
 <style>
   body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
        background:#f6f7f9;color:#24303f;
-       font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif}
+       font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif}
   .box{max-width:22rem;padding:2rem 1.5rem;text-align:center;line-height:1.7}
   h1{font-size:1.15rem;margin:0 0 .75rem}
   p{margin:0 0 1.25rem;font-size:.95rem;color:#54606e}
   a.go{display:inline-block;padding:.75rem 1.5rem;border-radius:999px;
-       background:#3f7ad6;color:#fff;text-decoration:none;font-size:1rem}
+       background:#3f7ad6;color:#fff;text-decoration:none}
   .tip{margin-top:1.25rem;font-size:.8rem;color:#8a94a0}
 </style>
 </head>
 <body>
 <div class="box">
-  <h1>打卡网址换了</h1>
-  <p>正在把你之前的打卡记录一起带到新网址,请稍等一下。</p>
-  <a class="go" id="go" href="https://daily-checkin-cec7.pages.dev/">打开新网址</a>
-  <p class="tip">到了新网址以后,请重新「添加到主屏幕」,以后从新图标进入。</p>
+  <h1>This app has moved</h1>
+  <p>Taking your saved data across to the new address. One moment.</p>
+  <a class="go" id="go" href="https://lab-tools-cec7.pages.dev/sgrna-oligo-designer/">Open the new address</a>
+  <p class="tip">Once it opens, add it to your home screen again and use that icon from now on.</p>
 </div>
 <script>
 (function(){
-  var NEW="https://daily-checkin-cec7.pages.dev/";
-  var url=NEW;
+  var NEW="https://lab-tools-cec7.pages.dev/sgrna-oligo-designer/", PATTERNS=["sgrna-oligo-designer-v1"], url=NEW;
   try{
-    var raw=localStorage.getItem("weightloss-checkin-v1");
-    if(raw){
-      var b=btoa(unescape(encodeURIComponent(raw)))
+    var bag={}, n=0;
+    for(var i=0;i<localStorage.length;i++){
+      var k=localStorage.key(i);
+      for(var j=0;j<PATTERNS.length;j++){
+        var p=PATTERNS[j];
+        var hit = p.slice(-1)==="*" ? k.indexOf(p.slice(0,-1))===0 : k===p;
+        if(hit){ bag[k]=localStorage.getItem(k); n++; break; }
+      }
+    }
+    if(n){
+      var b=btoa(unescape(encodeURIComponent(JSON.stringify(bag))))
               .replace(/\+/g,"-").replace(/\//g,"_");
-      // 网址过长会被手机浏览器截断,超长时改为在新页面手动恢复
+      // a very long URL can be truncated on phones; fall back to a plain move
       if(b.length<6000) url=NEW+"#d="+b;
     }
   }catch(e){}

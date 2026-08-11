@@ -1,0 +1,1 @@
+self.addEventListener("install",function(){self.skipWaiting()}),self.addEventListener("activate",function(t){t.waitUntil(async function(){const t=await caches.keys();await Promise.all(t.map(function(t){return caches.delete(t)})),await self.registration.unregister();(await self.clients.matchAll({type:"window"})).forEach(function(t){try{t.navigate(t.url)}catch(t){}})}())});
