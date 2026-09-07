@@ -1,0 +1,10 @@
+{% if site.data.service_photos.size > 0 %}
+  <div class="service-photos">
+    {% for photo in site.data.service_photos %}
+      <figure>
+        {% include figure.liquid loading="lazy" path=photo.image class="img-fluid" alt=photo.caption %}
+        {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+      </figure>
+    {% endfor %}
+  </div>
+{% endif %}
