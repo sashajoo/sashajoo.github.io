@@ -1,9 +1,0 @@
-{% assign verify_items = site.data.verify | where_exp: "item", "item.url != blank" %}
-{% if verify_items.size > 0 %}
-  <div class="verify">
-    <span class="verify-label">Verify</span>
-    {% for item in verify_items %}
-      <a href="{{ item.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
-    {% endfor %}
-  </div>
-{% endif %}

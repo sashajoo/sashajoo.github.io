@@ -1,0 +1,27 @@
+# The identity row under the name on the About page. One line, one place:
+# this replaces both the old "Verify" row and the social icons that used to
+# sit at the foot of the page, so nothing is listed twice.
+#
+# NO CV LINK HERE, EVER. Her CV is not published on this site: no /cv/ page,
+# no PDF in assets, no link. Settled 7 Sep 2026, do not re-add.
+#
+# `icon` is a Font Awesome or Academicons class. An entry with an empty url
+# is skipped, so a line can sit here until the link exists.
+- label: Email
+  icon: fa-solid fa-envelope
+  url: mailto:sha.zhu@ucsf.edu
+- label: Google Scholar
+  icon: ai ai-google-scholar
+  url: https://scholar.google.com/citations?user=jxET6tQAAAAJ
+- label: ORCID
+  icon: ai ai-orcid
+  url: "" # fill in: https://orcid.org/0000-0000-0000-0000
+- label: PubMed
+  icon: ai ai-pubmed
+  url: "" # fill in: a My Bibliography public link, not a bare author search
+- label: GitHub
+  icon: fa-brands fa-github
+  url: https://github.com/sashajoo
+- label: LinkedIn
+  icon: fa-brands fa-linkedin
+  url: https://www.linkedin.com/in/sha-zhu-39b355237

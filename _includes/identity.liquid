@@ -1,0 +1,10 @@
+{% assign identity_items = site.data.identity | where_exp: "item", "item.url != blank" %}
+{% if identity_items.size > 0 %}
+  <div class="identity">
+    {% for item in identity_items %}
+      <a href="{{ item.url }}"{% unless item.url contains 'mailto:' %} target="_blank" rel="noopener noreferrer"{% endunless %}>
+        <i class="{{ item.icon }}" aria-hidden="true"></i>{{ item.label }}
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}
