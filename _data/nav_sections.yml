@@ -1,0 +1,9 @@
+# Section anchors shown in the navbar between "About" and the standalone
+# pages. Each `anchor` must match an id rendered on the About page by
+# _layouts/about.liquid.
+- title: Clinical
+  anchor: clinical
+- title: Service
+  anchor: service
+- title: Presentations
+  anchor: presentations

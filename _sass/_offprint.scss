@@ -72,6 +72,35 @@ code {
   text-transform: uppercase;
 }
 
+// Sections of the about page sit slightly lighter than the page links, so
+// the navbar still reads as two groups rather than seven equal items.
+.navbar .nav-section .nav-link {
+  opacity: 0.72;
+}
+
+.navbar .nav-section .nav-link:hover {
+  opacity: 1;
+}
+
+// The navbar is fixed, so an anchor would otherwise land under it.
+:target,
+[id="clinical"],
+[id="service"],
+[id="presentations"],
+[id="publications"] {
+  scroll-margin-top: 5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 // ---- masthead ----------------------------------------------------------
 // Name on the left, portrait on the right, on one line. Everything below
 // then gets the full width of the page.
