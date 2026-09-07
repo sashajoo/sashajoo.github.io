@@ -1,9 +1,12 @@
 # Section anchors shown in the navbar between "About" and the standalone
 # pages. Each `anchor` must match an id rendered on the About page by
-# _layouts/about.liquid.
+# _layouts/about.liquid. A divider is drawn after the last one, so a reader
+# can tell what scrolls from what navigates.
 - title: Clinical
   anchor: clinical
+- title: Research
+  anchor: research
+- title: Awards
+  anchor: awards
 - title: Service
   anchor: service
-- title: Presentations
-  anchor: presentations

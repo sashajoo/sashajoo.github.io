@@ -81,9 +81,20 @@ code {
 // items plus the search and theme controls overflowed the container up to
 // about 880px. Below that the sections drop out and the pages remain.
 @media (max-width: 991.98px) {
-  .navbar .nav-section {
+  .navbar .nav-section,
+  .navbar .nav-divider {
     display: none;
   }
+}
+
+// The rule that separates the two kinds of item. Everything to its left is
+// an anchor on the About page; everything to its right is a page of its own.
+.navbar .nav-divider {
+  align-self: center;
+  width: 1px;
+  height: 0.85rem;
+  margin: 0 0.55rem;
+  background: var(--offprint-rule);
 }
 
 .navbar .nav-section .nav-link:hover {
@@ -524,5 +535,23 @@ article.offprint {
     color: var(--offprint-accent);
     text-decoration: none;
     border-bottom: 1px solid var(--offprint-accent-rule);
+  }
+}
+
+// Awards. Reuses the .clinical when/what grid so the dated lines on the page
+// all sit on one column edge; the group headings are the only new thing.
+.awards {
+  .awards-group {
+    margin: 1.5rem 0 0.5rem;
+    font-family: $offprint-sans;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--offprint-meta);
+  }
+
+  .awards-group:first-child {
+    margin-top: 0.2rem;
   }
 }

@@ -63,6 +63,12 @@
             </li>
           {% endfor %}
 
+          <!-- Everything above scrolls the About page; everything below is a
+               page of its own. The rule is what tells the two apart. -->
+          {% if site.data.nav_sections.size > 0 %}
+            <li class="nav-item nav-divider" aria-hidden="true"></li>
+          {% endif %}
+
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}

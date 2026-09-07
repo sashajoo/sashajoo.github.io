@@ -45,25 +45,20 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
-    <!-- Clinical experience -->
+    <!-- US clinical experience -->
     {% if site.data.clinical and site.data.clinical.size > 0 %}
       <h2 id="clinical">US Clinical Experience</h2>
       {% include clinical.liquid %}
     {% endif %}
 
-    <!-- Teaching and service -->
-    {% if site.data.service and site.data.service.size > 0 %}
-      <h2 id="service">Teaching &amp; Service</h2>
-      {% include service.liquid %}
-    {% endif %}
-    {% include service_photos.liquid %}
-
-    <!-- Latest posts -->
-    {% if page.latest_posts and page.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
+    <!-- Selected papers. Anchored as "research" because the navbar calls it
+         Research, to keep it apart from the standalone All Publications page. -->
+    {% if page.selected_papers %}
+      <h2 id="research">Selected Publications</h2>
+      {% include selected_papers.liquid %}
+      <div class="allpubs">
+        <a href="{{ '/publications/' | relative_url }}">All publications &rarr;</a>
+      </div>
     {% endif %}
 
     <!-- Presentations -->
@@ -72,23 +67,18 @@ layout: default
       {% include presentations.liquid %}
     {% endif %}
 
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2 id="publications">
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-      <div class="allpubs"><a href="{{ '/publications/' | relative_url }}">All publications</a></div>
+    <!-- Awards -->
+    {% if site.data.awards and site.data.awards.size > 0 %}
+      <h2 id="awards">Awards &amp; Honors</h2>
+      {% include awards.liquid %}
     {% endif %}
 
-    <!-- News -->
-    {% if page.announcements and page.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
-      </h2>
-      {% include news.liquid limit=true %}
+    <!-- Teaching and service -->
+    {% if site.data.service and site.data.service.size > 0 %}
+      <h2 id="service">Teaching &amp; Service</h2>
+      {% include service.liquid %}
     {% endif %}
-
+    {% include service_photos.liquid %}
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
