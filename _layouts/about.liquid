@@ -48,6 +48,12 @@ layout: default
       {% include clinical.liquid %}
     {% endif %}
 
+    <!-- Teaching and service -->
+    {% if site.data.service and site.data.service.size > 0 %}
+      <h2>Teaching &amp; Service</h2>
+      {% include service.liquid %}
+    {% endif %}
+
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>

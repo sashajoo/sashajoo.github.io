@@ -1,0 +1,7 @@
+{% if site.data.service.size > 0 %}
+  <div class="service">
+    {% for line in site.data.service %}
+      <p>{{ line }}</p>
+    {% endfor %}
+  </div>
+{% endif %}

@@ -205,6 +205,21 @@ article.offprint {
   }
 }
 
+// ---- teaching and service ----------------------------------------------
+.service {
+  max-width: 60ch;
+
+  p {
+    font-size: 0.97rem;
+    line-height: 1.55;
+    margin: 0 0 0.7rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
 // ---- publications as a reference list ----------------------------------
 // The theme ships each entry as stacked blocks; run them together so the
 // list reads the way a reference section does, with a hanging indent.
