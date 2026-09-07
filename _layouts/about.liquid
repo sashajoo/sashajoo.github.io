@@ -66,6 +66,12 @@ layout: default
       {% include latest_posts.liquid %}
     {% endif %}
 
+    <!-- Presentations -->
+    {% if site.data.presentations and site.data.presentations.size > 0 %}
+      <h2>Presentations</h2>
+      {% include presentations.liquid %}
+    {% endif %}
+
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>

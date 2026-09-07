@@ -1,0 +1,16 @@
+{% if site.data.presentations.size > 0 %}
+  <div class="clinical presentations">
+    {% for item in site.data.presentations %}
+      <div class="entry">
+        <div class="when">{{ item.when }}</div>
+        <div class="what">
+          {{ item.what }}
+          {% if item.where %}<span class="where">{{ item.where }}</span>{% endif %}
+          {% if item.press_url %}
+            <a class="press" href="{{ item.press_url }}" target="_blank" rel="noopener noreferrer">{{ item.press_label | default: "Press coverage" }}</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
