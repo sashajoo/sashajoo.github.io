@@ -1,13 +1,16 @@
 # US clinical experience, shown on the About page above the publications.
 # Newest first. `where` is optional.
 #
-# NOTE: Michigan formally titles this rotation a visiting US sub-internship.
-# The wording here is kept as "observership" so the site agrees with the CV.
-# If the CV and personal statement are changed to the institution's own title,
-# change this line at the same time, never on its own.
+# Michigan is the institution's own title, a visiting US sub-internship, at her
+# instruction 7 Sep 2026. UW is a plain observership. The two are deliberately
+# NOT written as a matched pair.
+#
+# The CV and personal statement must be made to agree. A CV heading saying
+# sub-internship beside a letter describing observation is the inconsistency a
+# committee catches, so the bullets stay as observed cases either way.
 - when: May 2026
   what: Clinical observership, Department of Urology
   where: University of Washington, Seattle, WA &middot; with Daniel W. Lin, MD
 - when: Apr 2026
-  what: Clinical observership, Department of Urology
+  what: Visiting sub-internship, Department of Urology
   where: University of Michigan, Ann Arbor, MI &middot; with Todd M. Morgan, MD

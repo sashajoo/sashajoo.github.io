@@ -151,11 +151,11 @@ html {
   float: none !important;
   flex: 0 0 auto;
   margin: 0;
-  width: 156px !important;
+  width: 196px !important;
   text-align: left;
 
   @media (max-width: 576px) {
-    width: 136px !important;
+    width: 168px !important;
   }
 }
 
@@ -255,7 +255,7 @@ article.offprint {
 
 // ---- about page sections -----------------------------------------------
 article.offprint {
-  padding-top: 0.6rem;
+  padding-top: 0;
 
   h2 {
     font-family: $offprint-sans;

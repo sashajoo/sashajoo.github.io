@@ -13,12 +13,20 @@
 - label: Google Scholar
   icon: ai ai-google-scholar
   url: https://scholar.google.com/citations?user=jxET6tQAAAAJ
+# No ORCID iD exists for her yet: a search of all 35 ORCID records named
+# "Sha Zhu" and of the author metadata on her own DOIs found none. Create one
+# at orcid.org, link the works, then this url becomes https://orcid.org/<id>
+# and the PubMed one can become https://pubmed.ncbi.nlm.nih.gov/?term=<id>[auid]
 - label: ORCID
   icon: ai ai-orcid
-  url: "" # fill in: https://orcid.org/0000-0000-0000-0000
+  url: ""
+# An exact list of her 46 PubMed-indexed papers, by PMID. An author or
+# affiliation search cannot be used: several other S Zhus publish from West
+# China, and that query returns their heparin, obstetrics and stone-surgery
+# papers alongside hers.
 - label: PubMed
   icon: ai ai-pubmed
-  url: "" # fill in: a My Bibliography public link, not a bare author search
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=42362304%2C40355427%2C40057038%2C38512114%2C38459122%2C38379333%2C37847513%2C37415738%2C37131267%2C36907910%2C36865786%2C36836061%2C36376185%2C36348577%2C35771310%2C36082136%2C36067250%2C35969149%2C35941663%2C35864546%2C35397700%2C34185954%2C35115934%2C34512023%2C34489456%2C34435696%2C34318630%2C34028061%2C33414138%2C33026922%2C31140234%2C33324569%2C33269597%2C33072564%2C33042428%2C32719852%2C35117716%2C32093688%2C31710002%2C31424026%2C31784574%2C31433509%2C31427906%2C31401413%2C31294486%2C30609313
 - label: GitHub
   icon: fa-brands fa-github
   url: https://github.com/sashajoo
