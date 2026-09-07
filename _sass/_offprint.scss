@@ -30,7 +30,7 @@ $offprint-sans: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans
 body {
   font-family: $offprint-serif;
   font-size: 1.02rem;
-  line-height: 1.6;
+  line-height: 1.72;
 }
 
 h1,
@@ -67,7 +67,7 @@ code {
 }
 
 .navbar .nav-link {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -132,7 +132,7 @@ html {
 }
 
 .post-header .desc {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--offprint-meta);
@@ -145,11 +145,11 @@ html {
   float: none !important;
   flex: 0 0 auto;
   margin: 0;
-  width: 184px !important;
+  width: 156px !important;
   text-align: left;
 
   @media (max-width: 576px) {
-    width: 152px !important;
+    width: 136px !important;
   }
 }
 
@@ -189,6 +189,26 @@ html {
     text-align: left;
     margin-top: 0.45rem;
   }
+}
+
+// ---- mobile: stop the hidden BibTeX blocks widening the document --------
+// al-folio keeps a <pre><code> BibTeX block per entry, collapsed rather than
+// display:none, so its long lines still set the document width. On a phone
+// that pushed every line off the right edge and the navbar toggler with it.
+.publications .bibtex,
+.publications .bibtex pre,
+.publications .bibtex code,
+.publications pre,
+.publications code {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.post,
+article.offprint {
+  min-width: 0;
 }
 
 // ---- identity row ------------------------------------------------------
@@ -237,7 +257,7 @@ article.offprint {
 
   h2 {
     font-family: $offprint-sans;
-    font-size: 0.68rem;
+    font-size: 0.74rem;
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -337,6 +357,7 @@ article.offprint {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   margin-top: 1.4rem;
+  max-width: 640px;
 
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
@@ -443,9 +464,16 @@ article.offprint {
         margin-top: 0.25rem;
       }
 
+      // Plain accent link rather than the theme's boxed pill, which was the
+      // only bordered object in the reference list and broke its rhythm.
       .btn {
-        font-size: 0.62rem;
-        padding: 0.1rem 0.45rem;
+        font-size: 0.7rem;
+        padding: 0;
+        border: 0;
+        background: none;
+        color: var(--offprint-accent);
+        text-transform: lowercase;
+        letter-spacing: 0.02em;
       }
     }
 
