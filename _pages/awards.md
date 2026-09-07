@@ -8,7 +8,7 @@ nav_order: 3
 
 ## Research Awards
 
-- **Pilot Research Award**, UCSF Prostate Cancer Program (2025) — $50,000
+- **Pilot Research Award**, UCSF Prostate Cancer Program (2024) — $50,000
 - **Excellent Postgraduate Award**, Sichuan University (2020)
 
 ## Scholarships & Academic Recognition
