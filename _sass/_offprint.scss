@@ -196,10 +196,10 @@ article.offprint {
     }
   }
 
-  // A long line of serif across the full container is what made the first
-  // pass look grey; running text stops at a readable measure.
+  // Her call 7 Sep 2026: the bio runs the full width rather than stopping
+  // at a measure, so the space beside it is not left empty.
   .clearfix p {
-    max-width: 72ch;
+    max-width: none;
   }
 }
 
@@ -244,7 +244,7 @@ article.offprint {
 
 // ---- teaching and service ----------------------------------------------
 .service {
-  max-width: 72ch;
+  max-width: none;
 
   p {
     font-size: 0.97rem;
