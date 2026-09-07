@@ -391,9 +391,10 @@ article.offprint {
     max-width: none;
 
     > li {
-      display: grid;
-      grid-template-columns: 1.8rem 1fr;
-      align-items: baseline;
+      // Explicitly block, not grid. The two-column grid belongs only to the
+      // numbered homepage list; on /publications/ there is no rank number, so
+      // a grid would put the whole entry in the narrow first track.
+      display: block;
       margin-bottom: 0.9rem;
 
       // Grid items default to min-width:auto, which lets a long author list
@@ -485,8 +486,14 @@ article.offprint {
 .selected-pubs ol.bibliography {
   counter-reset: offprint-ref;
 
+  // The rank number sits in its own track. This grid must stay scoped to the
+  // homepage list: on /publications/ there is no ::before, so a two-column
+  // grid would put the whole entry in the 1.8rem track, one word per line.
   > li {
     counter-increment: offprint-ref;
+    display: grid;
+    grid-template-columns: 1.8rem 1fr;
+    align-items: baseline;
 
     &::before {
       content: counter(offprint-ref) ".";
