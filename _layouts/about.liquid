@@ -16,8 +16,12 @@ layout: default
         <p class="desc">{{ page.subtitle }}</p>
         {% include identity.liquid %}
       </div>
-      {% if page.profile %}
-        <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+    </div>
+  </header>
+
+  <article class="offprint">
+    {% if page.profile %}
+          <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
           {% if page.profile.image %}
             {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
             {% if page.profile.image_circular %}
@@ -37,11 +41,8 @@ layout: default
             <div class="more-info">{{ page.profile.more_info }}</div>
           {% endif %}
         </div>
-      {% endif %}
-    </div>
-  </header>
+    {% endif %}
 
-  <article class="offprint">
     <div class="clearfix">{{ content }}</div>
 
     <!-- Clinical experience -->

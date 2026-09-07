@@ -147,33 +147,33 @@ html {
 
 // The portrait stays small and in colour; a large photograph is what the
 // practice-marketing sites do, not what trainees do.
-.masthead .profile {
-  float: none !important;
-  flex: 0 0 auto;
-  margin: 0;
+.profile {
+  float: right !important;
   width: 196px !important;
+  margin: 0.2rem 0 1.4rem 2rem !important;
   text-align: left;
 
-  @media (max-width: 576px) {
-    width: 168px !important;
-  }
-}
-
-// Plate: a hairline frame with the caption set inside it, the way a journal
-// sets a figure. Her choice.
-.masthead .profile {
+  // Plate: a hairline frame with the caption set inside it, the way a journal
+  // sets a figure. It floats in the article so the opening paragraph wraps
+  // beside it and no dead space is left under the identity row.
   border: 1px solid var(--offprint-rule);
   border-radius: 2px;
   padding: 7px;
   background: var(--global-bg-color);
+
+  @media (max-width: 576px) {
+    float: none !important;
+    width: 168px !important;
+    margin: 0 0 1.4rem !important;
+  }
 }
 
-.masthead .profile img {
+.profile img {
   border-radius: 1px !important;
   display: block;
 }
 
-.masthead .profile .more-info {
+.profile .more-info {
   border-top: 1px solid var(--offprint-rule);
   margin-top: 7px;
   padding-top: 6px;
@@ -181,21 +181,6 @@ html {
   text-align: left;
 }
 
-.profile {
-  width: 190px !important;
-
-  img {
-    border-radius: 2px !important;
-    box-shadow: none !important;
-  }
-
-  .more-info {
-    font-size: 0.72rem;
-    color: var(--offprint-meta);
-    text-align: left;
-    margin-top: 0.45rem;
-  }
-}
 
 // ---- mobile: stop the hidden BibTeX blocks widening the document --------
 // al-folio keeps a <pre><code> BibTeX block per entry, collapsed rather than
