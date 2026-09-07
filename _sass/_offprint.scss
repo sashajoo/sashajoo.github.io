@@ -145,12 +145,34 @@ html {
   float: none !important;
   flex: 0 0 auto;
   margin: 0;
-  width: 190px !important;
+  width: 184px !important;
   text-align: left;
 
   @media (max-width: 576px) {
-    width: 150px !important;
+    width: 152px !important;
   }
+}
+
+// Plate: a hairline frame with the caption set inside it, the way a journal
+// sets a figure. Her choice.
+.masthead .profile {
+  border: 1px solid var(--offprint-rule);
+  border-radius: 2px;
+  padding: 7px;
+  background: var(--global-bg-color);
+}
+
+.masthead .profile img {
+  border-radius: 1px !important;
+  display: block;
+}
+
+.masthead .profile .more-info {
+  border-top: 1px solid var(--offprint-rule);
+  margin-top: 7px;
+  padding-top: 6px;
+  font-size: 0.68rem;
+  text-align: left;
 }
 
 .profile {
@@ -178,8 +200,8 @@ html {
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.4rem 1.5rem;
-  margin: 1rem 0 0;
-  padding: 0.65rem 0;
+  margin: 0.9rem 0 0;
+  padding: 0.6rem 0;
   border-top: 1px solid var(--offprint-rule);
   border-bottom: 1px solid var(--offprint-rule);
   font-family: $offprint-sans;
@@ -211,7 +233,7 @@ html[data-theme="dark"] .identity a {
 
 // ---- about page sections -----------------------------------------------
 article.offprint {
-  padding-top: 1.4rem;
+  padding-top: 0.6rem;
 
   h2 {
     font-family: $offprint-sans;

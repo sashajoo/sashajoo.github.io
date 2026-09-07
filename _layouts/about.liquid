@@ -14,6 +14,7 @@ layout: default
           {% endif %}
         </h1>
         <p class="desc">{{ page.subtitle }}</p>
+        {% include identity.liquid %}
       </div>
       {% if page.profile %}
         <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
@@ -39,8 +40,6 @@ layout: default
       {% endif %}
     </div>
   </header>
-
-  {% include identity.liquid %}
 
   <article class="offprint">
     <div class="clearfix">{{ content }}</div>
