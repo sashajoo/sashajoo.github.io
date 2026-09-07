@@ -236,6 +236,14 @@ article.offprint {
     width: 1em;
     text-align: center;
   }
+
+  // The deployed academicons stylesheet is older than the one in this repo and
+  // has no .ai-pubmed rule, so the glyph came out blank. The webfont itself
+  // does contain U+E99F, so declare it here and stop depending on which
+  // version of academicons happens to be live.
+  .ai-pubmed::before {
+    content: "\e99f";
+  }
 }
 
 // ---- about page sections -----------------------------------------------
