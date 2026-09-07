@@ -369,6 +369,20 @@ article.offprint {
         color: var(--offprint-meta);
       }
 
+      .cofirst {
+        display: inline;
+        font-family: $offprint-sans;
+        font-size: 0.68rem;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--offprint-accent);
+        border: 1px solid rgba(122, 31, 43, 0.35);
+        border-radius: 3px;
+        padding: 0.06rem 0.34rem;
+        margin-left: 0.35rem;
+        white-space: nowrap;
+      }
+
       .links {
         display: block;
         margin-top: 0.25rem;

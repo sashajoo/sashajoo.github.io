@@ -136,6 +136,9 @@
           {{- more_authors_hide -}}
         </span>
       {% endif %}
+      {% if entry.cofirst %}
+        <span class="cofirst">Co-first author</span>
+      {% endif %}
       {% if entry.annotation %}
         <i
           class="fa-solid fa-circle-info ml-1"

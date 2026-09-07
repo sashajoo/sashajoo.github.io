@@ -1,12 +1,12 @@
 # Verification row shown directly under the name on the About page.
 # An entry with an empty url is skipped, so leave a line in place until you
 # have the link rather than deleting it.
+#
+# NO CV LINK HERE, EVER. Her CV is not published on this site: no /cv/ page,
+# no PDF in assets, no link. Settled 7 Sep 2026, do not re-add.
 - label: Google Scholar
   url: https://scholar.google.com/citations?user=jxET6tQAAAAJ
 - label: ORCID
   url: "" # fill in: https://orcid.org/0000-0000-0000-0000
 - label: PubMed
   url: "" # fill in: a My Bibliography public link, not a bare author search
-# CV link removed at her request 7 Sep 2026. Restore by filling the url back in.
-- label: CV (PDF)
-  url: "" # /assets/pdf/sha_zhu_cv.pdf
