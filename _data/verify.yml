@@ -1,0 +1,11 @@
+# Verification row shown directly under the name on the About page.
+# An entry with an empty url is skipped, so leave a line in place until you
+# have the link rather than deleting it.
+- label: Google Scholar
+  url: https://scholar.google.com/citations?user=jxET6tQAAAAJ
+- label: ORCID
+  url: "" # fill in: https://orcid.org/0000-0000-0000-0000
+- label: PubMed
+  url: "" # fill in: a My Bibliography public link, not a bare author search
+- label: CV (PDF)
+  url: /assets/pdf/sha_zhu_cv.pdf

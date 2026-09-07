@@ -1,0 +1,276 @@
+/*******************************************************************************
+ * Offprint — journal-offprint treatment for the site.
+ * Loaded last from assets/css/main.scss so it wins over the theme defaults.
+ ******************************************************************************/
+
+// ---- palette -----------------------------------------------------------
+:root {
+  --offprint-accent: #7a1f2b;
+  --offprint-meta: #6d6d6d;
+  --offprint-rule: #e2e2e2;
+  --global-theme-color: var(--offprint-accent);
+  --global-hover-color: var(--offprint-accent);
+  --global-highlight-color: var(--offprint-accent);
+}
+
+html[data-theme="dark"] {
+  --offprint-accent: #c77a84;
+  --offprint-meta: #9a9a9a;
+  --offprint-rule: #303030;
+  --global-theme-color: var(--offprint-accent);
+  --global-hover-color: var(--offprint-accent);
+  --global-highlight-color: var(--offprint-accent);
+}
+
+// ---- type --------------------------------------------------------------
+$offprint-serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+$offprint-sans: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+
+body {
+  font-family: $offprint-serif;
+  font-size: 1.05rem;
+  line-height: 1.62;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.post-title,
+.publications h2 a {
+  font-family: $offprint-serif;
+  letter-spacing: -0.01em;
+}
+
+// Navigation, buttons and every piece of metadata stay in the sans face,
+// the way running heads and figure labels do in a printed journal.
+.navbar,
+.navbar .nav-link,
+.footer,
+.btn,
+.badge,
+abbr,
+.post-header .desc,
+.more-info,
+.social,
+.tag,
+.bibtex,
+pre,
+code {
+  font-family: $offprint-sans;
+}
+
+.navbar .nav-link {
+  font-size: 0.78rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+// ---- about page --------------------------------------------------------
+.offprint {
+  border-left: 3px solid var(--offprint-accent);
+  padding-left: 1.6rem;
+
+  @media (max-width: 576px) {
+    border-left-width: 2px;
+    padding-left: 0.9rem;
+  }
+
+  > h2 {
+    font-family: $offprint-sans;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--offprint-accent);
+    border-top: 1px solid var(--offprint-rule);
+    padding-top: 1.4rem;
+    margin-top: 2.4rem;
+    margin-bottom: 1rem;
+
+    a {
+      color: inherit;
+    }
+  }
+}
+
+.post-header .post-title {
+  font-weight: 600;
+}
+
+.post-header .desc {
+  font-size: 0.76rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--offprint-meta);
+}
+
+// ---- verification row --------------------------------------------------
+// Sits directly under the name so a reader can check the record in one click.
+.verify {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 1.25rem;
+  margin: 0.9rem 0 0;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--offprint-rule);
+  border-bottom: 1px solid var(--offprint-rule);
+  font-family: $offprint-sans;
+  font-size: 0.78rem;
+
+  .verify-label {
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 0.66rem;
+    color: var(--offprint-meta);
+  }
+
+  a {
+    color: var(--offprint-accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(122, 31, 43, 0.35);
+
+    &:hover {
+      border-bottom-color: var(--offprint-accent);
+    }
+  }
+}
+
+html[data-theme="dark"] .verify a {
+  border-bottom-color: rgba(199, 122, 132, 0.4);
+}
+
+// ---- clinical section --------------------------------------------------
+.clinical {
+  .entry {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    gap: 0.4rem 1.4rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dotted var(--offprint-rule);
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+      gap: 0.15rem;
+    }
+  }
+
+  .when {
+    font-family: $offprint-sans;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--offprint-meta);
+    padding-top: 0.22rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .what {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  .where {
+    display: block;
+    font-family: $offprint-sans;
+    font-size: 0.76rem;
+    color: var(--offprint-meta);
+    margin-top: 0.15rem;
+  }
+}
+
+// ---- publications as a reference list ----------------------------------
+// The theme ships each entry as stacked blocks; run them together so the
+// list reads the way a reference section does, with a hanging indent.
+.publications {
+  ol.bibliography {
+    counter-reset: offprint-ref;
+
+    > li {
+      counter-increment: offprint-ref;
+      display: grid;
+      grid-template-columns: 2.1rem 1fr;
+      align-items: baseline;
+      margin-bottom: 1.15rem;
+
+      &::before {
+        content: counter(offprint-ref) ".";
+        padding-right: 0.5rem;
+        text-align: right;
+        color: var(--offprint-accent);
+        font-variant-numeric: tabular-nums;
+      }
+
+      @media (max-width: 576px) {
+        grid-template-columns: 1.6rem 1fr;
+      }
+
+      // Grid items default to min-width:auto, which lets a long author list
+      // push the track wider than the column and run off the page.
+      > * {
+        min-width: 0;
+      }
+
+      > .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .title,
+      .author,
+      .periodical {
+        display: inline;
+        font-size: 0.97rem;
+        line-height: 1.5;
+      }
+
+      .author {
+        color: inherit;
+
+        // The markup leaves whitespace after the author list, so the period
+        // is pulled back onto the last name.
+        &::after {
+          content: ".";
+          margin-left: -0.25em;
+        }
+      }
+
+      .title {
+        font-weight: 400;
+
+        &::after {
+          content: ". ";
+        }
+      }
+
+      .periodical {
+        color: var(--offprint-meta);
+
+        em {
+          font-style: italic;
+        }
+      }
+
+      .links {
+        display: block;
+        margin-top: 0.4rem;
+      }
+
+      .btn {
+        font-size: 0.68rem;
+        letter-spacing: 0.04em;
+      }
+    }
+  }
+}
+
+// ---- news --------------------------------------------------------------
+// News runs last and stays short; a stale list at the top of the page reads
+// as an abandoned site.
+.news .news-item,
+table.table-sm td {
+  font-size: 0.95rem;
+}
