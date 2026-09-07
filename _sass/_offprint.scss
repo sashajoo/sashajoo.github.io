@@ -489,10 +489,11 @@ article.offprint {
     }
   }
 
-  // Six on the front page, the rest one click away. The proper fix is to trim
-  // selected={true} in _bibliography/papers.bib; this is the stopgap, and it
-  // must stay scoped here so /publications/ keeps every entry.
-  > li:nth-child(n + 7) {
+  // Seven on the front page, her picks, the rest one click away. papers.bib
+  // now carries exactly seven selected={true}, so this cap is a backstop
+  // rather than the mechanism. It must stay scoped here so /publications/
+  // keeps every entry.
+  > li:nth-child(n + 8) {
     display: none;
   }
 }
