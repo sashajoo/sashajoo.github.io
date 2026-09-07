@@ -258,9 +258,17 @@ article.offprint {
 }
 
 // ---- presentations -----------------------------------------------------
+.presentations .press-row {
+  display: block;
+  margin-top: 0.35rem;
+}
+
+.presentations .press-row .press + .press {
+  margin-left: 0.9rem;
+}
+
 .presentations .press {
   display: inline-block;
-  margin-top: 0.3rem;
   font-family: $offprint-sans;
   font-size: 0.74rem;
   color: var(--offprint-accent);

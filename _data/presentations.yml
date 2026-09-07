@@ -1,10 +1,18 @@
 # Presentations, shown on the About page above the publications.
-# `press` adds a source link on the same line.
+# `press` is a list of source links shown on the same line.
 - when: Oct 2025
   what: STEAP1 regulation and combination strategies in prostate cancer
   where: Prostate Cancer Foundation Scientific Retreat, Carlsbad, CA
-  press_label: Covered by GU Oncology Now
-  press_url: https://www.guoncologynow.com/post/study-identifies-mechanisms-controlling-steap1-expression-opportunities-for-combination-therapy-in-pca
+  press:
+    - label: UCSF Urology
+      url: https://urology.ucsf.edu/news/all/202512/new-insights-steap1-protein-could-advance-treatment-options-prostate-cancer
+    - label: GU Oncology Now
+      url: https://www.guoncologynow.com/post/study-identifies-mechanisms-controlling-steap1-expression-opportunities-for-combination-therapy-in-pca
 - when: Apr 2025
-  what: Podium presentation
-  where: AUA Annual Meeting, Las Vegas, NV
+  what: >-
+    FACS-based whole-genome CRISPRi screen to uncover STEAP1 regulators in
+    prostate cancer
+  where: Podium presentation, AUA Annual Meeting, Las Vegas, NV
+  press:
+    - label: UCSF MedConnection
+      url: https://medconnection.ucsfhealth.org/news/ucsf-urology-experts-highlight-leadership-in-innovative-research-and-treatment-at-national-urology-conference

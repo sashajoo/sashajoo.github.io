@@ -6,8 +6,12 @@
         <div class="what">
           {{ item.what }}
           {% if item.where %}<span class="where">{{ item.where }}</span>{% endif %}
-          {% if item.press_url %}
-            <a class="press" href="{{ item.press_url }}" target="_blank" rel="noopener noreferrer">{{ item.press_label | default: "Press coverage" }}</a>
+          {% if item.press %}
+            <span class="press-row">
+              {% for p in item.press %}
+                <a class="press" href="{{ p.url }}" target="_blank" rel="noopener noreferrer">{{ p.label }}</a>
+              {% endfor %}
+            </span>
           {% endif %}
         </div>
       </div>
