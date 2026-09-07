@@ -339,6 +339,7 @@ filtered_bibtex_keywords:
     dimensions,
     eprint,
     google_scholar_id,
+    cofirst,
     hal,
     html,
     inspirehep_id,

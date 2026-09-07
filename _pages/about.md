@@ -12,7 +12,6 @@ profile:
     <p>San Francisco, CA</p>
 
 selected_papers: true
-social: true
 
 announcements:
   enabled: false

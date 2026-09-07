@@ -136,9 +136,6 @@
           {{- more_authors_hide -}}
         </span>
       {% endif %}
-      {% if entry.cofirst %}
-        <span class="cofirst">Co-first author</span>
-      {% endif %}
       {% if entry.annotation %}
         <i
           class="fa-solid fa-circle-info ml-1"
@@ -150,6 +147,10 @@
         </i>
       {% endif %}
     </div>
+
+    {% if entry.cofirst %}
+      <span class="cofirst">Co-first author</span>
+    {% endif %}
 
     <!-- Journal/Book title and date -->
     {% assign proceedings = 'inproceedings,incollection' | split: ',' %}

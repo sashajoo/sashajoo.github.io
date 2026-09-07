@@ -7,6 +7,7 @@
 // Replaces the stock al-folio accent ($purple-color, #b509ac).
 :root {
   --offprint-accent: #7a1f2b;
+  --offprint-accent-rule: rgba(122, 31, 43, 0.5);
   --offprint-meta: #6d6d6d;
   --offprint-rule: #e6e2df;
   --global-theme-color: var(--offprint-accent);
@@ -16,6 +17,7 @@
 
 html[data-theme="dark"] {
   --offprint-accent: #c77a84;
+  --offprint-accent-rule: rgba(199, 122, 132, 0.6);
   --offprint-meta: #9a9a9a;
   --offprint-rule: #333030;
   --global-theme-color: var(--offprint-accent);
@@ -50,11 +52,8 @@ h6,
 .navbar .nav-link,
 .footer,
 .btn,
-.badge,
-abbr,
 .post-header .desc,
 .profile .more-info,
-.social,
 pre,
 code {
   font-family: $offprint-sans;
@@ -78,16 +77,23 @@ code {
   opacity: 0.72;
 }
 
+// Bootstrap expands the bar at 576px and .navbar-nav is nowrap, so seven
+// items plus the search and theme controls overflowed the container up to
+// about 880px. Below that the sections drop out and the pages remain.
+@media (max-width: 991.98px) {
+  .navbar .nav-section {
+    display: none;
+  }
+}
+
 .navbar .nav-section .nav-link:hover {
   opacity: 1;
 }
 
-// The navbar is fixed, so an anchor would otherwise land under it.
-:target,
-[id="clinical"],
-[id="service"],
-[id="presentations"],
-[id="publications"] {
+// The navbar is fixed, so an anchor would otherwise land under it. Applies
+// to every section heading, so adding one to nav_sections.yml needs no
+// matching change here.
+article.offprint h2[id] {
   scroll-margin-top: 5rem;
 }
 
@@ -230,7 +236,7 @@ article.offprint {
   a {
     color: var(--offprint-accent);
     text-decoration: none;
-    border-bottom: 1px solid rgba(122, 31, 43, 0.28);
+    border-bottom: 1px solid var(--offprint-accent-rule);
     display: inline-flex;
     align-items: baseline;
     gap: 0.4rem;
@@ -245,10 +251,6 @@ article.offprint {
     width: 1em;
     text-align: center;
   }
-}
-
-html[data-theme="dark"] .identity a {
-  border-bottom-color: rgba(199, 122, 132, 0.4);
 }
 
 // ---- about page sections -----------------------------------------------
@@ -348,7 +350,7 @@ article.offprint {
   font-size: 0.74rem;
   color: var(--offprint-accent);
   text-decoration: none;
-  border-bottom: 1px solid rgba(122, 31, 43, 0.35);
+  border-bottom: 1px solid var(--offprint-accent-rule);
 }
 
 // ---- service photographs -----------------------------------------------
@@ -393,23 +395,13 @@ article.offprint {
   margin-top: 0;
 
   ol.bibliography {
-    counter-reset: offprint-ref;
     max-width: none;
 
     > li {
-      counter-increment: offprint-ref;
       display: grid;
       grid-template-columns: 1.8rem 1fr;
       align-items: baseline;
       margin-bottom: 0.9rem;
-
-      &::before {
-        content: counter(offprint-ref) ".";
-        text-align: right;
-        padding-right: 0.55rem;
-        color: var(--offprint-accent);
-        font-variant-numeric: tabular-nums;
-      }
 
       // Grid items default to min-width:auto, which lets a long author list
       // push the track wider than the column and run off the page.
@@ -417,9 +409,18 @@ article.offprint {
         min-width: 0;
       }
 
+      // bib.liquid wraps each entry in a Bootstrap .col-sm-10, which stopped
+      // the reference list 17% short of the right margin.
       > .row {
         margin-left: 0;
         margin-right: 0;
+
+        > div {
+          flex: 0 0 100%;
+          max-width: 100%;
+          padding-left: 0;
+          padding-right: 0;
+        }
       }
 
       .title,
@@ -445,14 +446,21 @@ article.offprint {
         color: var(--offprint-meta);
       }
 
+      // The theme sets these to #828282, which is 3.84:1 on white. They are
+      // interactive, so they need to clear 4.5:1.
+      .author .more-authors {
+        color: var(--offprint-meta);
+        border-bottom-color: var(--offprint-meta);
+      }
+
       .cofirst {
-        display: inline;
+        display: inline-block;
         font-family: $offprint-sans;
         font-size: 0.68rem;
         letter-spacing: 0.09em;
         text-transform: uppercase;
         color: var(--offprint-accent);
-        border: 1px solid rgba(122, 31, 43, 0.35);
+        border: 1px solid var(--offprint-accent-rule);
         border-radius: 3px;
         padding: 0.06rem 0.34rem;
         margin-left: 0.35rem;
@@ -466,7 +474,8 @@ article.offprint {
 
       // Plain accent link rather than the theme's boxed pill, which was the
       // only bordered object in the reference list and broke its rhythm.
-      .btn {
+      // _publications.scss styles these as `.links a.btn`, so match that.
+      .links a.btn {
         font-size: 0.7rem;
         padding: 0;
         border: 0;
@@ -477,11 +486,29 @@ article.offprint {
       }
     }
 
-    // Six on the front page, the rest one click away. The proper fix is to
-    // trim selected={true} in _bibliography/papers.bib; this is the stopgap.
-    > li:nth-child(n + 7) {
-      display: none;
+  }
+}
+
+.selected-pubs ol.bibliography {
+  counter-reset: offprint-ref;
+
+  > li {
+    counter-increment: offprint-ref;
+
+    &::before {
+      content: counter(offprint-ref) ".";
+      text-align: right;
+      padding-right: 0.55rem;
+      color: var(--offprint-accent);
+      font-variant-numeric: tabular-nums;
     }
+  }
+
+  // Six on the front page, the rest one click away. The proper fix is to trim
+  // selected={true} in _bibliography/papers.bib; this is the stopgap, and it
+  // must stay scoped here so /publications/ keeps every entry.
+  > li:nth-child(n + 7) {
+    display: none;
   }
 }
 
@@ -495,6 +522,6 @@ article.offprint {
   a {
     color: var(--offprint-accent);
     text-decoration: none;
-    border-bottom: 1px solid rgba(122, 31, 43, 0.3);
+    border-bottom: 1px solid var(--offprint-accent-rule);
   }
 }

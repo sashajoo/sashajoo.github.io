@@ -1,4 +1,4 @@
-{% assign identity_items = site.data.identity | where_exp: "item", "item.url != blank" %}
+{% assign identity_items = site.data.identity | where_exp: "item", "item.url and item.url != ''" %}
 {% if identity_items.size > 0 %}
   <div class="identity">
     {% for item in identity_items %}
