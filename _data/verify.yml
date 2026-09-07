@@ -7,5 +7,6 @@
   url: "" # fill in: https://orcid.org/0000-0000-0000-0000
 - label: PubMed
   url: "" # fill in: a My Bibliography public link, not a bare author search
+# CV link removed at her request 7 Sep 2026. Restore by filling the url back in.
 - label: CV (PDF)
-  url: /assets/pdf/sha_zhu_cv.pdf
+  url: "" # /assets/pdf/sha_zhu_cv.pdf

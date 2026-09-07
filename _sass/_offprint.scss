@@ -60,6 +60,12 @@ code {
   font-family: $offprint-sans;
 }
 
+// The theme sets the fixed navbar to opacity .95, so page content ghosts
+// through it as you scroll. Serif text makes that very visible.
+.navbar {
+  opacity: 1;
+}
+
 .navbar .nav-link {
   font-size: 0.75rem;
   letter-spacing: 0.14em;
@@ -67,8 +73,27 @@ code {
 }
 
 // ---- masthead ----------------------------------------------------------
+// Name on the left, portrait on the right, on one line. Everything below
+// then gets the full width of the page.
 .post-header {
   margin-bottom: 0;
+}
+
+.masthead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2.5rem;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
+
+.masthead-name {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .post-header .post-title {
@@ -87,8 +112,20 @@ code {
 
 // The portrait stays small and in colour; a large photograph is what the
 // practice-marketing sites do, not what trainees do.
+.masthead .profile {
+  float: none !important;
+  flex: 0 0 auto;
+  margin: 0;
+  width: 190px !important;
+  text-align: left;
+
+  @media (max-width: 576px) {
+    width: 150px !important;
+  }
+}
+
 .profile {
-  width: 150px !important;
+  width: 190px !important;
 
   img {
     border-radius: 2px !important;
@@ -162,7 +199,7 @@ article.offprint {
   // A long line of serif across the full container is what made the first
   // pass look grey; running text stops at a readable measure.
   .clearfix p {
-    max-width: 60ch;
+    max-width: 72ch;
   }
 }
 
@@ -207,7 +244,7 @@ article.offprint {
 
 // ---- teaching and service ----------------------------------------------
 .service {
-  max-width: 60ch;
+  max-width: 72ch;
 
   p {
     font-size: 0.97rem;
@@ -228,7 +265,7 @@ article.offprint {
 
   ol.bibliography {
     counter-reset: offprint-ref;
-    max-width: 66ch;
+    max-width: 78ch;
 
     > li {
       counter-increment: offprint-ref;
