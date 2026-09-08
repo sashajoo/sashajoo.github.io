@@ -1,7 +1,12 @@
 {% if site.data.service.size > 0 %}
   <div class="service">
     {% for line in site.data.service %}
-      <p>{{ line }}</p>
+      <p>
+        {% if line.text %}{{ line.text }}{% else %}{{ line }}{% endif %}
+        {% if line.source %}
+          <a class="press" href="{{ line.source.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ line.source.label }}</a>
+        {% endif %}
+      </p>
     {% endfor %}
   </div>
 {% endif %}

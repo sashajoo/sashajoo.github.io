@@ -348,13 +348,20 @@ article.offprint {
   margin-left: 0.9rem;
 }
 
-.presentations .press {
+.presentations .press,
+.service .press {
   display: inline-block;
   font-family: $offprint-sans;
   font-size: 0.74rem;
   color: var(--offprint-accent);
   text-decoration: none;
   border-bottom: 1px solid var(--offprint-accent-rule);
+}
+
+// A service line's source link sits inline at the end of its sentence.
+.service .press {
+  margin-left: 0.35rem;
+  white-space: nowrap;
 }
 
 // ---- service photographs -----------------------------------------------

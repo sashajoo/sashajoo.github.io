@@ -1,18 +1,25 @@
 # Teaching and service, shown on the About page below the clinical section.
 # Written as prose rather than a dated list; the dates live on the CV.
 #
+# Each entry is `text`, with an optional `source` (label + url) rendered as a
+# small link at the end of the line.
+#
 # Her post and its dates are confirmed by two Sichuan University Youth League
-# press reports (青春川大), archived at ~/Downloads/service-press/:
-#   2015-11-17 — names her as captain of the team, judging the World AIDS Day
-#                design competition final at West China School of Public Health
-#   2016-10-30 — names her as sitting captain at the 2016 chapter founding
-# Both pages are unreachable from the US; the archived PDFs are the record.
-- >-
-  Led the Xinglinfeng Youth Volunteer Service Team at West China School of
-  Medicine, 2015–2016: regular visits to a local nursing home, patient guidance
-  and wayfinding in the hospital, and health education sessions in local high
-  schools.
-- >-
-  Invited judge, HIV/AIDS awareness design competition for the World AIDS Day
-  campaign at West China School of Public Health, November 2015.
-- Mentored medical students in clinical research methodology.
+# press reports (青春川大). The live pages are unreachable from the US, so the
+# archived PDFs under assets/pdf/ are the record; full-size originals sit in
+# ~/Downloads/service-press/.
+- text: >-
+    Led the Xinglinfeng Youth Volunteer Service Team at West China School of
+    Medicine, 2015–2016: regular visits to a local nursing home, patient
+    guidance and wayfinding in the hospital, and health education sessions in
+    local high schools.
+  source:
+    label: Sichuan University news, 2016 (Chinese)
+    url: /assets/pdf/xinglinfeng-volunteer-team-2016.pdf
+- text: >-
+    Invited judge, HIV/AIDS awareness design competition for the World AIDS Day
+    campaign at West China School of Public Health, November 2015.
+  source:
+    label: Sichuan University news, 2015 (Chinese)
+    url: /assets/pdf/world-aids-day-campaign-2015.pdf
+- text: Mentored medical students in clinical research methodology.

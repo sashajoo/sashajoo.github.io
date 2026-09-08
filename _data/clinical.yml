@@ -1,16 +1,26 @@
 # US clinical experience, shown on the About page above the publications.
 # Newest first. `where` is optional.
 #
+# Dates are the exact rotation dates, from the Urology Shadowing pages in the
+# AUA match hub (Michigan Apr 10 – May 1 2026; UW May 4 – 13 2026, primary
+# attendings Lin, Gore and Nyame). UCSF is the ongoing observership with
+# Dr. Chu, running alongside the postdoc since December 2023, at her
+# instruction 8 Sep 2026.
+#
 # Michigan is the institution's own title, a visiting US sub-internship, at her
-# instruction 7 Sep 2026. UW is a plain observership. The two are deliberately
-# NOT written as a matched pair.
+# instruction 7 Sep 2026. UW and UCSF are plain observerships. They are
+# deliberately NOT written as a matched set.
 #
 # The CV and personal statement must be made to agree. A CV heading saying
 # sub-internship beside a letter describing observation is the inconsistency a
 # committee catches, so the bullets stay as observed cases either way.
-- when: May 2026
+- when: Dec 2023 &ndash; present
+  what: Clinical observership, Department of Urology
+  where: >-
+    University of California, San Francisco, CA &middot; with Carissa E. Chu, MD
+- when: May 4&ndash;13, 2026
   what: Clinical observership, Department of Urology
   where: University of Washington, Seattle, WA &middot; with Daniel W. Lin, MD
-- when: Apr 2026
+- when: Apr 10 &ndash; May 1, 2026
   what: Visiting sub-internship, Department of Urology
   where: University of Michigan, Ann Arbor, MI &middot; with Todd M. Morgan, MD
