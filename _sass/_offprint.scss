@@ -288,7 +288,9 @@ article.offprint {
 .clinical {
   .entry {
     display: grid;
-    grid-template-columns: 7rem 1fr;
+    // 9.2rem, not 7rem: the clinical lines carry exact rotation dates now
+    // ("APR 10 – MAY 1, 2026") and 7rem broke them across two lines.
+    grid-template-columns: 9.2rem 1fr;
     gap: 0.2rem 1.4rem;
     padding: 0.55rem 0;
     border-bottom: 1px solid var(--offprint-rule);
