@@ -263,6 +263,15 @@
         <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
       {% endif %}
     </div>
+
+    <!-- Press or invited commentary written about this paper -->
+    {% if entry.press_url %}
+      <span class="press-row">
+        <a class="press" href="{{ entry.press_url }}" target="_blank" rel="noopener noreferrer">
+          {%- if entry.press_label %}{{ entry.press_label }}{% else %}Press{% endif -%}
+        </a>
+      </span>
+    {% endif %}
     {% if site.enable_publication_badges %}
       {% assign entry_has_altmetric_badge = false %}
       {% if entry.altmetric and entry.altmetric != 'false' %}

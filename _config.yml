@@ -346,6 +346,8 @@ filtered_bibtex_keywords:
     pdf,
     pmid,
     poster,
+    press_label,
+    press_url,
     preview,
     selected,
     slides,

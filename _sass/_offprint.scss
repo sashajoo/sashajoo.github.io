@@ -350,8 +350,17 @@ article.offprint {
   margin-left: 0.9rem;
 }
 
+// A reference-list entry carrying press or an invited commentary. It has to
+// sit on its own line under the `.links` row, and `.links` is already
+// `display: block`, so this only needs its own block box.
+.publications .press-row {
+  display: block;
+  margin-top: 0.1rem;
+}
+
 .presentations .press,
-.service .press {
+.service .press,
+.publications .press {
   display: inline-block;
   font-family: $offprint-sans;
   font-size: 0.74rem;
