@@ -5,22 +5,26 @@
 # ranges (Michigan Apr 10 – May 1 2026, UW May 4 – 13 2026, from the Urology
 # Shadowing pages in the AUA match hub) read as shorter than the months do,
 # and invite a reader to count days. The exact dates belong on the CV and in
-# ERAS. UCSF keeps its real span because it is the ongoing observership with
-# Dr. Chu, running alongside the postdoc since December 2023.
+# ERAS. UCSF keeps its real span because it is ongoing, running alongside the
+# postdoc since December 2023.
 #
-# All three are observerships. CORRECTED 8 Sep 2026: the 7 Sep line calling
-# Michigan a "visiting US sub-internship" was wrong and is retracted. There is
-# no Michigan title. The rotation was arranged informally through Dr. Morgan,
-# with no VSLO registration, no on-call, no exit meetings and no patient-care
-# responsibility, so nothing issued by the institution supports that word.
-# Do not reintroduce it. The three lines are a matched set on purpose.
+# HER SETTLED WORDING, 8 Sep 2026: the two away rotations are "Visiting medical
+# graduate". Use that term here, on the CV, and anywhere else it comes up; if an
+# older file still says observership or observer, change it. UCSF is the one
+# exception and stays "Clinical observership", because she is a postdoctoral
+# scholar in that department and "visiting" would be false.
+#
+# RETRACTED 8 Sep 2026: the 7 Sep line calling Michigan a "visiting US
+# sub-internship" was wrong. There is no Michigan title. The rotation was
+# arranged informally through Dr. Morgan, with no VSLO registration, no on-call,
+# no exit meetings and no patient-care responsibility. Do not reintroduce it.
 - when: Dec 2023 &ndash; present
   what: Clinical observership, Department of Urology
   where: >-
     University of California, San Francisco, CA &middot; with Carissa E. Chu, MD
 - when: May 2026
-  what: Clinical observership, Department of Urology
+  what: Visiting medical graduate, Department of Urology
   where: University of Washington, Seattle, WA &middot; with Daniel W. Lin, MD
 - when: Apr 2026
-  what: Clinical observership, Department of Urology
+  what: Visiting medical graduate, Department of Urology
   where: University of Michigan, Ann Arbor, MI &middot; with Todd M. Morgan, MD
