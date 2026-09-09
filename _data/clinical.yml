@@ -8,13 +8,12 @@
 # ERAS. UCSF keeps its real span because it is the ongoing observership with
 # Dr. Chu, running alongside the postdoc since December 2023.
 #
-# Michigan is the institution's own title, a visiting US sub-internship, at her
-# instruction 7 Sep 2026. UW and UCSF are plain observerships. They are
-# deliberately NOT written as a matched set.
-#
-# The CV and personal statement must be made to agree. A CV heading saying
-# sub-internship beside a letter describing observation is the inconsistency a
-# committee catches, so the bullets stay as observed cases either way.
+# All three are observerships. CORRECTED 8 Sep 2026: the 7 Sep line calling
+# Michigan a "visiting US sub-internship" was wrong and is retracted. There is
+# no Michigan title. The rotation was arranged informally through Dr. Morgan,
+# with no VSLO registration, no on-call, no exit meetings and no patient-care
+# responsibility, so nothing issued by the institution supports that word.
+# Do not reintroduce it. The three lines are a matched set on purpose.
 - when: Dec 2023 &ndash; present
   what: Clinical observership, Department of Urology
   where: >-
@@ -23,5 +22,5 @@
   what: Clinical observership, Department of Urology
   where: University of Washington, Seattle, WA &middot; with Daniel W. Lin, MD
 - when: Apr 2026
-  what: Visiting sub-internship, Department of Urology
+  what: Clinical observership, Department of Urology
   where: University of Michigan, Ann Arbor, MI &middot; with Todd M. Morgan, MD
