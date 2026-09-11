@@ -4,15 +4,17 @@
 # Each entry is `text`, with an optional `source` (label + url) rendered as a
 # small link at the end of the line.
 #
-# Her post and its dates are confirmed by two Sichuan University Youth League
-# press reports (青春川大). The live pages are unreachable from the US, so the
-# archived PDFs under assets/pdf/ are the record; full-size originals sit in
-# ~/Downloads/service-press/.
+# Her posts and dates come from her own team records (10 Sep 2026): the
+# 2015–16 roster lists her as 副队长兼江安分队队长 under 队长 孙雪梅, and her
+# 2015–2016 team report is signed 青志队长 朱莎, Sep 2016. The Oct 2016
+# Sichuan University Youth League report (青春川大) names 现青志队长朱莎 and
+# 原青志队长孙雪梅. The live pages are unreachable from the US, so the archived
+# PDFs under assets/pdf/ are the record; originals sit in ~/Downloads/service-press/.
 - text: >-
-    Led the Xinglinfeng Youth Volunteer Service Team at West China School of
-    Medicine, 2015–2016: regular visits to a local nursing home, patient
-    guidance and wayfinding in the hospital, and health education sessions in
-    local high schools.
+    Deputy Leader (2015–2016) and Team Leader (2016–2017) of the Xinglinfeng
+    Youth Volunteer Service Team at West China School of Medicine: regular
+    visits to a local nursing home, patient guidance and wayfinding in the
+    hospital, and health education sessions in local high schools.
   source:
     label: Sichuan University news, 2016 (Chinese)
     url: /assets/pdf/xinglinfeng-volunteer-team-2016.pdf
