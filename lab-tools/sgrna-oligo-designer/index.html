@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Moved</title>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+       background:#f6f7f9;color:#24303f;
+       font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif}
+  .box{max-width:22rem;padding:2rem 1.5rem;text-align:center;line-height:1.7}
+  h1{font-size:1.15rem;margin:0 0 .75rem}
+  p{margin:0 0 1.25rem;font-size:.95rem;color:#54606e}
+  a.go{display:inline-block;padding:.75rem 1.5rem;border-radius:999px;
+       background:#3f7ad6;color:#fff;text-decoration:none}
+  .tip{margin-top:1.25rem;font-size:.8rem;color:#8a94a0}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>This app has moved</h1>
+  <p>Taking your saved data across to the new address. One moment.</p>
+  <a class="go" id="go" href="https://lab-tools-cec7.pages.dev/sgrna-oligo-designer/">Open the new address</a>
+  <p class="tip">Once it opens, add it to your home screen again and use that icon from now on.</p>
+</div>
+<script>
+(function(){
+  var NEW="https://lab-tools-cec7.pages.dev/sgrna-oligo-designer/", PATTERNS=["sgrna-oligo-designer-v1"], url=NEW;
+  try{
+    var bag={}, n=0;
+    for(var i=0;i<localStorage.length;i++){
+      var k=localStorage.key(i);
+      for(var j=0;j<PATTERNS.length;j++){
+        var p=PATTERNS[j];
+        var hit = p.slice(-1)==="*" ? k.indexOf(p.slice(0,-1))===0 : k===p;
+        if(hit){ bag[k]=localStorage.getItem(k); n++; break; }
+      }
+    }
+    if(n){
+      var b=btoa(unescape(encodeURIComponent(JSON.stringify(bag))))
+              .replace(/\+/g,"-").replace(/\//g,"_");
+      // a very long URL can be truncated on phones; fall back to a plain move
+      if(b.length<6000) url=NEW+"#d="+b;
+    }
+  }catch(e){}
+  // if the old offline worker is still installed here, retire it and drop its
+  // caches, otherwise it could keep serving the old app from this address
+  try{
+    if(navigator.serviceWorker&&navigator.serviceWorker.getRegistrations)
+      navigator.serviceWorker.getRegistrations().then(function(rs){
+        rs.forEach(function(r){ r.unregister(); });
+      });
+    if(window.caches&&caches.keys)
+      caches.keys().then(function(ks){ ks.forEach(function(k){ caches.delete(k); }); });
+  }catch(e){}
+
+  document.getElementById("go").href=url;
+  setTimeout(function(){ location.replace(url); },1200);
+})();
+</script>
+</body>
+</html>
