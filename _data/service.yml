@@ -1,0 +1,20 @@
+# Teaching and service, shown on the About page below the clinical section.
+# Written as prose rather than a dated list; the dates live on the CV.
+#
+# Each entry is `text`, with an optional `source` (label + url) rendered as a
+# small link at the end of the line.
+- text: >-
+    Deputy Leader (2015–2016) and Team Leader (2016–2017) of the Xinglinfeng
+    Youth Volunteer Service Team at West China School of Medicine: regular
+    visits to a local nursing home, patient guidance and wayfinding in the
+    hospital, and health education sessions in local high schools.
+  source:
+    label: Sichuan University news, 2016 (Chinese)
+    url: /assets/pdf/xinglinfeng-volunteer-team-2016.pdf
+- text: >-
+    Invited judge, HIV/AIDS awareness design competition for the World AIDS Day
+    campaign at West China School of Public Health, November 2015.
+  source:
+    label: Sichuan University news, 2015 (Chinese)
+    url: /assets/pdf/world-aids-day-campaign-2015.pdf
+- text: Mentored medical students in clinical research methodology.

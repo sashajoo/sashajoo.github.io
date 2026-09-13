@@ -1,0 +1,27 @@
+# The identity row under the name on the About page. One line, one place:
+# this replaces both the old "Verify" row and the social icons that used to
+# sit at the foot of the page, so nothing is listed twice.
+#
+# `icon` is a Font Awesome or Academicons class. An entry with an empty url
+# is skipped, so a line can sit here until the link exists.
+- label: Email
+  icon: fa-solid fa-envelope
+  url: mailto:sha.zhu@ucsf.edu
+- label: Google Scholar
+  icon: ai ai-google-scholar
+  url: https://scholar.google.com/citations?user=jxET6tQAAAAJ
+# ORCID: add the url once the iD exists.
+- label: ORCID
+  icon: ai ai-orcid
+  url: ""
+# PubMed: an exact list by PMID, because an author search also returns other
+# authors with the same name.
+- label: PubMed
+  icon: ai ai-pubmed
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=40727372%2C38926757%2C38905806%2C38629249%2C30652989%2C42362304%2C40355427%2C40057038%2C38512114%2C38459122%2C38379333%2C37847513%2C37415738%2C37131267%2C36907910%2C36865786%2C36836061%2C36376185%2C36348577%2C35771310%2C36082136%2C36067250%2C35969149%2C35941663%2C35864546%2C35397700%2C34185954%2C35115934%2C34512023%2C34489456%2C34435696%2C34318630%2C34028061%2C33414138%2C33026922%2C31140234%2C33324569%2C33269597%2C33072564%2C33042428%2C32719852%2C35117716%2C32093688%2C31710002%2C31424026%2C31784574%2C31433509%2C31427906%2C31401413%2C31294486%2C30609313
+- label: GitHub
+  icon: fa-brands fa-github
+  url: https://github.com/sashajoo
+- label: LinkedIn
+  icon: fa-brands fa-linkedin
+  url: https://www.linkedin.com/in/sha-zhu-39b355237

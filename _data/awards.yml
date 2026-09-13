@@ -1,0 +1,16 @@
+# Awards and honours, shown on the About page below the presentations.
+# Grouped, newest first inside each group. `note` is optional and is set in
+# the metadata face on the same line.
+- group: Research
+  items:
+    - when: 2024
+      what: Pilot Research Award, UCSF Prostate Cancer Program
+      note: $50,000
+    - when: 2020
+      what: Excellent Postgraduate Award, Sichuan University
+- group: Scholarships and academic recognition
+  items:
+    - when: 2019
+      what: Outstanding Graduate, Sichuan University and Sichuan Province
+    - when: 2015&ndash;2018
+      what: Chinese National Scholarship, Ministry of Education of China

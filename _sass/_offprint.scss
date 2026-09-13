@@ -1,0 +1,575 @@
+/*******************************************************************************
+ * Offprint — journal-offprint treatment for the site.
+ * Loaded last from assets/css/main.scss so it wins over the theme defaults.
+ ******************************************************************************/
+
+// ---- palette -----------------------------------------------------------
+// Replaces the stock al-folio accent ($purple-color, #b509ac).
+:root {
+  --offprint-accent: #7a1f2b;
+  --offprint-accent-rule: rgba(122, 31, 43, 0.5);
+  --offprint-meta: #6d6d6d;
+  --offprint-rule: #e6e2df;
+  --global-theme-color: var(--offprint-accent);
+  --global-hover-color: var(--offprint-accent);
+  --global-highlight-color: var(--offprint-accent);
+}
+
+html[data-theme="dark"] {
+  --offprint-accent: #c77a84;
+  --offprint-accent-rule: rgba(199, 122, 132, 0.6);
+  --offprint-meta: #9a9a9a;
+  --offprint-rule: #333030;
+  --global-theme-color: var(--offprint-accent);
+  --global-hover-color: var(--offprint-accent);
+  --global-highlight-color: var(--offprint-accent);
+}
+
+// ---- type --------------------------------------------------------------
+$offprint-serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+$offprint-sans: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+
+body {
+  font-family: $offprint-serif;
+  font-size: 1.02rem;
+  line-height: 1.72;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.post-title {
+  font-family: $offprint-serif;
+  letter-spacing: -0.015em;
+}
+
+// Navigation, buttons and metadata stay in the sans face, the way running
+// heads and figure labels do in a printed journal.
+.navbar,
+.navbar .nav-link,
+.footer,
+.btn,
+.post-header .desc,
+.profile .more-info,
+pre,
+code {
+  font-family: $offprint-sans;
+}
+
+// The theme sets the fixed navbar to opacity .95, so page content ghosts
+// through it as you scroll. Serif text makes that very visible.
+.navbar {
+  opacity: 1;
+}
+
+.navbar .nav-link {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+// Sections of the about page sit slightly lighter than the page links, so
+// the navbar still reads as two groups rather than seven equal items.
+.navbar .nav-section .nav-link {
+  opacity: 0.72;
+}
+
+// Bootstrap expands the bar at 576px and .navbar-nav is nowrap, so seven
+// items plus the search and theme controls overflowed the container up to
+// about 880px. Below that the sections drop out and the pages remain.
+@media (max-width: 991.98px) {
+  .navbar .nav-section,
+  .navbar .nav-divider {
+    display: none;
+  }
+}
+
+// The rule that separates the two kinds of item. Everything to its left is
+// an anchor on the About page; everything to its right is a page of its own.
+.navbar .nav-divider {
+  align-self: center;
+  width: 1px;
+  height: 0.85rem;
+  margin: 0 0.55rem;
+  background: var(--offprint-rule);
+}
+
+.navbar .nav-section .nav-link:hover {
+  opacity: 1;
+}
+
+// The navbar is fixed, so an anchor would otherwise land under it. Applies
+// to every section heading, so adding one to nav_sections.yml needs no
+// matching change here.
+article.offprint h2[id] {
+  scroll-margin-top: 5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+// ---- masthead ----------------------------------------------------------
+// Name on the left, portrait on the right, on one line. Everything below
+// then gets the full width of the page.
+.post-header {
+  margin-bottom: 0;
+}
+
+.masthead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2.5rem;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
+
+.masthead-name {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.post-header .post-title {
+  font-weight: 600;
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.post-header .desc {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--offprint-meta);
+  margin-top: 0.45rem;
+}
+
+// The portrait stays small and in colour; a large photograph is what the
+// practice-marketing sites do, not what trainees do.
+.profile {
+  float: right !important;
+  width: 196px !important;
+  margin: 0.2rem 0 1.4rem 2rem !important;
+  text-align: left;
+
+  // Plate: a hairline frame with the caption set inside it, the way a journal
+  // sets a figure. It floats in the article so the opening paragraph wraps
+  // beside it and no dead space is left under the identity row.
+  border: 1px solid var(--offprint-rule);
+  border-radius: 2px;
+  padding: 7px;
+  background: var(--global-bg-color);
+
+  @media (max-width: 576px) {
+    float: none !important;
+    width: 168px !important;
+    margin: 0 0 1.4rem !important;
+  }
+}
+
+.profile img {
+  border-radius: 1px !important;
+  display: block;
+}
+
+.profile .more-info {
+  border-top: 1px solid var(--offprint-rule);
+  margin-top: 7px;
+  padding-top: 6px;
+  font-size: 0.68rem;
+  text-align: left;
+}
+
+
+// ---- mobile: stop the hidden BibTeX blocks widening the document --------
+// al-folio keeps a <pre><code> BibTeX block per entry, collapsed rather than
+// display:none, so its long lines still set the document width. On a phone
+// that pushed every line off the right edge and the navbar toggler with it.
+.publications .bibtex,
+.publications .bibtex pre,
+.publications .bibtex code,
+.publications pre,
+.publications code {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.post,
+article.offprint {
+  min-width: 0;
+}
+
+// ---- identity row ------------------------------------------------------
+// One row under the name carrying every way to check or reach her. Replaces
+// the old verification row and the social icons that sat at the foot of the
+// page, so nothing appears twice.
+.identity {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 1.5rem;
+  margin: 0.9rem 0 0;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--offprint-rule);
+  border-bottom: 1px solid var(--offprint-rule);
+  font-family: $offprint-sans;
+  font-size: 0.78rem;
+
+  a {
+    color: var(--offprint-accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--offprint-accent-rule);
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+
+    &:hover {
+      border-bottom-color: var(--offprint-accent);
+    }
+  }
+
+  i {
+    font-size: 0.9rem;
+    width: 1em;
+    text-align: center;
+  }
+
+  // The deployed academicons stylesheet is older than the one in this repo and
+  // has no .ai-pubmed rule, so the glyph came out blank. The webfont itself
+  // does contain U+E99F, so declare it here and stop depending on which
+  // version of academicons happens to be live.
+  .ai-pubmed::before {
+    content: "\e99f";
+  }
+}
+
+// ---- about page sections -----------------------------------------------
+article.offprint {
+  padding-top: 0;
+
+  h2 {
+    font-family: $offprint-sans;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--offprint-accent);
+    margin: 2.6rem 0 1rem;
+    padding: 0;
+    border: 0;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  // The bio runs the full width rather than stopping
+  // at a measure, so the space beside it is not left empty.
+  .clearfix p {
+    max-width: none;
+  }
+}
+
+// ---- clinical section --------------------------------------------------
+.clinical {
+  .entry {
+    display: grid;
+    // 8.4rem, not 7rem: the widest date is now "DEC 2023 – PRESENT" and 7rem
+    // broke it across two lines.
+    grid-template-columns: 8.4rem 1fr;
+    gap: 0.2rem 1.4rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--offprint-rule);
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+      gap: 0.1rem;
+    }
+  }
+
+  .when {
+    font-family: $offprint-sans;
+    font-size: 0.68rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--offprint-meta);
+    padding-top: 0.28rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .what {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  .where {
+    display: block;
+    font-family: $offprint-sans;
+    font-size: 0.75rem;
+    color: var(--offprint-meta);
+    margin-top: 0.1rem;
+  }
+}
+
+// ---- teaching and service ----------------------------------------------
+.service {
+  max-width: none;
+
+  p {
+    font-size: 0.97rem;
+    line-height: 1.55;
+    margin: 0 0 0.7rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ---- presentations -----------------------------------------------------
+.presentations .press-row {
+  display: block;
+  margin-top: 0.35rem;
+}
+
+.presentations .press-row .press + .press {
+  margin-left: 0.9rem;
+}
+
+// A reference-list entry carrying press or an invited commentary. It has to
+// sit on its own line under the `.links` row, and `.links` is already
+// `display: block`, so this only needs its own block box.
+.publications .press-row {
+  display: block;
+  margin-top: 0.1rem;
+}
+
+.presentations .press,
+.service .press,
+.publications .press {
+  display: inline-block;
+  font-family: $offprint-sans;
+  font-size: 0.74rem;
+  color: var(--offprint-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--offprint-accent-rule);
+}
+
+// A service line's source link sits inline at the end of its sentence.
+.service .press {
+  margin-left: 0.35rem;
+  white-space: nowrap;
+}
+
+// ---- service photographs -----------------------------------------------
+.service-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.4rem;
+  max-width: 640px;
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  // No height:100% here — with a grid row it stretches the box, and a photo
+  // that fails to load then leaves a tall empty gap.
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+
+  figcaption {
+    font-family: $offprint-sans;
+    font-size: 0.72rem;
+    color: var(--offprint-meta);
+    margin-top: 0.4rem;
+    line-height: 1.4;
+  }
+}
+
+// ---- publications as a reference list ----------------------------------
+// The theme ships each entry as stacked blocks; run them together so the
+// list reads the way a reference section does, with a hanging indent.
+.publications {
+  margin-top: 0;
+
+  ol.bibliography {
+    max-width: none;
+
+    > li {
+      // Explicitly block, not grid. The two-column grid belongs only to the
+      // numbered homepage list; on /publications/ there is no rank number, so
+      // a grid would put the whole entry in the narrow first track.
+      display: block;
+      margin-bottom: 0.9rem;
+
+      // Grid items default to min-width:auto, which lets a long author list
+      // push the track wider than the column and run off the page.
+      > * {
+        min-width: 0;
+      }
+
+      // bib.liquid wraps each entry in a Bootstrap .col-sm-10, which stopped
+      // the reference list 17% short of the right margin.
+      > .row {
+        margin-left: 0;
+        margin-right: 0;
+
+        > div {
+          flex: 0 0 100%;
+          max-width: 100%;
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      .title,
+      .author,
+      .periodical {
+        display: inline;
+        font-size: 0.94rem;
+        line-height: 1.45;
+      }
+
+      .title::after {
+        content: ". ";
+      }
+
+      // The markup leaves whitespace after the author list, so the period is
+      // pulled back onto the last name.
+      .author::after {
+        content: ".";
+        margin-left: -0.25em;
+      }
+
+      .periodical {
+        color: var(--offprint-meta);
+      }
+
+      // The theme sets these to #828282, which is 3.84:1 on white. They are
+      // interactive, so they need to clear 4.5:1.
+      .author .more-authors {
+        color: var(--offprint-meta);
+        border-bottom-color: var(--offprint-meta);
+      }
+
+      .cofirst {
+        display: inline-block;
+        font-family: $offprint-sans;
+        font-size: 0.68rem;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--offprint-accent);
+        border: 1px solid var(--offprint-accent-rule);
+        border-radius: 3px;
+        padding: 0.06rem 0.34rem;
+        margin-left: 0.35rem;
+        white-space: nowrap;
+      }
+
+      .links {
+        display: block;
+        margin-top: 0.25rem;
+      }
+
+      // Plain accent link rather than the theme's boxed pill, which was the
+      // only bordered object in the reference list and broke its rhythm.
+      // _publications.scss styles these as `.links a.btn`, so match that.
+      .links a.btn {
+        font-size: 0.7rem;
+        padding: 0;
+        border: 0;
+        background: none;
+        color: var(--offprint-accent);
+        text-transform: lowercase;
+        letter-spacing: 0.02em;
+      }
+    }
+
+  }
+}
+
+.selected-pubs ol.bibliography {
+  counter-reset: offprint-ref;
+
+  // The rank number sits in its own track. This grid must stay scoped to the
+  // homepage list: on /publications/ there is no ::before, so a two-column
+  // grid would put the whole entry in the 1.8rem track, one word per line.
+  > li {
+    counter-increment: offprint-ref;
+    display: grid;
+    grid-template-columns: 1.8rem 1fr;
+    align-items: baseline;
+
+    &::before {
+      content: counter(offprint-ref) ".";
+      text-align: right;
+      padding-right: 0.55rem;
+      color: var(--offprint-accent);
+      font-variant-numeric: tabular-nums;
+    }
+  }
+
+  // Seven on the front page, the rest one click away. papers.bib
+  // now carries exactly seven selected={true}, so this cap is a backstop
+  // rather than the mechanism. It must stay scoped here so /publications/
+  // keeps every entry.
+  > li:nth-child(n + 8) {
+    display: none;
+  }
+}
+
+.allpubs {
+  margin-top: 1.1rem;
+  font-family: $offprint-sans;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  a {
+    color: var(--offprint-accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--offprint-accent-rule);
+  }
+}
+
+// Awards. Reuses the .clinical when/what grid so the dated lines on the page
+// all sit on one column edge; the group headings are the only new thing.
+.awards {
+  .awards-group {
+    margin: 1.5rem 0 0.5rem;
+    font-family: $offprint-sans;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--offprint-meta);
+  }
+
+  .awards-group:first-child {
+    margin-top: 0.2rem;
+  }
+}

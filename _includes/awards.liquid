@@ -1,0 +1,18 @@
+{% if site.data.awards.size > 0 %}
+  <div class="awards">
+    {% for g in site.data.awards %}
+      <h3 class="awards-group">{{ g.group }}</h3>
+      <div class="clinical">
+        {% for item in g.items %}
+          <div class="entry">
+            <div class="when">{{ item.when }}</div>
+            <div class="what">
+              {{ item.what }}
+              {% if item.note %}<span class="where">{{ item.note }}</span>{% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

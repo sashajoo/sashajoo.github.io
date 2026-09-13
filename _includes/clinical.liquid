@@ -1,0 +1,13 @@
+{% if site.data.clinical.size > 0 %}
+  <div class="clinical">
+    {% for item in site.data.clinical %}
+      <div class="entry">
+        <div class="when">{{ item.when }}</div>
+        <div class="what">
+          {{ item.what }}
+          {% if item.where %}<span class="where">{{ item.where }}</span>{% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
