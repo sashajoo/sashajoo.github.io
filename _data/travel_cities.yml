@@ -112,6 +112,9 @@
 - name: "Mount Tamalpais, USA"
   lat: 37.9235
   lon: -122.5960
+- name: "Mission Peak, USA"
+  lat: 37.5125
+  lon: -121.8806
 - name: "Hearst Castle, USA"
   lat: 35.6852
   lon: -121.1685
