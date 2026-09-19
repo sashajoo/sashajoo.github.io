@@ -8,6 +8,6 @@ dropdown: true
 children:
   - title: My cat 🐱
     permalink: /beyond-work/python/
-  - title: Travel
+  - title: Hiking & Travel
     permalink: /beyond-work/travel/
 ---

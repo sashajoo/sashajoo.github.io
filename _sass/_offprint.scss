@@ -80,11 +80,47 @@ code {
 // Bootstrap expands the bar at 576px and .navbar-nav is nowrap, so seven
 // items plus the search and theme controls overflowed the container up to
 // about 880px. Below that the sections drop out and the pages remain.
-@media (max-width: 991.98px) {
+@media (max-width: 1249.98px) {
   .navbar .nav-section,
   .navbar .nav-divider {
     display: none;
   }
+}
+
+// On a wide screen every item sits on ONE line. The page column is 955px on
+// most pages, which is too narrow for the name plus nine items, so "All
+// Publications" and the search hint wrapped onto a second line. The bar gets
+// its own 1200px column, items never wrap, and the "ctrl k" hint is dropped
+// (the magnifier stays and the shortcut still works).
+@media (min-width: 1250px) {
+  .navbar > .container {
+    max-width: 1200px;
+  }
+
+  .navbar .navbar-nav .nav-link {
+    white-space: nowrap;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    letter-spacing: 0.11em;
+  }
+
+  .navbar #search-toggle .nav-link {
+    font-size: 0;
+    letter-spacing: 0;
+
+    i {
+      font-size: 0.8rem;
+    }
+  }
+
+  .navbar .nav-divider {
+    margin: 0 0.3rem;
+  }
+}
+
+// Below that the bar is short enough already; items still must not break in two.
+.navbar .navbar-nav .nav-link {
+  white-space: nowrap;
 }
 
 // The rule that separates the two kinds of item. Everything to its left is

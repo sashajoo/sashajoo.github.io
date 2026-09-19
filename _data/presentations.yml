@@ -16,3 +16,25 @@
   press:
     - label: UCSF MedConnection
       url: https://medconnection.ucsfhealth.org/news/ucsf-urology-experts-highlight-leadership-in-innovative-research-and-treatment-at-national-urology-conference
+    - label: Photo
+      url: /assets/img/presentations/aua2025_podium_las_vegas.jpg
+- when: Mar 2023
+  what: >-
+    Distinct genomic features and evolutionary relationships between concurrent
+    intraductal carcinoma and adenocarcinoma of the prostate
+  where: Oral presentation, EAU Annual Congress, Milan, Italy (West China Hospital Urology)
+  press:
+    - label: Abstract, European Urology
+      url: https://doi.org/10.1016/S0302-2838(23)01193-4
+    - label: Photo
+      url: /assets/img/presentations/eau2023_podium_milan.jpg
+- when: May 2022
+  what: >-
+    Homologous recombination deficiency (HRD) score in Chinese aggressive prostatic
+    adenocarcinoma with or without intraductal carcinoma of the prostate
+  where: Podium presentation, AUA Annual Meeting, New Orleans, LA (West China Hospital Urology)
+  press:
+    - label: Abstract, Journal of Urology
+      url: https://doi.org/10.1097/JU.0000000000002593.09
+    - label: Photo
+      url: /assets/img/presentations/aua2022_podium_new_orleans.jpg

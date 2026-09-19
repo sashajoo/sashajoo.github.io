@@ -1,8 +1,25 @@
-<figure class="travel-map" role="img" aria-label="World map of places Sasha has visited">
-  {% include travel_map_world.svg %}
-  <div class="travel-map__tooltip" aria-hidden="true"></div>
+{% comment %} The counts are fixed numbers from the data file, so nobody ever reads a half-way value. {% endcomment %}
+{% assign globe_places = site.data.travel_cities | where_exp: "c", "c.kind != 'hike'" %}
+{% assign globe_countries = "" | split: "" %}
+{% for c in globe_places %}{% assign parts = c.name | split: ", " %}{% assign globe_countries = globe_countries | push: parts.last %}{% endfor %}
+{% assign globe_countries = globe_countries | uniq %}
+<figure
+  class="travel-globe"
+  role="img"
+  aria-label="Globe of places Sasha has visited"
+  data-countries="{{ '/assets/json/globe-countries-110m.json' | relative_url }}"
+  data-states="{{ '/assets/json/globe-us-states-10m.json' | relative_url }}"
+>
+  <div class="travel-globe__stats" aria-hidden="true">
+    <span><b>{{ globe_places | size }}</b> places</span>
+    <span><b>{{ globe_countries | size }}</b> countries</span>
+    <button type="button" class="travel-globe__replay">Replay</button>
+  </div>
+  <svg viewBox="0 0 640 640" aria-hidden="true" focusable="false"></svg>
+  <div class="travel-globe__tooltip" aria-hidden="true"></div>
 </figure>
 <script id="travel-cities-data" type="application/json">
   {{ site.data.travel_cities | jsonify }}
 </script>
-<script defer src="{{ '/assets/js/travel-map.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/travel-globe-vendor.min.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/travel-globe.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

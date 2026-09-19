@@ -40,6 +40,18 @@
 - name: "Florence, Italy"
   lat: 43.7696
   lon: 11.2558
+- name: "Zadar, Croatia"
+  lat: 44.1194
+  lon: 15.2314
+- name: "Split, Croatia"
+  lat: 43.5081
+  lon: 16.4402
+- name: "Koper, Slovenia"
+  lat: 45.5481
+  lon: 13.7302
+- name: "Postojna, Slovenia"
+  lat: 45.7743
+  lon: 14.2153
 - name: "Warsaw, Poland"
   lat: 52.2297
   lon: 21.0122
@@ -112,9 +124,27 @@
 - name: "Mount Tamalpais, USA"
   lat: 37.9235
   lon: -122.5960
+  kind: hike
 - name: "Mission Peak, USA"
   lat: 37.5125
   lon: -121.8806
+  kind: hike
+- name: "Point Reyes, USA"
+  lat: 38.0404
+  lon: -122.7996
+  kind: hike
+- name: "Muir Woods, USA"
+  lat: 37.8970
+  lon: -122.5811
+  kind: hike
+- name: "Mori Point, USA"
+  lat: 37.6179
+  lon: -122.4905
+  kind: hike
+- name: "Purisima Creek Redwoods, USA"
+  lat: 37.4190
+  lon: -122.3480
+  kind: hike
 - name: "Hearst Castle, USA"
   lat: 35.6852
   lon: -121.1685
