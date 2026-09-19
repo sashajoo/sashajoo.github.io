@@ -23,8 +23,8 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/beyond-work/python/";
               },
-            },{id: "dropdown-travel",
-              title: "Travel",
+            },{id: "dropdown-hiking-amp-travel",
+              title: "Hiking &amp; Travel",
               description: "",
               section: "Dropdown",
               handler: () => {
