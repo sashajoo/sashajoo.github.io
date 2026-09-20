@@ -22,20 +22,23 @@ Curious, opinionated, and convinced that every time I sit down to study, I becom
   <div style="flex: 1.500 1 0">
     {% include figure.liquid path="assets/img/beyond_work/python/IMG_0096.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
   </div>
-</div>
-<div class="cat-row">
   <div style="flex: 1.500 1 0">
     {% include figure.liquid path="assets/img/beyond_work/python/IMG_0112.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
   </div>
+</div>
+<div class="cat-row">
   <div style="flex: 1.327 1 0">
     {% include figure.liquid path="assets/img/beyond_work/python/IMG_1836.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+  </div>
+  <div style="flex: 1.500 1 0">
+    {% include figure.liquid path="assets/img/beyond_work/python/IMG_3374.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
   </div>
 </div>
 <div class="cat-row">
   <div style="flex: 1.500 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/python/IMG_3374.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
-  </div>
-  <div style="flex: 1.500 1 0">
     {% include figure.liquid path="assets/img/beyond_work/python/IMG_9770.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+  </div>
+  <div style="flex: 1.334 1 0">
+    {% include figure.liquid path="assets/img/beyond_work/python/python_batman.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
   </div>
 </div>
