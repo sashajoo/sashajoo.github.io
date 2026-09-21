@@ -45,19 +45,21 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
-    <!-- US clinical experience -->
+    <!-- Clinical experience -->
     {% if site.data.clinical and site.data.clinical.size > 0 %}
-      <h2 id="clinical">US Clinical Experience</h2>
+      <h2 id="clinical">Clinical Experience</h2>
       {% include clinical.liquid %}
     {% endif %}
 
-    <!-- Selected papers. Anchored as "research" because the navbar calls it
-         Research, to keep it apart from the standalone All Publications page. -->
+    <!-- Research: the theme cards, then the link to All Publications. Still
+         gated on page.selected_papers so the front matter switch keeps working. -->
     {% if page.selected_papers %}
-      <h2 id="research">Selected Publications</h2>
-      {% include selected_papers.liquid %}
-      <div class="allpubs">
-        <a href="{{ '/publications/' | relative_url }}">All publications &rarr;</a>
+      <h2 id="research">Research</h2>
+      <div class="research-block">
+        {% include research_themes.liquid %}
+        <div class="allpubs">
+          <a href="{{ '/publications/' | relative_url }}">All publications &rarr;</a>
+        </div>
       </div>
     {% endif %}
 

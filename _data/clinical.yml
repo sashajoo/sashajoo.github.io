@@ -1,12 +1,32 @@
-# US clinical experience, shown on the About page above the publications.
-# Newest first. `where` is optional.
-- when: Dec 2023 &ndash; present
-  what: Clinical observership, Department of Urology
-  where: >-
-    University of California, San Francisco, CA &middot; with Carissa E. Chu, MD
-- when: May 2026
-  what: Visiting medical graduate, Department of Urology
-  where: University of Washington, Seattle, WA &middot; with Daniel W. Lin, MD
-- when: Apr 2026
-  what: Visiting medical graduate, Department of Urology
-  where: University of Michigan, Ann Arbor, MI &middot; with Todd M. Morgan, MD
+# Clinical experience, shown on the About page above the publications.
+# Grouped, newest first inside each group. `where` is optional. A group may
+# carry one `photo` (image + caption), shown under its entries.
+- group: United States
+  items:
+    - when: Dec 2023 &ndash; present
+      what: Clinical observership, Department of Urology
+      where: >-
+        University of California, San Francisco, CA &middot; with Carissa E. Chu, MD
+    - when: May 2026
+      what: Visiting medical graduate, Department of Urology
+      where: University of Washington, Seattle, WA &middot; with Daniel W. Lin, MD
+    - when: Apr 2026
+      what: Visiting medical graduate, Department of Urology
+      where: University of Michigan, Ann Arbor, MI &middot; with Todd M. Morgan, MD
+- group: China
+  photo:
+    image: assets/img/clinical/westchina_urology_2023.jpg
+    caption: >-
+      Department of Urology, West China Hospital, Sichuan University,
+      September 2023.
+  items:
+    - when: Apr 2018 &ndash; Nov 2021
+      what: Clinical internship and urology clinical training
+      where: >-
+        West China Hospital, Sichuan University, Chengdu &middot; with Hao Zeng, MD.
+        The final-year rotating internship, 56 weeks across 11 departments,
+        including an 8&#8209;week urology elective.
+    - when: Sep 2019 &ndash; Jul 2020
+      what: >-
+        Coordinator, genitourinary oncology multidisciplinary team (MDT) clinic
+      where: West China Hospital, Sichuan University, Chengdu

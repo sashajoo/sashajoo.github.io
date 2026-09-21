@@ -12,5 +12,8 @@
   items:
     - when: 2019
       what: Outstanding Graduate, Sichuan University and Sichuan Province
-    - when: 2015&ndash;2018
+    - when: 2014&ndash;15 to 2017&ndash;18
       what: Chinese National Scholarship, Ministry of Education of China
+      note: >-
+        Awarded 4 consecutive years; goes to about 0.2% of college students in
+        China

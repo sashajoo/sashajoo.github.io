@@ -1,13 +1,26 @@
 {% if site.data.clinical.size > 0 %}
-  <div class="clinical">
-    {% for item in site.data.clinical %}
-      <div class="entry">
-        <div class="when">{{ item.when }}</div>
-        <div class="what">
-          {{ item.what }}
-          {% if item.where %}<span class="where">{{ item.where }}</span>{% endif %}
+  <div class="clinical-groups">
+    {% for g in site.data.clinical %}
+      <h3 class="entry-group">{{ g.group }}</h3>
+      {% if g.photo and g.photo.image %}<div class="clinical-with-photo">{% endif %}
+      <div class="clinical">
+        {% for item in g.items %}
+          <div class="entry">
+            <div class="when">{{ item.when }}</div>
+            <div class="what">
+              {{ item.what }}
+              {% if item.where %}<span class="where">{{ item.where }}</span>{% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      {% if g.photo and g.photo.image %}
+        <div class="clinical-photo">
+          {% include figure.liquid loading="lazy" path=g.photo.image class="img-fluid" alt=g.photo.caption zoomable=true zoom_src=g.photo.image sizes="(max-width: 768px) 95vw, 320px" %}
+          {% if g.photo.caption %}<div class="plate-caption">{{ g.photo.caption }}</div>{% endif %}
         </div>
       </div>
+      {% endif %}
     {% endfor %}
   </div>
 {% endif %}

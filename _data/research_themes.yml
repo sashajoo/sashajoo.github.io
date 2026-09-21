@@ -1,0 +1,103 @@
+# Research themes, shown as cards at the top of the Research section.
+# `items` are the key works per theme; a paper links to PubMed by `pmid`.
+# `role` is optional and shown after the journal.
+- title: "STEAP1 and PSMA as surface targets in prostate cancer"
+  venues: "AUA Annual Meeting · Prostate Cancer Foundation · Urologic Oncology"
+  summary: >-
+    Current work at UCSF. A genome-wide CRISPRi screen for what controls
+    STEAP1, the target of new T-cell therapies, drugs that could strengthen
+    those therapies, and a review of intraoperative PSMA guidance in robotic
+    prostatectomy.
+  items:
+    - title: "FACS-based whole-genome CRISPRi screen to uncover STEAP1 regulators in prostate cancer"
+      meta: "Podium presentation, AUA Annual Meeting, 2025"
+    - title: "STEAP1 regulation and combination strategies in prostate cancer"
+      meta: "Prostate Cancer Foundation Scientific Retreat, 2025"
+    - title: "Emerging role of intraoperative PSMA guidance in robot-assisted radical prostatectomy"
+      meta: "Invited review, Urologic Oncology, submitted 2026"
+      role: First author
+- title: "Intraductal carcinoma of the prostate"
+  venues: "Cancer Research · BMC Medicine · Cancer Medicine"
+  summary: >-
+    My dissertation. Intraductal carcinoma on biopsy as a marker of aggressive
+    disease and recurrence after radical prostatectomy, and its genomics and
+    DNA-repair defects.
+  items:
+    - title: "Genomic and evolutionary characterization of concurrent intraductal carcinoma and adenocarcinoma of the prostate"
+      meta: "Cancer Research, 2024"
+      pmid: "37847513"
+      role: Co-first author
+    - title: "Homologous recombination deficiency (HRD) score in aggressive prostatic adenocarcinoma with or without intraductal carcinoma of the prostate (IDC-P)"
+      meta: "BMC Medicine, 2022"
+      pmid: "35864546"
+      role: First author
+    - title: "Intraductal carcinoma of the prostate in prostate biopsy samples: correlation with aggressive pathological features after radical prostatectomy and prognostic value in high-risk prostate cancer"
+      meta: "Asian Journal of Andrology, 2020"
+      pmid: "31710002"
+      role: First author
+    - title: "Molecular complexity of intraductal carcinoma of the prostate"
+      meta: "Cancer Medicine, 2024"
+      pmid: "38379333"
+      role: First author
+- title: "FH-deficient and TFE3-rearranged renal cell carcinoma"
+  venues: "Nature Communications · Genome Medicine · Clinical Cancer Research"
+  summary: >-
+    Molecular profiling of two rare, molecularly defined kidney cancers, from
+    primary tumor to metastasis and in children and adolescents.
+  items:
+    - title: "Genomic and transcriptomic features between primary and paired metastatic fumarate hydratase-deficient renal cell carcinoma"
+      meta: "Genome Medicine, 2023"
+      pmid: "37131267"
+      role: Co-first author
+    - title: "Molecular characterization of TFE3-rearranged renal cell carcinoma in children and adolescents"
+      meta: "Modern Pathology, 2025"
+      pmid: "40057038"
+      role: Co-first author
+    - title: "Integrated molecular characterization of fumarate hydratase-deficient renal cell carcinoma"
+      meta: "Clinical Cancer Research, 2021"
+      pmid: "33414138"
+      role: Co-first author
+    - title: "Comprehensive molecular profiling of FH-deficient renal cell carcinoma identifies molecular subtypes and potential therapeutic targets"
+      meta: "Nature Communications, 2025"
+      pmid: "40355427"
+- title: "Liquid biopsy biomarkers in advanced prostate cancer"
+  venues: "The Oncologist · Cancer Medicine · Oncology Research"
+  summary: >-
+    Blood-based markers, exosomal RNA and circulating tumor DNA, linked to
+    treatment response and survival in advanced prostate cancer.
+  items:
+    - title: "Plasma exosomal AKR1C3 mRNA expression is a predictive and prognostic biomarker in patients with metastatic castration-resistant prostate cancer"
+      meta: "The Oncologist, 2022"
+      pmid: "36067250"
+      role: First author
+    - title: "Mutations in epigenetic regulator KMT2C detected by liquid biopsy are associated with worse survival in prostate cancer patients"
+      meta: "Oncology Research, 2023"
+      pmid: "37415738"
+      role: First author
+    - title: "Exosomal TUBB3 mRNA expression of metastatic castration-resistant prostate cancer patients: Association with patient outcome under abiraterone"
+      meta: "Cancer Medicine, 2021"
+      pmid: "34318630"
+      role: First author
+    - title: "Chronological liquid biopsy reveals the impact of platinum-based chemotherapy on a prostate cancer patient’s CDK12 mutation: A case report"
+      meta: "OncoTargets and Therapy, 2022"
+      pmid: "36082136"
+      role: First author
+- title: "Multidisciplinary care and outcomes in urologic oncology"
+  venues: "Urologic Clinics of North America · The Prostate"
+  summary: >-
+    Multidisciplinary team care and survival in metastatic prostate and kidney
+    cancer, and how social and structural factors shape bladder cancer
+    outcomes.
+  items:
+    - title: "Impact of Social and Structural Determinants of Health on Bladder Cancer Outcomes: Focus on Non-Muscle-Invasive Disease"
+      meta: "Urologic Clinics of North America, 2026"
+      pmid: "42362304"
+      role: First author
+    - title: "Dynamic multidisciplinary team discussions can improve the prognosis of metastatic castration-resistant prostate cancer patients"
+      meta: "The Prostate, 2021"
+      pmid: "34028061"
+      role: First author
+    - title: "Multidisciplinary team (MDT) discussion improves overall survival outcomes for metastatic renal cell carcinoma patients"
+      meta: "Journal of Multidisciplinary Healthcare, 2023"
+      pmid: "36865786"
+      role: Co-first author

@@ -1,0 +1,28 @@
+{% if site.data.research_themes.size > 0 %}
+  <div class="theme-cards">
+    {% for t in site.data.research_themes %}
+      <article class="theme-card">
+        <div class="theme-venues">{{ t.venues }}</div>
+        <h3 class="theme-title">{{ t.title }}</h3>
+        <p class="theme-summary">{{ t.summary }}</p>
+        {% if t.items.size > 0 %}
+          <details class="theme-items">
+            <summary>Key work ({{ t.items.size }})</summary>
+            <ul>
+              {% for it in t.items %}
+                <li>
+                  {% if it.pmid %}
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/{{ it.pmid }}/" target="_blank" rel="noopener">{{ it.title }}</a>
+                  {% else %}
+                    {{ it.title }}
+                  {% endif %}
+                  <span class="theme-item-meta">{{ it.meta }}{% if it.role %} &middot; {{ it.role }}{% endif %}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          </details>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+{% endif %}

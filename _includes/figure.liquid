@@ -71,6 +71,9 @@
       {% if include.zoomable %}
         data-zoomable
       {% endif %}
+      {% if include.zoom_src %}
+        data-zoom-src="{{ include.zoom_src | relative_url }}"
+      {% endif %}
       {% if include.loading %}
         loading="{{ include.loading }}"
       {% elsif site.lazy_loading_images %}
