@@ -16,7 +16,7 @@
       </div>
       {% if g.photo and g.photo.image %}
         <div class="clinical-photo">
-          {% include figure.liquid loading="lazy" path=g.photo.image class="img-fluid" alt=g.photo.caption zoomable=true zoom_src=g.photo.image sizes="(max-width: 768px) 95vw, 320px" %}
+          {% include figure.liquid loading="lazy" path=g.photo.image class="img-fluid" alt=g.photo.caption sizes="(max-width: 768px) 95vw, 320px" %}
           {% if g.photo.caption %}<div class="plate-caption">{{ g.photo.caption }}</div>{% endif %}
         </div>
       </div>

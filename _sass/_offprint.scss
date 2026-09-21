@@ -415,8 +415,9 @@ article.offprint {
 // ---- clinical group photograph -----------------------------------------
 // A group with a photo becomes two columns: its entries on the left, the
 // photo on the right as a plate (the portrait's hairline frame and inset
-// caption), so it sits beside the text instead of interrupting it. Click to
-// enlarge. On a narrow screen the photo drops under the entries.
+// caption), so it sits beside the text instead of interrupting it. No zoom,
+// and the file is at most 1400px, like every photo on the site. On a narrow
+// screen the photo drops under the entries.
 .clinical-with-photo {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 17.5rem;
@@ -449,7 +450,6 @@ article.offprint {
     width: 100%;
     height: auto;
     border-radius: 1px;
-    cursor: zoom-in;
   }
 
   // Not .caption: al-folio centres that class and gives it a bottom margin.
