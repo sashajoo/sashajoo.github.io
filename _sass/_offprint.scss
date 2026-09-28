@@ -313,11 +313,6 @@ article.offprint {
     }
   }
 
-  // The bio runs the full width rather than stopping
-  // at a measure, so the space beside it is not left empty.
-  .clearfix p {
-    max-width: none;
-  }
 }
 
 // ---- clinical section --------------------------------------------------
@@ -823,4 +818,43 @@ article.offprint {
   .entry-group:first-child {
     margin-top: 0.2rem;
   }
+}
+
+// ---- sheet on a desk ---------------------------------------------------
+// On a wide screen the 1200px column leaves wide side margins. The margins
+// take a soft desk color and the column reads as a paper sheet lying on it,
+// so the space looks planned. Phones keep paper edge to edge.
+:root {
+  --offprint-desk: #f3efe8;
+  --offprint-sheet-edge: rgba(60, 40, 20, 0.07);
+}
+html[data-theme="dark"] {
+  --offprint-desk: #121213;
+  --offprint-sheet-edge: rgba(255, 255, 255, 0.06);
+}
+
+@media (min-width: 600px) {
+  body {
+    background-color: var(--offprint-desk);
+  }
+  .navbar {
+    background-color: var(--offprint-desk) !important;
+  }
+  .container[role="main"] {
+    background: var(--global-bg-color);
+    box-shadow: 0 0 0 1px var(--offprint-sheet-edge), 0 1px 18px var(--offprint-sheet-edge);
+    border-radius: 2px;
+    padding: 2.2rem 2.6rem 2.6rem;
+    margin-bottom: 4.5rem;
+  }
+}
+
+// ---- line length ---------------------------------------------------------
+// Paragraph text keeps a readable measure on every page, the bio included.
+.post p:not(.caption),
+.post li {
+  max-width: 75ch;
+}
+.publications ol.bibliography li {
+  max-width: 90ch;
 }
