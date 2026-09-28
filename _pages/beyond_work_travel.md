@@ -17,9 +17,11 @@ Drag to spin. Hover over a dot to see the name.
 <style>
   /* Each row is one height and fills the width. A photo's share of the row is its own shape,
      so nothing is cropped and nothing is padded. On a phone the photos stack. */
-  /* This page is mostly photos, so on a wide screen its column matches the 1200px navbar
-     instead of the 930px text column the other pages use. */
-  @media (min-width: 1250px) { .container[role="main"] { max-width: 1200px; } }
+  /* This page is mostly photos, so it fills the screen: no centered column, only side
+     padding, and the navbar widens with it. Paragraph text keeps a readable line length. */
+  .container[role="main"], .navbar > .container { width: 100%; max-width: none; padding-left: 32px; padding-right: 32px; }
+  @media (max-width: 575px) { .container[role="main"], .navbar > .container { padding-left: 16px; padding-right: 16px; } }
+  .container[role="main"] p { max-width: 90ch; }
   .photo-row { display: flex; gap: 1rem; margin-top: 1rem; }
   .photo-row figure { margin: 0; }
   .photo-row .caption { margin-top: 0.4rem; margin-bottom: 0; }
@@ -32,51 +34,51 @@ Drag to spin. Hover over a dot to see the name.
 
 <div class="photo-row">
   <div style="flex: 1.777 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/lassen_bumpass_hell.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 602px, 95vw" alt="Sasha Zhu, Bumpass Hell, Lassen Volcanic National Park, CA" caption="Bumpass Hell, Lassen Volcanic National Park, CA · Sep 2026" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/lassen_bumpass_hell.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 50vw, 95vw" alt="Sasha Zhu, Bumpass Hell, Lassen Volcanic National Park, CA" caption="Bumpass Hell, Lassen Volcanic National Park, CA · Sep 2026" %}
   </div>
   <div style="flex: 1.777 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/burney_falls.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 602px, 95vw" alt="Sasha Zhu, Burney Falls, CA" caption="Burney Falls, CA · Sep 2026" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/burney_falls.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 50vw, 95vw" alt="Sasha Zhu, Burney Falls, CA" caption="Burney Falls, CA · Sep 2026" %}
   </div>
 </div>
 <div class="photo-row">
   <div style="flex: 0.574 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/mission_peak_summit.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 204px, 95vw" alt="Sasha Zhu, Mission Peak, Fremont, CA" caption="Mission Peak, Fremont, CA · Sep 2026" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/mission_peak_summit.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 17vw, 95vw" alt="Sasha Zhu, Mission Peak, Fremont, CA" caption="Mission Peak, Fremont, CA · Sep 2026" %}
   </div>
   <div style="flex: 1.305 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/mori_point.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 464px, 95vw" alt="Sasha Zhu, Mori Point, Pacifica, CA" caption="Mori Point, Pacifica, CA · Mar 2026" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/mori_point.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 39vw, 95vw" alt="Sasha Zhu, Mori Point, Pacifica, CA" caption="Mori Point, Pacifica, CA · Mar 2026" %}
   </div>
   <div style="flex: 1.777 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/fitzgerald_cypress.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 631px, 95vw" alt="Sasha Zhu, Fitzgerald Marine Reserve, Moss Beach, CA" caption="Fitzgerald Marine Reserve, Moss Beach, CA · Mar 2026" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/fitzgerald_cypress.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 52vw, 95vw" alt="Sasha Zhu, Fitzgerald Marine Reserve, Moss Beach, CA" caption="Fitzgerald Marine Reserve, Moss Beach, CA · Mar 2026" %}
   </div>
 </div>
 <div class="photo-row">
   <div style="flex: 1.333 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/russian_ridge.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 625px, 95vw" alt="Sasha Zhu, Russian Ridge, CA" caption="Russian Ridge, CA · Mar 2026" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/russian_ridge.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 52vw, 95vw" alt="Sasha Zhu, Russian Ridge, CA" caption="Russian Ridge, CA · Mar 2026" %}
   </div>
   <div style="flex: 1.501 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/IMG_8972.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 703px, 95vw" alt="Sasha Zhu, Zion National Park, UT" caption="Zion National Park, UT · Apr 2025" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/IMG_8972.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 58vw, 95vw" alt="Sasha Zhu, Zion National Park, UT" caption="Zion National Park, UT · Apr 2025" %}
   </div>
 </div>
 <div class="photo-row">
   <div style="flex: 1.501 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/point_reyes.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 493px, 95vw" alt="Sasha Zhu, Point Reyes, CA" caption="Point Reyes, CA · Dec 2024" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/point_reyes.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 41vw, 95vw" alt="Sasha Zhu, Point Reyes, CA" caption="Point Reyes, CA · Dec 2024" %}
   </div>
   <div style="flex: 0.667 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/yosemite_el_capitan.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 219px, 95vw" alt="Sasha Zhu, Yosemite National Park, CA" caption="Yosemite National Park, CA · Nov 2024" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/yosemite_el_capitan.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 18vw, 95vw" alt="Sasha Zhu, Yosemite National Park, CA" caption="Yosemite National Park, CA · Nov 2024" %}
   </div>
   <div style="flex: 1.501 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/mount_tam_fog.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 493px, 95vw" alt="Sasha Zhu, Mount Tamalpais, CA" caption="Mount Tamalpais, CA · Jul 2024" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/mount_tam_fog.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 41vw, 95vw" alt="Sasha Zhu, Mount Tamalpais, CA" caption="Mount Tamalpais, CA · Jul 2024" %}
   </div>
 </div>
 <div class="photo-row">
   <div style="flex: 0.750 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/falljokull_ice_cave.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 302px, 95vw" alt="Sasha Zhu, Falljökull glacier, Iceland" caption="Falljökull glacier, Iceland · Dec 2022" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/falljokull_ice_cave.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 25vw, 95vw" alt="Sasha Zhu, Falljökull glacier, Iceland" caption="Falljökull glacier, Iceland · Dec 2022" %}
   </div>
   <div style="flex: 0.750 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/calanques_marseille.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 302px, 95vw" alt="Sasha Zhu, Calanques, Marseille, France" caption="Calanques, Marseille, France · Mar 2022" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/calanques_marseille.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 25vw, 95vw" alt="Sasha Zhu, Calanques, Marseille, France" caption="Calanques, Marseille, France · Mar 2022" %}
   </div>
   <div style="flex: 1.486 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/diamond_head.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 598px, 95vw" alt="Waikiki from the Diamond Head summit, Oahu, HI" caption="Diamond Head, Oahu, HI · Sep 2019" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/diamond_head.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 50vw, 95vw" alt="Waikiki from the Diamond Head summit, Oahu, HI" caption="Diamond Head, Oahu, HI · Sep 2019" %}
   </div>
 </div>
 
@@ -84,45 +86,45 @@ Drag to spin. Hover over a dot to see the name.
 
 <div class="photo-row">
   <div style="flex: 1.777 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/lake_tahoe_kayak.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 602px, 95vw" alt="Sasha Zhu, Lake Tahoe, NV" caption="Lake Tahoe, NV · Aug 2026" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/lake_tahoe_kayak.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 50vw, 95vw" alt="Sasha Zhu, Lake Tahoe, NV" caption="Lake Tahoe, NV · Aug 2026" %}
   </div>
   <div style="flex: 1.777 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/pfeiffer_beach.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 602px, 95vw" alt="Sasha Zhu, Pfeiffer Beach, Big Sur, CA" caption="Pfeiffer Beach, Big Sur, CA · Jun 2026" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/pfeiffer_beach.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 50vw, 95vw" alt="Sasha Zhu, Pfeiffer Beach, Big Sur, CA" caption="Pfeiffer Beach, Big Sur, CA · Jun 2026" %}
   </div>
 </div>
 <div class="photo-row">
   <div style="flex: 0.750 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/IMG_9415.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 265px, 95vw" alt="Sasha Zhu, Antelope Canyon, Page, AZ" caption="Antelope Canyon, Page, AZ · May 2025" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/IMG_9415.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 22vw, 95vw" alt="Sasha Zhu, Antelope Canyon, Page, AZ" caption="Antelope Canyon, Page, AZ · May 2025" %}
   </div>
   <div style="flex: 1.333 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/joshua_tree.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 470px, 95vw" alt="Sasha Zhu, Joshua Tree National Park, CA" caption="Joshua Tree National Park, CA · Dec 2023" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/joshua_tree.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 39vw, 95vw" alt="Sasha Zhu, Joshua Tree National Park, CA" caption="Joshua Tree National Park, CA · Dec 2023" %}
   </div>
   <div style="flex: 1.333 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/gyeongbokgung.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 470px, 95vw" alt="Gwanghwamun gate, Gyeongbokgung Palace, Seoul" caption="Gyeongbokgung Palace, Seoul, South Korea · Nov 2023" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/gyeongbokgung.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 39vw, 95vw" alt="Gwanghwamun gate, Gyeongbokgung Palace, Seoul" caption="Gyeongbokgung Palace, Seoul, South Korea · Nov 2023" %}
   </div>
 </div>
 <div class="photo-row">
   <div style="flex: 1.333 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/beijing_skating.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 425px, 95vw" alt="Sasha Zhu, Beijing, China" caption="Beijing, China · Oct 2023" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/beijing_skating.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 35vw, 95vw" alt="Sasha Zhu, Beijing, China" caption="Beijing, China · Oct 2023" %}
   </div>
   <div style="flex: 1.109 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/varenna_lake_como.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 354px, 95vw" alt="Sasha Zhu, Varenna, Lake Como, Italy" caption="Varenna, Lake Como, Italy · Mar 2023" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/varenna_lake_como.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 29vw, 95vw" alt="Sasha Zhu, Varenna, Lake Como, Italy" caption="Varenna, Lake Como, Italy · Mar 2023" %}
   </div>
   <div style="flex: 1.333 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/titlis_clouds.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 425px, 95vw" alt="Sea of clouds below Titlis, Switzerland" caption="Titlis, Switzerland · Dec 2022" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/titlis_clouds.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 35vw, 95vw" alt="Sea of clouds below Titlis, Switzerland" caption="Titlis, Switzerland · Dec 2022" %}
   </div>
 </div>
 <div class="photo-row">
   <div style="flex: 0.750 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/hoge_veluwe_bike.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 227px, 95vw" alt="Sasha Zhu, Hoge Veluwe National Park, Netherlands" caption="Hoge Veluwe National Park, Netherlands · Aug 2022" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/hoge_veluwe_bike.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 19vw, 95vw" alt="Sasha Zhu, Hoge Veluwe National Park, Netherlands" caption="Hoge Veluwe National Park, Netherlands · Aug 2022" %}
   </div>
   <div style="flex: 1.333 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/hanauma_bay.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 403px, 95vw" alt="Hanauma Bay from the overlook, Oahu, HI" caption="Hanauma Bay, Oahu, HI · Sep 2019" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/hanauma_bay.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 33vw, 95vw" alt="Hanauma Bay from the overlook, Oahu, HI" caption="Hanauma Bay, Oahu, HI · Sep 2019" %}
   </div>
   <div style="flex: 1.333 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/waikiki_sunset.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 403px, 95vw" alt="Sasha Zhu at sunset, Waikiki, Oahu, HI" caption="Waikiki, Oahu, HI · Aug 2019" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/waikiki_sunset.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 33vw, 95vw" alt="Sasha Zhu at sunset, Waikiki, Oahu, HI" caption="Waikiki, Oahu, HI · Aug 2019" %}
   </div>
   <div style="flex: 0.562 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/ulun_danu_bali.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 170px, 95vw" alt="Ulun Danu Beratan temple on Lake Bratan, Bali" caption="Ulun Danu Beratan, Bali, Indonesia · Jan 2017" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/ulun_danu_bali.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 14vw, 95vw" alt="Ulun Danu Beratan temple on Lake Bratan, Bali" caption="Ulun Danu Beratan, Bali, Indonesia · Jan 2017" %}
   </div>
 </div>
