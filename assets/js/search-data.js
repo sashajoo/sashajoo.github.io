@@ -16,19 +16,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "dropdown-my-cat",
-              title: "My cat 🐱",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/beyond-work/python/";
-              },
-            },{id: "dropdown-hiking-amp-travel",
+        },{id: "dropdown-hiking-amp-travel",
               title: "Hiking &amp; Travel",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "/beyond-work/travel/";
+              },
+            },{id: "dropdown-my-cat",
+              title: "My cat 🐱",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/beyond-work/python/";
               },
             },{
         id: 'social-email',
