@@ -28,6 +28,14 @@ Drag to spin. Hover over a dot to see the name.
 ## Hikes
 
 <div class="photo-row">
+  <div style="flex: 1.777 1 0">
+    {% include figure.liquid path="assets/img/beyond_work/travel/lassen_bumpass_hell.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 478px, 95vw" alt="Sasha Zhu, Bumpass Hell, Lassen Volcanic National Park, CA" caption="Bumpass Hell, Lassen Volcanic National Park, CA · Sep 2026" %}
+  </div>
+  <div style="flex: 1.777 1 0">
+    {% include figure.liquid path="assets/img/beyond_work/travel/burney_falls.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 478px, 95vw" alt="Sasha Zhu, Burney Falls, CA" caption="Burney Falls, CA · Sep 2026" %}
+  </div>
+</div>
+<div class="photo-row">
   <div style="flex: 0.574 1 0">
     {% include figure.liquid path="assets/img/beyond_work/travel/mission_peak_summit.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 171px, 95vw" alt="Sasha Zhu, Mission Peak, Fremont, CA" caption="Mission Peak, Fremont, CA · Sep 2026" %}
   </div>

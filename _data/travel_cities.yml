@@ -193,3 +193,9 @@
 - name: "Bryce Canyon, USA"
   lat: 37.5930
   lon: -112.1871
+- name: "Lassen Volcanic National Park, USA"
+  lat: 40.4577
+  lon: -121.5020
+- name: "Burney Falls, USA"
+  lat: 41.0122
+  lon: -121.6519
