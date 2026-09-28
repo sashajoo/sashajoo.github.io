@@ -387,6 +387,49 @@ article.offprint {
   margin-left: 0.9rem;
 }
 
+// Presentation photos open in a pop-up instead of a new tab.
+.photo-pop {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  max-width: 92vw;
+  max-height: 92vh;
+  overflow: visible;
+}
+
+.photo-pop::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.photo-pop img {
+  display: block;
+  max-width: 92vw;
+  max-height: 84vh;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+.photo-pop-caption {
+  margin: 0.6rem 0 0;
+  text-align: center;
+  font-family: $offprint-sans;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.photo-pop-close {
+  position: absolute;
+  top: -2.4rem;
+  right: 0;
+  border: 0;
+  background: none;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
 // A reference-list entry carrying press or an invited commentary. It has to
 // sit on its own line under the `.links` row, and `.links` is already
 // `display: block`, so this only needs its own block box.

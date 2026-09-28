@@ -9,7 +9,12 @@
           {% if item.press %}
             <span class="press-row">
               {% for p in item.press %}
-                <a class="press" href="{{ p.url }}" target="_blank" rel="noopener noreferrer">{{ p.label }}</a>
+                {% assign ext = p.url | split: '.' | last | downcase %}
+                {% if ext == 'jpg' or ext == 'jpeg' or ext == 'png' or ext == 'webp' %}
+                  <a class="press js-photo" href="{{ p.url | relative_url }}" data-caption="{{ item.where | escape }}">{{ p.label }}</a>
+                {% else %}
+                  <a class="press" href="{{ p.url }}" target="_blank" rel="noopener noreferrer">{{ p.label }}</a>
+                {% endif %}
               {% endfor %}
             </span>
           {% endif %}
@@ -17,4 +22,29 @@
       </div>
     {% endfor %}
   </div>
+  <dialog class="photo-pop" aria-label="Photo">
+    <button type="button" class="photo-pop-close" aria-label="Close">&times;</button>
+    <img src="" alt="">
+    <p class="photo-pop-caption"></p>
+  </dialog>
+  <script>
+    (function () {
+      var d = document.querySelector("dialog.photo-pop");
+      if (!d || !d.showModal) return;
+      var img = d.querySelector("img"), cap = d.querySelector(".photo-pop-caption");
+      document.querySelectorAll("a.js-photo").forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          img.src = a.href;
+          img.alt = a.dataset.caption || "";
+          cap.textContent = a.dataset.caption || "";
+          d.showModal();
+        });
+      });
+      d.addEventListener("click", function (e) {
+        if (e.target === d || e.target.classList.contains("photo-pop-close")) d.close();
+      });
+      d.addEventListener("close", function () { img.src = ""; });
+    })();
+  </script>
 {% endif %}
