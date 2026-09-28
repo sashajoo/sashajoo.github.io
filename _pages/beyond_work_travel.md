@@ -37,21 +37,21 @@ Drag to spin. Hover over a dot to see the name.
 </div>
 <div class="photo-row">
   <div style="flex: 0.574 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/mission_peak_summit.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 171px, 95vw" alt="Sasha Zhu, Mission Peak, Fremont, CA" caption="Mission Peak, Fremont, CA · Sep 2026" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/mission_peak_summit.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 162px, 95vw" alt="Sasha Zhu, Mission Peak, Fremont, CA" caption="Mission Peak, Fremont, CA · Sep 2026" %}
   </div>
   <div style="flex: 1.305 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/mori_point.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 388px, 95vw" alt="Sasha Zhu, Mori Point, Pacifica, CA" caption="Mori Point, Pacifica, CA · Mar 2026" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/mori_point.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 368px, 95vw" alt="Sasha Zhu, Mori Point, Pacifica, CA" caption="Mori Point, Pacifica, CA · Mar 2026" %}
   </div>
-  <div style="flex: 1.333 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/russian_ridge.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 396px, 95vw" alt="Sasha Zhu, Russian Ridge, CA" caption="Russian Ridge, CA · Mar 2026" %}
+  <div style="flex: 1.777 1 0">
+    {% include figure.liquid path="assets/img/beyond_work/travel/fitzgerald_cypress.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 501px, 95vw" alt="Sasha Zhu, Fitzgerald Marine Reserve, Moss Beach, CA" caption="Fitzgerald Marine Reserve, Moss Beach, CA · Mar 2026" %}
   </div>
 </div>
 <div class="photo-row">
-  <div style="flex: 1.777 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/fitzgerald_cypress.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 518px, 95vw" alt="Sasha Zhu, Fitzgerald Marine Reserve, Moss Beach, CA" caption="Fitzgerald Marine Reserve, Moss Beach, CA · Mar 2026" %}
+  <div style="flex: 1.333 1 0">
+    {% include figure.liquid path="assets/img/beyond_work/travel/russian_ridge.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 496px, 95vw" alt="Sasha Zhu, Russian Ridge, CA" caption="Russian Ridge, CA · Mar 2026" %}
   </div>
   <div style="flex: 1.501 1 0">
-    {% include figure.liquid path="assets/img/beyond_work/travel/IMG_8972.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 437px, 95vw" alt="Sasha Zhu, Zion National Park, UT" caption="Zion National Park, UT · Apr 2025" %}
+    {% include figure.liquid path="assets/img/beyond_work/travel/IMG_8972.jpg" class="img-fluid rounded z-depth-1" sizes="(min-width: 576px) 558px, 95vw" alt="Sasha Zhu, Zion National Park, UT" caption="Zion National Park, UT · Apr 2025" %}
   </div>
 </div>
 <div class="photo-row">
