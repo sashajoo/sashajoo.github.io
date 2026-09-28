@@ -3,10 +3,10 @@
 # carry one `photo` (image + caption), shown under its entries.
 - group: United States
   photo:
-    image: assets/img/clinical/feng2024_with_carissa_chu.jpg
+    image: assets/img/clinical/pcf2025_with_carissa_chu.jpg
     caption: >-
-      With Carissa E. Chu, MD, at the first Felix Feng Symposium,
-      San Francisco, May 2024.
+      With Carissa E. Chu, MD, at the Prostate Cancer Foundation
+      Scientific Retreat, Carlsbad, CA, October 2025.
   items:
     - when: Dec 2023 &ndash; present
       what: Clinical observership, Department of Urology
