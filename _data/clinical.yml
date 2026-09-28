@@ -2,6 +2,11 @@
 # Grouped, newest first inside each group. `where` is optional. A group may
 # carry one `photo` (image + caption), shown under its entries.
 - group: United States
+  photo:
+    image: assets/img/clinical/pcf2025_with_carissa_chu.jpg
+    caption: >-
+      With Carissa E. Chu, MD, at the Prostate Cancer Foundation Scientific
+      Retreat, Carlsbad, CA, October 2025.
   items:
     - when: Dec 2023 &ndash; present
       what: Clinical observership, Department of Urology
