@@ -6,8 +6,10 @@ nav: true
 nav_order: 4
 dropdown: true
 children:
-  - title: My cat 🐱
-    permalink: /beyond-work/python/
   - title: Hiking & Travel
+    nav_title: Travel
     permalink: /beyond-work/travel/
+  - title: My cat 🐱
+    nav_title: My Cat 🐱
+    permalink: /beyond-work/python/
 ---

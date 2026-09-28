@@ -77,22 +77,15 @@ code {
   opacity: 0.72;
 }
 
-// Bootstrap expands the bar at 576px and .navbar-nav is nowrap, so seven
-// items plus the search and theme controls overflowed the container up to
-// about 880px. Below that the sections drop out and the pages remain.
-@media (max-width: 1249.98px) {
-  .navbar .nav-section,
-  .navbar .nav-divider {
-    display: none;
-  }
-}
+// The bar expands at 1200px (navbar-expand-xl); below that everything is in
+// the phone menu, which is styled further down.
 
 // On a wide screen every item sits on ONE line. The page column is 955px on
 // most pages, which is too narrow for the name plus nine items, so "All
 // Publications" and the search hint wrapped onto a second line. The bar gets
 // its own 1200px column, items never wrap, and the "ctrl k" hint is dropped
 // (the magnifier stays and the shortcut still works).
-@media (min-width: 1250px) {
+@media (min-width: 1200px) {
   .navbar > .container {
     max-width: 1200px;
   }
@@ -133,8 +126,136 @@ code {
   background: var(--offprint-rule);
 }
 
-.navbar .nav-section .nav-link:hover {
+.navbar .nav-section .nav-link:hover,
+.navbar .nav-section.active .nav-link {
   opacity: 1;
+}
+
+// Where you are. The marked item gets the theme colour (from _navbar.scss)
+// and a short rule under it, so it still reads in the lighter section group.
+@media (min-width: 1200px) {
+  .navbar .navbar-nav > .nav-item > .nav-link {
+    position: relative;
+  }
+
+  .navbar .navbar-nav > .nav-item.active > .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.15rem;
+    height: 1px;
+    background: currentColor;
+  }
+
+  // Two kinds of link must look different. Sections of the About page are
+  // plain words; pages of their own stay in capitals and carry an arrow.
+  .navbar .nav-section .nav-link {
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-size: 0.8rem;
+  }
+
+  .navbar .nav-page > .nav-link::after,
+  .navbar .nav-child > .nav-link::after,
+  .navbar .nav-page.active > .nav-link::after,
+  .navbar .nav-child.active > .nav-link::after {
+    position: static;
+    height: auto;
+    background: none;
+  }
+
+  .navbar .nav-page > .nav-link::after {
+    content: " \2197";
+  }
+
+  .navbar .nav-child > .nav-link::after {
+    content: " \2192";
+  }
+
+  // The group label is for the phone menu only.
+  .navbar .nav-group-label {
+    display: none;
+  }
+}
+
+.navbar .search-word {
+  display: none;
+}
+
+// ---- phone and tablet menu ---------------------------------------------
+// One left-aligned list, the same order as the wide bar: About with its
+// sections indented under it, a rule, then the pages, with Beyond Work as a
+// labelled group. Search and theme sit together on the last line.
+@media (max-width: 1199.98px) {
+  .navbar .navbar-collapse {
+    text-align: left !important;
+  }
+
+  .navbar .navbar-nav {
+    flex-direction: row;
+    flex-wrap: wrap !important;
+    align-items: center;
+    padding: 0.6rem 0 0.9rem;
+  }
+
+  .navbar .navbar-nav > .nav-item {
+    flex: 0 0 100%;
+  }
+
+  .navbar .navbar-nav .nav-link {
+    font-size: 0.8rem;
+    padding: 0.55rem 0;
+  }
+
+  .navbar .nav-section .nav-link,
+  .navbar .nav-child .nav-link {
+    padding-left: 1rem;
+    border-left: 1px solid var(--offprint-rule);
+  }
+
+  .navbar .nav-section.active .nav-link,
+  .navbar .nav-child.active .nav-link {
+    border-left: 2px solid var(--global-theme-color);
+    padding-left: calc(1rem - 1px);
+  }
+
+  .navbar .nav-divider {
+    display: block;
+    height: 1px;
+    width: auto;
+    margin: 0.6rem 0;
+  }
+
+  .navbar .nav-group-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+    padding: 0.9rem 0 0.3rem;
+  }
+
+  .navbar .navbar-nav > .nav-item:has(#search-toggle),
+  .navbar .navbar-nav > .toggle-container {
+    flex: 0 0 auto;
+    margin-top: 0.6rem;
+  }
+
+  .navbar .navbar-nav > .nav-item:has(#search-toggle) {
+    margin-right: 1.4rem;
+  }
+
+  .navbar #search-toggle {
+    padding: 0;
+  }
+
+  .navbar .search-hint {
+    display: none;
+  }
+
+  .navbar .search-word {
+    display: inline;
+  }
 }
 
 // The navbar is fixed, so an anchor would otherwise land under it. Applies
