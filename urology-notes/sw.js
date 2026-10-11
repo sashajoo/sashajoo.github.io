@@ -1,7 +1,7 @@
 // Offline copy of the study guide. HTML is network-first so a fixed page reaches people
 // as soon as they are online; fonts and icons are cache-first. The cache name carries the
 // build id, so every deploy replaces the old cache.
-const CACHE = "uro-guide-0.1.0-20261011053748";
+const CACHE = "uro-guide-0.1.0-20261011054022";
 const ASSETS = ["./", "./index.html", "./card.html", "./manifest.webmanifest", "./icon-180.png", "./icon-512.png",
                 "./fonts/Inter.woff2", "./fonts/SourceSerif4.woff2"];
 self.addEventListener("install", e => {
