@@ -979,3 +979,18 @@ html[data-theme="dark"] {
 .publications ol.bibliography li {
   max-width: 90ch;
 }
+
+// Highlighted link to the urology study notes (/urology-notes/), under the identity row.
+.guide-callout {
+  display: block;
+  border-left: 3px solid var(--offprint-accent);
+  background: var(--offprint-desk);
+  padding: 14px 18px;
+  margin: 22px 0 8px;
+  max-width: 75ch;
+  text-decoration: none !important;
+  .gc-label { display: block; font: 600 12px/1.3 $offprint-sans; letter-spacing: .12em; text-transform: uppercase; color: var(--offprint-meta); margin-bottom: 4px; }
+  .gc-title { display: block; font: 600 21px/1.25 $offprint-serif; color: var(--offprint-accent); }
+  .gc-sub { display: block; font: 15px/1.45 $offprint-serif; color: var(--global-text-color); margin-top: 3px; }
+  &:hover .gc-title { text-decoration: underline; }
+}

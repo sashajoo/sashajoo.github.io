@@ -22,6 +22,13 @@ latest_posts:
   enabled: false
 ---
 
+<a class="guide-callout" href="/urology-notes/">
+  <span class="gc-label">Study notes</span>
+  <span class="gc-title">Urology floor calls: my study notes →</span>
+  <span class="gc-sub">Reading notes on common urology calls, handoffs and escalation. Work in progress.</span>
+</a>
+
+
 I'm Sha Zhu, MD, PhD (I go by Sasha), a Postdoctoral Scholar in the [Chu Lab](https://urology.ucsf.edu/research/chu-lab), Department of Urology at UCSF. I earned my medical degree and doctorate at West China School of Medicine, Sichuan University, including visiting doctoral research at the Netherlands Cancer Institute in Amsterdam.
 
 My postdoctoral research focuses on prostate cancer immunotherapy, but my goal has always been the operating room. I am seeking urology residency to bring this translational work into direct patient care — drawn especially to the continuity urology offers: the chance to be both a surgeon and a longitudinal physician, operating on a patient and then managing their disease for years afterward. That integration is rare in surgery, and it's what I want my career to look like.
