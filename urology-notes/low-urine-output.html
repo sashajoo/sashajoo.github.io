@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Low urine output after surgery: study notes, Sasha Zhu</title>
+<meta name="description" content="RN: Mr. X, bed 12, POD 1 after robotic partial nephrectomy. The Foley put out 40 mL in 3 hours.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f3efe8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121213" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="icon-180.png">
+<script>(function(){
+  // Same key and values as sashajoo.github.io assets/js/theme.js: localStorage.theme = light | dark | system.
+  var q = new URLSearchParams(location.search).get('theme');
+  var s = q || localStorage.getItem('theme');
+  if (s !== 'light' && s !== 'dark') s = 'system';
+  var t = s === 'system' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : s;
+  document.documentElement.setAttribute('data-theme-setting', s);
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+<link rel="preload" href="fonts/SourceSerif4.c6da53156b.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Inter.cc390e0f18.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Self-hosted latin subsets (SIL Open Font License), re-subset 11 Oct 2026 to include arrows (U+2190-2199), subscript 2 and the signs <= >= (U+2264-2265). Variable fonts: one file covers 400-700. */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/Inter.cc390e0f18.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2082, U+20AC, U+2122, U+2190-2199, U+2212, U+2215, U+2264-2265, U+FEFF, U+FFFD}
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/SourceSerif4.c6da53156b.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2082, U+20AC, U+2122, U+2190-2199, U+2212, U+2215, U+2264-2265, U+FEFF, U+FFFD}
+
+:root{
+  color-scheme:light;
+  --desk:#f3efe8; --sheet:#fff; --ink:#1d1b1a; --meta:#5f5b58; --rule:#e6e2df;
+  --accent:#7a1f2b; --accent-rule:rgba(122,31,43,.42); --tint:#f7f3ee; --flash:#f6e9eb;
+  --amber:#8a5a00; --amber-bg:#fdf1d8; --edge:rgba(60,40,20,.07);
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:Inter,-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+  --pad:16px; --gap:48px;
+}
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --desk:#121213; --sheet:#1c1a19; --ink:#e8e3dd; --meta:#a9a39e; --rule:#34302e;
+  --accent:#c77a84; --accent-rule:rgba(199,122,132,.55); --tint:#252120; --flash:#2e2224;
+  --amber:#f0c36a; --amber-bg:#3a2c10; --edge:rgba(255,255,255,.06);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--desk);color:var(--ink);font:17px/1.6 var(--serif);
+  font-optical-sizing:auto;font-variant-numeric:lining-nums;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+sub{font-size:.68em;line-height:0;vertical-align:-.22em}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.skip{position:absolute;left:8px;top:-60px;z-index:100;padding:8px 14px;background:var(--sheet);color:var(--accent);font:600 15px/1.3 var(--sans);border:2px solid var(--accent);border-radius:3px;text-decoration:none}
+.skip:focus{top:8px}
+main[tabindex="-1"]:focus{outline:none}
+
+/* sheet on a desk, full width */
+.sheet{background:var(--sheet);padding:0 var(--pad) 28px}
+@media (min-width:600px){
+  :root{--pad:28px}
+  .sheet{margin:20px 20px 40px;border-radius:2px;box-shadow:0 0 0 1px var(--edge),0 1px 18px var(--edge)}
+}
+@media (min-width:1440px){:root{--pad:32px;--gap:40px}.sheet{margin:24px 24px 48px}}
+@media (min-width:1680px){:root{--pad:40px;--gap:56px}}
+
+/* first line */
+.topline{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 24px;
+  font:500 13px/1.4 var(--sans);color:var(--meta);padding:10px 0;border-bottom:1px solid var(--rule)}
+.disclaimer{margin:0}
+.topnav{display:flex;align-items:center;gap:4px 20px}
+.topnav a{color:var(--meta);text-decoration:none;display:inline-flex;align-items:center;min-height:32px}
+.topnav a:hover{color:var(--accent)}
+.theme-btn{font:inherit;color:var(--meta);background:none;border:1px solid var(--rule);border-radius:3px;
+  padding:4px 10px;min-height:30px;cursor:pointer}
+.theme-btn:hover{color:var(--accent);border-color:var(--accent-rule)}
+#theme-val{color:var(--ink)}
+
+/* grid: one column, then TOC + main, then TOC + main + sources rail */
+.layout{display:grid;grid-template-columns:minmax(0,1fr);padding-top:0}
+.post{container-type:inline-size;min-width:0}
+@media (min-width:1024px){
+  .layout{grid-template-columns:220px minmax(0,1fr);column-gap:var(--gap);padding-top:40px}
+  .toc{grid-column:1;grid-row:1 / span 2}
+  .post,.rail{grid-column:2}
+}
+@media (min-width:1440px){
+  .layout{grid-template-columns:240px minmax(0,1fr) 340px}
+  .toc{grid-row:1}
+  .rail{grid-column:3;grid-row:1}
+}
+
+/* table of contents */
+.toc{font:500 14px/1.45 var(--sans)}
+.toc ul{list-style:none;margin:0;padding:0;border-left:1px solid var(--rule)}
+.toc li a{display:block;padding:4px 0 4px 14px;margin-left:-1px;border-left:2px solid transparent;color:var(--meta);text-decoration:none}
+.toc li a:hover{color:var(--accent)}
+.toc li a.active{color:var(--ink);border-left-color:var(--accent);font-weight:600}
+.toc-label{font:600 11px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--meta);margin:0 0 8px}
+.toc-group+.toc-group{margin-top:22px}
+.toc-foot{display:flex;flex-direction:column;gap:6px;margin:26px 0 0;padding-top:16px;border-top:1px solid var(--rule);font-size:13px}
+.toc-foot a{color:var(--accent);text-decoration:none;align-self:flex-start;border-bottom:1px solid var(--accent-rule)}
+.toc-foot a:hover{border-bottom-color:var(--accent)}
+@media (min-width:1024px){
+  .toc-bar{display:none}
+  .toc-list{position:sticky;top:24px;max-height:calc(100vh - 48px);overflow:auto;padding-bottom:8px}
+}
+@media (max-width:1023.98px){
+  .toc{position:sticky;top:0;z-index:30;background:var(--sheet);margin:0 calc(-1*var(--pad));padding:0 var(--pad);border-bottom:1px solid var(--rule)}
+  .toc-bar{display:flex;align-items:center;gap:10px;width:100%;min-height:46px;padding:0;background:none;border:0;
+    font:600 13px/1.3 var(--sans);color:var(--ink);cursor:pointer;text-align:left}
+  .toc-bar-label{letter-spacing:.1em;text-transform:uppercase;font-size:11.5px;color:var(--meta);white-space:nowrap}
+  .toc-bar-cur{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500}
+  .chev{width:8px;height:8px;border-right:1.5px solid var(--meta);border-bottom:1.5px solid var(--meta);transform:rotate(45deg) translateY(-3px);transition:transform .15s}
+  .toc-bar[aria-expanded="true"] .chev{transform:rotate(-135deg) translateX(-3px)}
+  .toc-list{display:none;position:absolute;left:0;right:0;top:100%;background:var(--sheet);padding:4px var(--pad) 16px;
+    max-height:calc(100vh - 56px);overflow:auto;border-bottom:1px solid var(--rule);box-shadow:0 10px 18px -12px rgba(40,25,15,.25)}
+  .toc.open .toc-list{display:block}
+  .toc li a{padding:8px 0 8px 14px}
+}
+
+/* header */
+.post-head{padding-top:28px}
+@media (min-width:1024px){.post-head{padding-top:0}}
+h1{font:600 30px/1.14 var(--serif);letter-spacing:-.015em;margin:0 0 10px;text-wrap:balance}
+@media (min-width:600px){h1{font-size:40px;line-height:1.1}}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;font:500 13.5px/1.5 var(--sans);color:var(--meta);margin:0}
+.meta .dot{width:3px;height:3px;border-radius:50%;background:currentColor;opacity:.7}
+.meta a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-rule)}
+.meta a:hover{border-bottom-color:var(--accent)}
+.pager{margin:22px 0 0;max-width:780px;background:var(--tint);border-left:3px solid var(--accent);border-radius:0 2px 2px 0;padding:14px 22px 16px 19px}
+.pager-label{font:600 11.5px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--meta);margin:0 0 5px}
+.pager-text{font:400 18px/1.48 var(--serif);margin:0;text-wrap:pretty}
+@media (min-width:600px){.pager-text{font-size:19.5px}}
+.abbr{font:400 13.5px/1.5 var(--sans);color:var(--meta);max-width:90ch;margin:10px 0 0;text-wrap:pretty}
+
+/* sections */
+.sec{margin-top:44px;padding-top:24px;border-top:1px solid var(--rule);scroll-margin-top:64px}
+@media (min-width:1024px){.sec{margin-top:52px;padding-top:26px;scroll-margin-top:20px}}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;margin:0 0 16px}
+h2{font:600 23px/1.22 var(--serif);letter-spacing:-.01em;margin:0;position:relative}
+@media (min-width:600px){h2{font-size:27px}}
+.anchor{position:absolute;right:100%;padding-right:.35em;color:var(--meta);text-decoration:none;font-weight:400;opacity:0;transition:opacity .15s}
+h2:hover .anchor,.anchor:focus-visible{opacity:1}
+@media (max-width:1023.98px){.anchor{display:none}}
+.post p,.post li,.post dd{max-width:70ch}
+@media (min-width:600px){body{font-size:18px;line-height:1.65}}
+
+/* Sick or not sick + First 5 steps side by side when the main column is wide */
+@container (min-width:900px){
+  .pair{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);column-gap:56px}
+}
+.sick{list-style:none;margin:0;padding:2px 0 2px 20px;border-left:3px solid var(--accent)}
+.sick li+li{margin-top:12px}
+.steps,.worst{list-style:none;margin:0;padding:0;counter-reset:n}
+.steps li,.worst li{counter-increment:n;display:grid;grid-template-columns:34px minmax(0,1fr);align-items:start}
+.steps li+li,.worst li+li{margin-top:10px}
+.steps li::before{content:counter(n);width:24px;height:24px;margin-top:3px;border:1.5px solid var(--accent);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font:600 12.5px/1 var(--sans);color:var(--accent);font-variant-numeric:tabular-nums}
+.worst li::before{content:counter(n) ".";font:600 15px/1.75 var(--sans);color:var(--accent);font-variant-numeric:tabular-nums}
+
+/* If-then lines */
+.ifthen{border-top:1px solid var(--rule)}
+.ift{display:grid;grid-template-columns:3rem minmax(0,1fr) minmax(0,1fr);column-gap:24px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.ift-if{font:600 11.5px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);padding-top:.62em}
+.ift-then{display:grid;grid-template-columns:1.5em minmax(0,1fr)}
+.arrow{font:600 18px/1.65 var(--sans);color:var(--accent)}
+.ift-act{font-weight:600}
+@container (max-width:576px){
+  .ift{grid-template-columns:2.6rem minmax(0,1fr);row-gap:6px}
+  .ift-then{grid-column:2}
+}
+
+/* orders */
+.orders{list-style:none;margin:0;padding:0;columns:2 300px;column-gap:56px;font:400 16px/1.5 var(--sans)}
+.orders li{break-inside:avoid;position:relative;padding-left:26px;margin:0 0 11px}
+.orders li::before{content:"";position:absolute;left:0;top:.3em;width:11px;height:11px;border:1.5px solid var(--meta);border-radius:2px}
+
+/* call the senior: S, B, A, R */
+.sbar{display:grid;grid-template-columns:8.5rem minmax(0,1fr);column-gap:24px;row-gap:10px;margin:0;padding:4px 0 4px 20px;border-left:2px solid var(--rule)}
+.sbar dt{font:600 11.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);padding-top:.62em}
+.sbar dd{margin:0}
+@container (max-width:576px){.sbar{grid-template-columns:1fr;row-gap:2px}.sbar dd{margin-bottom:10px}.sbar dt{padding-top:4px}}
+
+/* expected vs not expected */
+.lead-in{color:var(--meta);margin:0 0 10px}
+.expect{display:grid;grid-template-columns:calc(8.5rem + 24px) minmax(0,1fr);column-gap:0;margin:0;border-top:1px solid var(--rule);max-width:calc(8.5rem + 24px + 70ch)}
+.post .expect dd{max-width:none}
+.expect dt,.expect dd{padding:11px 0;border-bottom:1px solid var(--rule);margin:0}
+.expect dt{padding-right:24px;font:600 11.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--meta);padding-top:calc(11px + .62em)}
+.expect dt.not{color:var(--accent)}
+@container (max-width:576px){.expect{grid-template-columns:1fr}.expect dt{border-bottom:0;padding-bottom:0}.expect dd{padding-top:4px}}
+
+/* plain lists */
+.plain{margin:0;padding-left:1.15em}
+.plain li{padding-left:.25em}
+.plain li+li{margin-top:8px}
+.plain li::marker{color:var(--meta)}
+.nw{white-space:nowrap}
+@container (min-width:900px){
+  .plain.cols{columns:2 340px;column-gap:64px}
+  .plain.cols li{break-inside:avoid;margin:0 0 8px}
+}
+
+/* questions */
+.quiz-btn,.reveal{font:600 13px/1 var(--sans);color:var(--accent);background:none;border:1px solid var(--accent-rule);border-radius:3px;
+  padding:7px 12px;cursor:pointer;min-height:32px}
+.quiz-btn:hover,.reveal:hover{border-color:var(--accent)}
+.quiz-btn[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.qas{border-top:1px solid var(--rule)}
+.qa{padding:18px 0;border-bottom:1px solid var(--rule)}
+.qa h3{font:600 19px/1.38 var(--serif);margin:0 0 6px;max-width:60ch}
+.ans p{margin:0}
+.ans p+p{margin-top:5px}
+.reveal{display:none;margin-top:4px;align-self:start;justify-self:start}
+.quiz .ans{display:none}
+.quiz .qa.open .ans{display:block}
+.quiz .reveal{display:inline-flex;align-items:center}
+.quiz .qa.open .reveal{display:none}
+@container (min-width:900px){
+  .qa{display:grid;grid-template-columns:minmax(0,19rem) minmax(0,1fr);column-gap:48px}
+  .qa h3{margin:0}
+  .ans,.reveal{grid-column:2}
+  .reveal{justify-self:start;grid-row:1}
+}
+
+/* citations */
+sup.cite{font:600 11.5px/0 var(--sans);vertical-align:0;position:relative;top:-.55em;margin-left:2px;color:var(--meta);letter-spacing:.02em;white-space:nowrap}
+sup.cite a{color:inherit;text-decoration:none;padding:0 1px}
+sup.cite a:hover,sup.cite a:focus-visible,sup.cite a.on{color:var(--accent)}
+.pop{position:absolute;z-index:60;max-width:300px;background:var(--sheet);color:var(--ink);border-radius:3px;padding:9px 12px 10px;
+  font:13px/1.45 var(--sans);box-shadow:0 0 0 1px var(--rule),0 6px 22px rgba(40,25,15,.14)}
+.pop .pn{color:var(--accent);font-weight:600;margin-right:6px}
+.pop .ps{display:block;color:var(--meta);margin-top:3px}
+
+/* varies chip: the only amber on the site */
+.varies{display:inline-block;font:600 12px/1 var(--sans);color:var(--amber);background:var(--amber-bg);border-radius:3px;
+  padding:4px 7px;margin:0 0 0 2px;white-space:nowrap;position:relative;top:-.1em}
+
+/* sources: right rail at 1440 and up, end of post below that */
+.rail{min-width:0}
+.srcs{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.srcs li{display:grid;grid-template-columns:1.9rem minmax(0,1fr);padding:12px 6px 13px 0;border-bottom:1px solid var(--rule);transition:background-color .3s}
+.srcs li.flash,.srcs li:target{background:var(--flash)}
+.src-n{font:600 13px/1.55 var(--sans);color:var(--accent);font-variant-numeric:tabular-nums;padding-left:4px}
+.src-title{display:block;font:600 16px/1.38 var(--serif);color:var(--ink);text-decoration:none}
+.src-title:hover{color:var(--accent)}
+.src-auth,.src-pub,.src-lic{display:block;font:13px/1.5 var(--sans);color:var(--meta)}
+.src-auth{margin-top:3px}
+.key{font:13px/1.55 var(--sans);color:var(--meta);margin:16px 0 0}
+.key .varies{margin-right:6px}
+@media (min-width:1440px){
+  .rail-in{position:sticky;top:24px}
+  .rail h2{font:600 11px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--meta);margin:0 0 8px}
+}
+@media (max-width:1439.98px){
+  .rail{margin-top:52px;padding-top:26px;border-top:1px solid var(--rule);scroll-margin-top:64px}
+  .rail h2{margin:0 0 16px}
+  .rail-in{max-width:70ch}
+}
+
+/* footer */
+.foot{margin-top:64px;padding-top:18px;border-top:1px solid var(--rule);font:13.5px/1.6 var(--sans);color:var(--meta)}
+.foot p{margin:0;max-width:90ch}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:10px 48px}
+.foot-links{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0!important}
+@media (min-width:900px){.foot-grid{grid-template-columns:minmax(0,1fr) auto;align-items:start}.foot-links{justify-content:flex-end;text-align:right}}
+.foot a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-rule)}
+.foot a:hover{border-bottom-color:var(--accent)}
+@media (min-width:1024px){.layout+.foot{margin-left:calc(220px + var(--gap))}}
+@media (min-width:1440px){.layout+.foot{margin-left:calc(240px + var(--gap))}}
+
+/* index: full width from the padding, no TOC column */
+.index{container-type:inline-size;min-width:0}
+.index .post-head{padding-top:32px}
+@media (min-width:1024px){.index .post-head{padding-top:40px}}
+.index h2{font:600 23px/1.22 var(--serif);letter-spacing:-.01em;margin:0}
+@media (min-width:600px){.index h2{font-size:27px}}
+
+/* the six-step strip, drawn in the ladder grammar */
+.frame{margin-top:36px;scroll-margin-top:20px}
+.strip{margin:0}
+.strip .fig-title{margin-bottom:10px}
+.strip .trk{fill:var(--rule)}
+.strip .t-num{fill:var(--meta)}
+.strip .t-short{font-size:13.5px;fill:var(--meta)}
+.strip .fig-cap{margin-top:8px}
+.steps-text li{padding-left:.25em}
+.steps-text li b{font-weight:600;font-family:var(--serif)}
+@container (min-width:1680px){.index .strip svg.s1792{display:block;max-width:1900px}}
+@container (min-width:1460px) and (max-width:1679.98px){.index .strip svg.s1560{display:block;max-width:1747px}}
+@container (min-width:1270px) and (max-width:1459.98px){.index .strip svg.s1360{display:block;max-width:1523px}}
+@container (min-width:1180px) and (max-width:1269.98px){.index .strip svg.s1180{display:block;max-width:1321px}}
+@container (min-width:1000px) and (max-width:1179.98px){.index .strip svg.s1090{display:block;max-width:1220px}}
+@container (min-width:800px) and (max-width:999.98px){.index .strip svg.s900{display:block;max-width:1008px}}
+@container (min-width:620px) and (max-width:799.98px){.index .strip svg.s700{display:block;max-width:784px}}
+@container (min-width:500px) and (max-width:619.98px){.index .strip svg.s520{display:block;max-width:582px}}
+@container (max-width:499.98px){.index .strip svg.s360{display:block;max-width:420px}}
+
+/* the directory: two columns from 1100, rows not cards */
+.ix-cols{display:grid;grid-template-columns:minmax(0,1fr);gap:44px;margin-top:56px}
+@container (min-width:1100px){.ix-cols{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:64px}}
+.ix-head{display:flex;align-items:baseline;gap:12px;margin:0;padding-bottom:12px;border-bottom:1px solid var(--rule)}
+.ix-count{font:500 13.5px/1 var(--sans);color:var(--meta);font-variant-numeric:tabular-nums}
+.ix-list{list-style:none;margin:0;padding:0}
+.ix-list li{border-bottom:1px solid var(--rule);scroll-margin-top:24px}
+.ix-row{display:grid;grid-template-columns:44px minmax(0,1fr) auto;column-gap:16px;align-items:start;min-height:64px;padding:14px 0 15px;color:inherit;text-decoration:none}
+.ix-body{min-width:0}
+.ix-n{font:600 14px/27px var(--sans);color:var(--meta);font-variant-numeric:tabular-nums}
+/* emergencies: the same filled mark as step 1, nothing louder */
+#emergency .ix-head h2{color:var(--accent)}
+#emergency .ix-n{color:var(--accent)}
+#emergency .ix-n::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--fig-3);margin:0 7px 2px 0;vertical-align:middle}
+.live .ix-n{color:var(--accent)}
+.ix-title{display:block;font:400 21px/1.3 var(--serif);color:var(--ink);text-wrap:pretty;transition:color .15s}
+.live .ix-title{font-weight:600}
+.ix-page{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font:400 15.5px/1.5 var(--serif);color:var(--meta);margin:3px 0 0;max-width:70ch}
+.ix-k{display:inline-block;min-width:2.4em;font:600 10.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--meta);margin-right:2px}
+.ix-right{display:flex;align-items:center;gap:9px;height:27px;color:var(--meta);transition:color .15s}
+.ix-soon{font:500 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.glyph{width:20px;height:12px;display:block;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.glyph .d{fill:currentColor;stroke:none}
+a.ix-row:hover .ix-title,a.ix-row:focus-visible .ix-title{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:var(--accent-rule);text-underline-offset:3px}
+a.ix-row:hover .ix-right{color:var(--accent)}
+@keyframes ix-target{from{background-color:var(--tint)}to{background-color:transparent}}
+.ix-list li:target{animation:ix-target 1.6s ease-out both}
+@media (max-width:599.98px){
+  .ix-row{grid-template-columns:40px minmax(0,1fr);column-gap:12px;padding:13px 0 14px}
+  .ix-title{font-size:19px}
+  .ix-right{grid-column:2;height:auto;margin-top:5px}
+}
+
+/* patient safety habits: hairline cards, primary figure open, the rest under More */
+.habits{margin-top:64px;scroll-margin-top:20px}
+.hlead{font:400 18px/1.5 var(--serif);color:var(--meta);margin:6px 0 0;max-width:70ch}
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:22px}
+@container (min-width:720px){.hgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
+@container (min-width:1500px){.hgrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}}
+.hcard{border:1px solid var(--rule);border-radius:3px;padding:18px 20px 16px;min-width:0;display:flex;flex-direction:column}
+.hcard h3{font:600 16px/1.3 var(--sans);margin:0 0 4px}
+.hsub{font:15px/1.45 var(--serif);color:var(--meta);margin:0 0 14px}
+.hnote{font:13.5px/1.45 var(--serif);color:var(--meta);margin:10px 0 0}
+.hcard .fig-text{margin-top:auto;padding-top:10px}
+.hsrc{font:12.5px/1.45 var(--sans);color:var(--meta);margin:8px 0 0}
+.hsrc a{color:var(--meta)}
+.hsrc a:hover{color:var(--accent)}
+.after{margin-top:8px}
+.after-label{font:600 11px/1.35 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--meta);margin:0 0 6px}
+.after+.hsrc{margin-top:12px}
+.rows{display:grid;grid-template-columns:minmax(0,1fr);margin:0;font:14px/1.45 var(--sans);border-top:1px solid var(--rule)}
+.rows dt{font-weight:600;color:var(--accent);padding:7px 0 0}
+.rows dd{margin:0;padding:1px 0 7px;border-bottom:1px solid var(--rule)}
+.seq{list-style:none;counter-reset:q;margin:0;padding:0;font:14px/1.45 var(--sans)}
+.seq li{counter-increment:q;position:relative;padding:4px 0 6px 32px}
+.seq li::before{content:counter(q);position:absolute;left:0;top:4px;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);font:600 12px/19px var(--sans);text-align:center;font-variant-numeric:tabular-nums;background:var(--sheet)}
+.seq li:not(:last-child)::after{content:"";position:absolute;left:11px;top:28px;bottom:-4px;border-left:1px solid var(--rule)}
+.seq li b{display:block;font-weight:600}
+.seq li span{display:block}
+.ladder{list-style:none;display:flex;flex-direction:column;gap:8px;margin:0;padding:0;font:14px/1.45 var(--sans)}
+.rung{display:grid;grid-template-columns:2em minmax(0,1fr);column-gap:10px;padding:3px 0 3px 12px;border-left:2px solid var(--fig-1)}
+.rung.r2{border-left-color:var(--fig-2)}
+.rung.r3{border-left-color:var(--fig-3)}
+.rung b{font-weight:600}
+.ladder.wide .rung{grid-template-columns:minmax(0,1fr);row-gap:1px}
+.checks{list-style:none;margin:0;padding:0;font:14px/1.45 var(--sans)}
+.checks li{position:relative;padding:5px 0 5px 24px;border-bottom:1px solid var(--rule)}
+.checks li:first-child{border-top:1px solid var(--rule)}
+.checks li::before{content:"";position:absolute;left:0;top:.68em;width:11px;height:11px;border:1.5px solid var(--meta);border-radius:2px}
+.ptcard{margin:0;background:var(--tint);border-left:2px solid var(--accent);border-radius:0 2px 2px 0;padding:10px 14px 12px;font:14px/1.45 var(--sans)}
+.pt-top{margin-bottom:6px}
+.ptcard dl{margin:0}
+.ptcard dt{font:600 11px/1.35 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--meta);margin-top:7px}
+.ptcard dd{margin:0}
+.pt-note{font:13px/1.45 var(--serif);color:var(--meta);margin:8px 0 0}
+
+
+/* nested lines, sub-heads inside a section, plain paragraphs */
+.post .sublist{list-style:disc;margin:6px 0 2px;padding-left:1.15em;columns:auto;font:inherit}
+.post .sublist li{display:list-item;counter-increment:none;padding:0 0 0 .2em;margin:4px 0 0;break-inside:auto;position:static}
+.post .sublist li::before{content:none}
+.post .sublist li::marker{color:var(--meta)}
+.orders .sublist{font:400 15px/1.5 var(--sans)}
+.subhead{font:600 12px/1.4 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--meta);margin:26px 0 10px}
+.sec-head+.subhead,.subhead:first-child{margin-top:0}
+.para{margin:0 0 10px}
+.ift-plain{grid-column:2 / -1}
+
+/* review build only: the banner and the lines still to check by hand */
+.banner{font:600 13px/1.4 var(--sans);color:var(--accent);background:var(--flash);padding:9px var(--pad);margin:0 calc(-1*var(--pad))}
+.banner a{color:inherit}
+.hand{font:12.5px/1.45 var(--sans);color:var(--meta);border:1px dashed var(--meta);border-radius:3px;padding:1px 6px;margin-left:6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.foot details{margin-top:12px}
+.foot summary{cursor:pointer;color:var(--accent);font-weight:600}
+.foot ul{margin:8px 0 0;padding-left:1.1em}
+
+@media print{
+  body{background:#fff}
+  .sheet{margin:0;box-shadow:none;padding:0}
+  .toc,.theme-btn,.pop,.quiz-btn,.reveal,.anchor,.banner,.hand{display:none!important}
+  .layout{display:block}
+  .quiz .ans{display:block!important}
+  .rail-in{position:static}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+/* figures: ladder, fork, gauge. Marks use a one-hue ramp (watch / act / act now); text uses the page tokens. */
+:root{--fig-1:#c98a94;--fig-2:#a4505c;--fig-3:#8e2634;--fig-track:#f7f3ee;--fig-line:rgba(29,27,26,.55)}
+html[data-theme="dark"]{--fig-1:#80474f;--fig-2:#a85a66;--fig-3:#cf6e7b;--fig-track:#252120;--fig-line:rgba(232,227,221,.55)}
+.fig{margin:30px 0 0;padding:0}
+/* A figure in a half-width .pair column picks its 900 / 600 / 360 layout from the column, not the page. */
+.pair .fig{container-type:inline-size}
+.sec .fig{margin-top:26px}
+.fig+.sec,.fig+.pair{margin-top:40px}
+.fig figcaption{display:contents}
+.fig-title{font:600 15.5px/1.35 var(--sans);color:var(--ink);margin:0 0 12px;max-width:70ch}
+.fig-cap{font:13.5px/1.5 var(--sans);color:var(--meta);margin:6px 0 0;max-width:80ch}
+.fig-text{margin:12px 0 0;max-width:80ch}
+.fig-text summary{font:600 13px/1.4 var(--sans);color:var(--accent);cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;min-height:32px}
+.fig-text summary::-webkit-details-marker{display:none}
+.fig-text summary::before{content:"";width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
+.fig-text[open] summary::before{transform:rotate(45deg)}
+.fig-text .plain{margin-top:6px}
+.fig-text .ifthen{margin-top:6px}
+.fig-text .qlead{font:600 16px/1.4 var(--serif);margin:10px 0 2px}
+.fig svg.v{display:none;width:100%;height:auto;overflow:visible;font-family:var(--sans)}
+.fig svg.v900{display:block;max-width:990px}
+@container (max-width:779.98px){.fig svg.v900{display:none}.fig svg.v600{display:block;max-width:660px}}
+@container (max-width:519.98px){.fig svg.v600{display:none}.fig svg.v360{display:block;max-width:420px}}
+.fig text{fill:var(--ink)}
+.fig .t-val{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.fig .t-lab{font-size:14.5px}
+.fig .t-meta,.fig tspan.t-meta{font-size:13px;fill:var(--meta)}
+.fig .t-now{font-size:12.5px;font-weight:600;fill:var(--meta)}
+.fig .t-root{font-family:var(--serif);font-size:16.5px;font-weight:600}
+.fig .t-act{font-family:var(--serif);font-size:15.5px;font-weight:600}
+.fig .t-kick{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;fill:var(--accent)}
+.fig .t-cut{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+.fig .t-zone{font-size:12.5px;fill:var(--meta)}
+.fig .t-src{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;fill:var(--meta)}
+.fig .chip{fill:var(--amber-bg)}
+.fig .t-chip{font-size:11.5px;font-weight:600;fill:var(--amber)}
+.fig .band-v.hollow{fill:none;stroke:var(--fig-1);stroke-width:1.5;stroke-dasharray:3 3}
+.fig .r1{fill:var(--fig-1)}.fig .r2{fill:var(--fig-2)}.fig .r3{fill:var(--fig-3)}
+.fig .gs{stop-color:var(--fig-3)}
+.fig .axis{stroke:var(--rule);stroke-width:1}
+.fig .dot{stroke:var(--sheet);stroke-width:2}
+.fig .dot.hollow{fill:var(--sheet);stroke:var(--fig-1);stroke-width:2}
+.fig .band{fill:var(--tint)}
+.fig .ln{stroke:var(--fig-line);stroke-width:1.5;fill:none;stroke-linecap:round}
+.fig .arr{fill:var(--fig-line)}
+.fig .node{fill:var(--fig-3);fill-opacity:.07;stroke:var(--fig-3);stroke-width:1.5}
+html[data-theme="dark"] .fig .node{fill-opacity:.12}
+.gauge{display:grid;grid-template-columns:150px minmax(0,1fr);column-gap:24px;row-gap:6px;max-width:990px;align-items:start}
+.g-row{display:contents}
+.g-label{padding-top:19px;font:600 14.5px/1.3 var(--sans)}
+.g-unit{display:block;font:400 13px/1.4 var(--sans);color:var(--meta)}
+.g-chip{display:block;margin-top:5px}
+.g-chip .varies{margin:0;top:0}
+.track{display:block;width:100%;overflow:visible;font-family:var(--sans)}
+.track .trk{fill:var(--fig-track);stroke:var(--rule);stroke-width:1}
+.track .tick{stroke:var(--ink);stroke-width:1}
+@container (max-width:779.98px){.gauge{grid-template-columns:118px minmax(0,1fr);column-gap:18px}}
+@container (max-width:519.98px){
+  .gauge{grid-template-columns:minmax(0,1fr);row-gap:0}
+  .g-label{padding-top:8px}.g-label .g-unit{display:inline;margin-left:6px}.g-label .g-chip{display:inline;margin-left:8px}
+  .g-row+.g-row .g-label{margin-top:6px}
+}
+@media print{.fig svg.v{display:none}.fig svg.v900{display:block}.fig-text{display:block}.fig-text summary{display:none}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#top">Skip to content</a>
+<div class="sheet">
+<div id="stale" class="banner" hidden>This is a saved copy. A newer version exists. <a href="./" onclick="location.reload();return false">Reload</a></div>
+<div class="topline"><p class="disclaimer">Personal study notes. Not medical advice.</p><div class="topnav"><a href="https://sashajoo.github.io/">Sasha Zhu</a><a href="index.html#call-8">All notes</a><button type="button" class="theme-btn" id="theme-btn" aria-label="Color theme">Theme: <span id="theme-val">Auto</span></button></div></div>
+<div class="layout">
+  <nav class="toc" id="toc" aria-label="On this page">
+    <button type="button" class="toc-bar" id="toc-bar" aria-expanded="false" aria-controls="toc-list">
+      <span class="toc-bar-label">On this page</span><span class="toc-bar-cur" id="toc-cur"></span><span class="chev" aria-hidden="true"></span>
+    </button>
+    <div class="toc-list" id="toc-list">
+      <div class="toc-group"><p class="toc-label">Bedside</p><ul><li><a href="#sick" data-target="sick">Danger signs</a></li><li><a href="#first-steps" data-target="first-steps">First steps</a></li><li><a href="#key-decision" data-target="key-decision">Key decision</a></li><li><a href="#worst-first" data-target="worst-first">Do not miss</a></li><li><a href="#orders" data-target="orders">Orders and tests</a></li><li><a href="#call-senior" data-target="call-senior">Call the senior</a></li></ul></div><div class="toc-group"><p class="toc-label">After</p><ul><li><a href="#follow-up" data-target="follow-up">Follow up</a></li><li><a href="#expected" data-target="expected">Normal or warning sign</a></li><li><a href="#avoid" data-target="avoid">Avoid</a></li></ul></div><div class="toc-group"><p class="toc-label">Study</p><ul><li><a href="#questions" data-target="questions">Study questions</a></li><li><a href="#sources" data-target="sources">Sources</a></li></ul></div>
+      <p class="toc-foot"><a href="low-urine-output-card.html">Pocket card</a><a href="index.html#call-8">All notes</a></p>
+    </div>
+  </nav>
+  <main class="post" id="top" tabindex="-1"><article>
+    <header class="post-head">
+      <h1>Low urine output after surgery</h1>
+      <p class="meta"><span>Common call</span><span class="dot" aria-hidden="true"></span><span>Sasha Zhu</span><span class="dot" aria-hidden="true"></span><span>Reviewed, version 0.1</span><span class="dot" aria-hidden="true"></span><span>Last checked 2026-10-11</span><span class="dot" aria-hidden="true"></span><span><a href="low-urine-output-card.html">Pocket card</a></span></p>
+      <div class="pager"><p class="pager-label">Page</p><p class="pager-text">RN: Mr. X, bed 12, POD 1 after robotic partial nephrectomy. The Foley put out 40 mL in 3 hours.</p></div>
+      <p class="abbr">Abbreviations: RN, registered nurse; POD, postoperative day; KDIGO, Kidney Disease: Improving Global Outcomes; AKI, acute kidney injury; HR, heart rate; BP, blood pressure; CBC, complete blood count; Hgb, hemoglobin; PT/INR, prothrombin time / international normalized ratio; PTT, partial thromboplastin time; ECG, electrocardiogram; FENa, fractional excretion of sodium; I/O, intake and output; NSAIDs, nonsteroidal anti-inflammatory drugs; CT, computed tomography; IV, intravenous; ADH, antidiuretic hormone; IR, interventional radiology; MI, heart attack (myocardial infarction).</p>
+    </header>
+    <figure class="fig fig-gauge" id="luo-gauge"><figcaption><p class="fig-title">Low urine output: how low, and for how long</p></figcaption><div class="gauge"><div class="g-row"><div class="g-label"><span class="g-name">Urine output, 2 hours</span><span class="g-unit">mL/kg/h</span></div><svg class="track" width="100%" height="58" style="height:58px" role="img" aria-label="Urine output, 2 hours"><rect class="trk" x="0" y="22" width="100%" height="12" rx="2"/><rect class="r3 zone" x="0" y="22" width="33.13%" height="12" rx="2"/><line class="tick" x1="33.33%" y1="17" x2="33.33%" y2="39"/><text class="t-cut" text-anchor="middle" x="33.33%" y="12">0.5</text><text class="t-zone" text-anchor="start" x="0" y="54">under 0.5 for 2 hours: monitor more closely</text></svg></div><div class="g-row"><div class="g-label"><span class="g-name">Urine output, 6 hours</span><span class="g-unit">mL/kg/h</span></div><svg class="track" width="100%" height="58" style="height:58px" role="img" aria-label="Urine output, 6 hours"><rect class="trk" x="0" y="22" width="100%" height="12" rx="2"/><rect class="r3 zone" x="0" y="22" width="33.13%" height="12" rx="2"/><line class="tick" x1="33.33%" y1="17" x2="33.33%" y2="39"/><text class="t-cut" text-anchor="middle" x="33.33%" y="12">0.5</text><text class="t-zone" text-anchor="start" x="0" y="54">under 0.5 for 6 hours: KDIGO stage 1 AKI</text></svg></div></div><p class="fig-cap">Read the rate and the hours together. About 35 mL/h in a 70-kg adult.<sup class="cite"><a href="#src-1" data-n="1" data-sec="" aria-label="Source 1">1</a>,<a href="#src-2" data-n="2" data-sec="" aria-label="Source 2">2</a></sup></p><details class="fig-text"><summary>Text version</summary><ul class="plain"><li>Not expected: under 0.5 mL/kg/h for 6 hours. That meets KDIGO stage 1 AKI.<sup class="cite"><a href="#src-2" data-n="2" data-sec="Definition/Introduction" aria-label="Source 2: Definition/Introduction">2</a></sup></li></ul></details></figure><div class="pair"><section class="sec sec-sick" id="sick" aria-labelledby="h-sick"><div class="sec-head"><h2 id="h-sick"><a class="anchor" href="#sick" aria-label="Link to this section">#</a>Danger signs</h2></div><ul class="sick"><li>HR up, BP down, cool skin, Hgb falling: think bleeding. Tachycardia often comes first.<sup class="cite"><a href="#src-3" data-n="3" data-sec="Pearls and Other Issues" aria-label="Source 3: Pearls and Other Issues">3</a>,<a href="#src-4" data-n="4" data-sec="Evaluation" aria-label="Source 4: Evaluation">4</a></sup></li><li>No urine at all: think blocked Foley, other obstruction, or blocked renal vessel.<sup class="cite"><a href="#src-5" data-n="5" data-sec="History and Physical" aria-label="Source 5: History and Physical">5</a>,<a href="#src-6" data-n="6" data-sec="Differential Diagnosis" aria-label="Source 6: Differential Diagnosis">6</a></sup></li><li>Fever, fast pulse, swollen belly, or low BP: think urine leak or sepsis.<sup class="cite"><a href="#src-7" data-n="7" data-sec="Perioperative complications" aria-label="Source 7: Perioperative complications">7</a>,<a href="#src-8" data-n="8" data-sec="Postoperative CT imaging" aria-label="Source 8: Postoperative CT imaging">8</a></sup></li><li>Severe high potassium: an emergency too.<sup class="cite"><a href="#src-5" data-n="5" data-sec="Complications" aria-label="Source 5: Complications">5</a></sup></li></ul></section><section class="sec sec-first-steps" id="first-steps" aria-labelledby="h-first-steps"><div class="sec-head"><h2 id="h-first-steps"><a class="anchor" href="#first-steps" aria-label="Link to this section">#</a>First steps</h2></div><ol class="steps"><li><div>See the patient: vitals, belly, flanks, wound, every drain.<sup class="cite"><a href="#src-4" data-n="4" data-sec="Evaluation" aria-label="Source 4: Evaluation">4</a>,<a href="#src-9" data-n="9" data-sec="Nursing, Allied Health, and Interprofessional Team…" aria-label="Source 9: Nursing, Allied Health, and Interprofessional Team…">9</a></sup></div></li><li><div>Trace the Foley and tubing for kinks and clots. Note each tube's output.<sup class="cite"><a href="#src-1" data-n="1" data-sec="Treatment and management" aria-label="Source 1: Treatment and management">1</a>,<a href="#src-9" data-n="9" data-sec="Nursing, Allied Health, and Interprofessional Team…" aria-label="Source 9: Nursing, Allied Health, and Interprofessional Team…">9</a></sup></div></li><li><div>Bladder scan. Full bladder with a Foley in: it is not draining.<sup class="cite"><a href="#src-1" data-n="1" data-sec="History and Physical; Enhancing Healthcare Team Outcomes" aria-label="Source 1: History and Physical; Enhancing Healthcare Team Outcomes">1</a>,<a href="#src-10" data-n="10" data-sec="Evaluation" aria-label="Source 10: Evaluation">10</a></sup></div></li><li><div>Blocked catheter:<ul class="sublist"><li>After prostatectomy or bladder repair, ask your senior before any flush <span class="nw"><span class="varies">varies by site</span>.</span> After neobladder, flush gently with saline on the team's schedule, and whenever it stops draining or mucus seems to block it <span class="nw"><span class="varies">varies by site</span>.</span> Never force. Call if nothing comes back.<sup class="cite"><a href="#src-11" data-n="11" data-sec="Postoperative and Rehabilitation Care" aria-label="Source 11: Postoperative and Rehabilitation Care">11</a>,<a href="#src-12" data-n="12" data-sec="Discussion and Conclusions" aria-label="Source 12: Discussion and Conclusions">12</a>,<a href="#src-13" data-n="13" data-sec="How to irrigate your catheter" aria-label="Source 13: How to irrigate your catheter">13</a>,<a href="#src-14" data-n="14" data-sec="Single catheter drainage of neobladder" aria-label="Source 14: Single catheter drainage of neobladder">14</a></sup></li><li>Otherwise flush gently <span class="nw"><span class="varies">varies by site</span>.</span> Still blocked: catheter change, with your senior.<sup class="cite"><a href="#src-1" data-n="1" data-sec="Treatment and management" aria-label="Source 1: Treatment and management">1</a>,<a href="#src-15" data-n="15" data-sec="Complications" aria-label="Source 15: Complications">15</a></sup></li></ul></div></li><li><div>Send chemistry (potassium, creatinine) and CBC. Call your senior.<sup class="cite"><a href="#src-4" data-n="4" data-sec="Evaluation" aria-label="Source 4: Evaluation">4</a>,<a href="#src-5" data-n="5" data-sec="Evaluation" aria-label="Source 5: Evaluation">5</a></sup></div></li></ol></section></div><section class="sec sec-key-decision" id="key-decision" aria-labelledby="h-key-decision"><div class="sec-head"><h2 id="h-key-decision"><a class="anchor" href="#key-decision" aria-label="Link to this section">#</a>Key decision</h2></div><div class="ifthen" role="list"><div class="ift" role="listitem"><span class="ift-if">If</span><span class="ift-cond">full bladder on scan, or clot or mucus on flush</span><span class="ift-then"><span class="arrow" aria-hidden="true">→</span><span class="ift-act"><span class="vh">then </span>catheter problem. Fix drainage first.<sup class="cite"><a href="#src-1" data-n="1" data-sec="Treatment and management" aria-label="Source 1: Treatment and management">1</a>,<a href="#src-16" data-n="16" data-sec="Post-operative care and complications" aria-label="Source 16: Post-operative care and complications">16</a></sup></span></span></div><div class="ift" role="listitem"><span class="ift-if">If</span><span class="ift-cond">HR up, BP down, or Hgb falling</span><span class="ift-then"><span class="arrow" aria-hidden="true">→</span><span class="ift-act"><span class="vh">then </span>treat as bleeding. Call your senior now.<sup class="cite"><a href="#src-4" data-n="4" data-sec="Treatment and management" aria-label="Source 4: Treatment and management">4</a>,<a href="#src-8" data-n="8" data-sec="Postoperative CT imaging" aria-label="Source 8: Postoperative CT imaging">8</a></sup></span></span></div><div class="ift" role="listitem"><span class="ift-if">If</span><span class="ift-cond">catheter drains, vitals stable, drain output rising</span><span class="ift-then"><span class="arrow" aria-hidden="true">→</span><span class="ift-act"><span class="vh">then </span>think urine leak. Send drain creatinine.<sup class="cite"><a href="#src-7" data-n="7" data-sec="Perioperative complications" aria-label="Source 7: Perioperative complications">7</a>,<a href="#src-17" data-n="17" data-sec="Evaluation" aria-label="Source 17: Evaluation">17</a></sup></span></span></div></div></section><section class="sec sec-worst-first" id="worst-first" aria-labelledby="h-worst-first"><div class="sec-head"><h2 id="h-worst-first"><a class="anchor" href="#worst-first" aria-label="Link to this section">#</a>Do not miss</h2></div><ol class="worst"><li><div>Bleeding: the most common early problem after laparoscopic partial nephrectomy.<sup class="cite"><a href="#src-8" data-n="8" data-sec="Haemorrhagic and vascular complications" aria-label="Source 8: Haemorrhagic and vascular complications">8</a></sup></div></li><li><div>Obstruction: blocked Foley, clot, mucus, or a blocked ureter.<sup class="cite"><a href="#src-1" data-n="1" data-sec="Etiology" aria-label="Source 1: Etiology">1</a>,<a href="#src-6" data-n="6" data-sec="Differential Diagnosis" aria-label="Source 6: Differential Diagnosis">6</a>,<a href="#src-16" data-n="16" data-sec="Post-operative care and complications" aria-label="Source 16: Post-operative care and complications">16</a></sup></div></li><li><div>Urine leak or missed ureteral injury. Can cause ileus and an infected urinoma.<sup class="cite"><a href="#src-8" data-n="8" data-sec="Urine leaks and urinomas" aria-label="Source 8: Urine leaks and urinomas">8</a>,<a href="#src-17" data-n="17" data-sec="Complications" aria-label="Source 17: Complications">17</a>,<a href="#src-18" data-n="18" data-sec="Complications" aria-label="Source 18: Complications">18</a></sup></div></li><li><div>Heart injury or MI. A weak heart cuts blood flow to the kidney. After surgery it is often silent; troponin finds it.<sup class="cite"><a href="#src-6" data-n="6" data-sec="Pathophysiology" aria-label="Source 6: Pathophysiology">6</a>,<a href="#src-19" data-n="19" data-sec="Management considerations" aria-label="Source 19: Management considerations">19</a></sup></div></li></ol></section><section class="sec sec-orders" id="orders" aria-labelledby="h-orders"><div class="sec-head"><h2 id="h-orders"><a class="anchor" href="#orders" aria-label="Link to this section">#</a>Orders and tests</h2></div><figure class="fig fig-ladder" id="sepsis-clock"><figcaption><p class="fig-title">When antibiotics are due in sepsis</p></figcaption><svg class="v v900" viewBox="0 0 900 148" width="900" height="148" role="img" aria-label="When antibiotics are due in sepsis"><defs><linearGradient id="sepsis-clock-tail-h900"><stop offset="0" class="gs"/><stop offset="1" class="gs" stop-opacity="0"/></linearGradient></defs><line class="axis" x1="32" y1="18" x2="864" y2="18"/><text class="t-val" text-anchor="middle"><tspan x="64" y="48">0 h</tspan></text><text class="t-lab" text-anchor="middle"><tspan x="64" y="72">Sepsis</tspan><tspan x="64" y="90">suspected: see</tspan><tspan x="64" y="108">the patient, call</tspan><tspan x="64" y="126">your senior</tspan></text><text class="t-val" text-anchor="middle"><tspan x="427" y="48">1 h</tspan></text><text class="t-lab" text-anchor="middle"><tspan x="427" y="72">Shock possible or sepsis likely:</tspan><tspan x="427" y="90">broad-spectrum antibiotics within 1 hour</tspan></text><text class="t-val" text-anchor="middle"><tspan x="790" y="48">3 h</tspan></text><text class="t-lab" text-anchor="middle"><tspan x="790" y="72">Possible sepsis without</tspan><tspan x="790" y="90">shock: antibiotics within 3</tspan><tspan x="790" y="108">hours if concern persists</tspan></text><rect class="r3" x="72" y="16" width="347" height="4" rx="2"/><rect class="r3" x="435" y="16" width="347" height="4" rx="2"/><rect style="fill:url(#sepsis-clock-tail-h900)" x="798" y="16" width="66" height="4" rx="2"/><circle class="dot r3" cx="64" cy="18" r="6.5"/><circle class="dot r3" cx="427" cy="18" r="6.5"/><circle class="dot r2" cx="790" cy="18" r="6.5"/></svg><svg class="v v600" viewBox="0 0 600 192" width="600" height="192" role="img" aria-label="When antibiotics are due in sepsis"><defs><linearGradient id="sepsis-clock-tail-600" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="gs"/><stop offset="1" class="gs" stop-opacity="0"/></linearGradient></defs><line class="axis" x1="92" y1="16" x2="92" y2="192"/><rect class="r3" x="90" y="34" width="4" height="42" rx="2"/><rect class="r3" x="90" y="92" width="4" height="42" rx="2"/><rect style="fill:url(#sepsis-clock-tail-600)" x="90" y="150" width="4" height="42" rx="2"/><circle class="dot r3" cx="92" cy="26" r="6.5"/><text class="t-val" text-anchor="end"><tspan x="78" y="31">0 h</tspan></text><text class="t-lab"><tspan x="116" y="31">Sepsis suspected: see the patient, call your senior</tspan></text><circle class="dot r3" cx="92" cy="84" r="6.5"/><text class="t-val" text-anchor="end"><tspan x="78" y="89">1 h</tspan></text><text class="t-lab"><tspan x="116" y="89">Shock possible or sepsis likely: broad-spectrum antibiotics within 1</tspan><tspan x="116" y="107">hour</tspan></text><circle class="dot r2" cx="92" cy="142" r="6.5"/><text class="t-val" text-anchor="end"><tspan x="78" y="147">3 h</tspan></text><text class="t-lab"><tspan x="116" y="147">Possible sepsis without shock: antibiotics within 3 hours if concern</tspan><tspan x="116" y="165">persists</tspan></text></svg><svg class="v v360" viewBox="0 0 360 228" width="360" height="228" role="img" aria-label="When antibiotics are due in sepsis"><defs><linearGradient id="sepsis-clock-tail-360" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="gs"/><stop offset="1" class="gs" stop-opacity="0"/></linearGradient></defs><line class="axis" x1="84" y1="16" x2="84" y2="228"/><rect class="r3" x="82" y="34" width="4" height="42" rx="2"/><rect class="r3" x="82" y="92" width="4" height="60" rx="2"/><rect style="fill:url(#sepsis-clock-tail-360)" x="82" y="168" width="4" height="60" rx="2"/><circle class="dot r3" cx="84" cy="26" r="6.5"/><text class="t-val" text-anchor="end"><tspan x="70" y="31">0 h</tspan></text><text class="t-lab"><tspan x="108" y="31">Sepsis suspected: see the patient,</tspan><tspan x="108" y="49">call your senior</tspan></text><circle class="dot r3" cx="84" cy="84" r="6.5"/><text class="t-val" text-anchor="end"><tspan x="70" y="89">1 h</tspan></text><text class="t-lab"><tspan x="108" y="89">Shock possible or sepsis likely:</tspan><tspan x="108" y="107">broad-spectrum antibiotics within</tspan><tspan x="108" y="125">1 hour</tspan></text><circle class="dot r2" cx="84" cy="160" r="6.5"/><text class="t-val" text-anchor="end"><tspan x="70" y="165">3 h</tspan></text><text class="t-lab"><tspan x="108" y="165">Possible sepsis without shock:</tspan><tspan x="108" y="183">antibiotics within 3 hours if</tspan><tspan x="108" y="201">concern persists</tspan></text></svg><p class="fig-cap">Hours from when sepsis is first suspected. Spacing not to scale.<sup class="cite"><a href="#src-25" data-n="25" data-sec="Time to antibiotics, Recommendations 13-14; Time to antibiotics, Recommendation 12" aria-label="Source 25: Time to antibiotics, Recommendations 13-14; Time to antibiotics, Recommendation 12">25</a></sup></p><details class="fig-text"><summary>Text version</summary><ul class="plain"><li>Antibiotics: broad-spectrum, within 1 hour if shock is possible or sepsis is likely. Call your senior now.<sup class="cite"><a href="#src-25" data-n="25" data-sec="Time to antibiotics, Recommendation 12" aria-label="Source 25: Time to antibiotics, Recommendation 12">25</a></sup></li><li>Possible sepsis without shock: see the patient, call your senior; antibiotics within 3 hours if concern persists.<sup class="cite"><a href="#src-25" data-n="25" data-sec="Time to antibiotics, Recommendations 13-14" aria-label="Source 25: Time to antibiotics, Recommendations 13-14">25</a></sup></li></ul></details></figure><ul class="orders"><li>Who may order what alone <span class="nw"><span class="varies">varies by site</span>.</span> Ask your senior early.</li><li>Labs: chemistry with potassium and creatinine, CBC.<sup class="cite"><a href="#src-4" data-n="4" data-sec="Evaluation" aria-label="Source 4: Evaluation">4</a>,<a href="#src-5" data-n="5" data-sec="Evaluation" aria-label="Source 5: Evaluation">5</a></sup></li><li>Bleeding possible: add type and crossmatch, PT/INR, PTT, lactate.<sup class="cite"><a href="#src-4" data-n="4" data-sec="Evaluation" aria-label="Source 4: Evaluation">4</a></sup></li><li>ECG if potassium is high: it can cause arrhythmias.<sup class="cite"><a href="#src-5" data-n="5" data-sec="Treatment and management; Complications" aria-label="Source 5: Treatment and management; Complications">5</a></sup></li><li>Troponin and ECG if a heart cause is possible. Most heart injury after surgery has no chest pain.<sup class="cite"><a href="#src-19" data-n="19" data-sec="Management considerations" aria-label="Source 19: Management considerations">19</a>,<a href="#src-20" data-n="20" data-sec="Results, Reporting, and Critical Findings" aria-label="Source 20: Results, Reporting, and Critical Findings">20</a></sup></li><li>Bleeding, low BP or a fast pulse can strain the heart too.<sup class="cite"><a href="#src-19" data-n="19" data-sec="Pathophysiology" aria-label="Source 19: Pathophysiology">19</a>,<a href="#src-20" data-n="20" data-sec="Interfering Factors" aria-label="Source 20: Interfering Factors">20</a></sup></li><li>Kidney injury can raise troponin on its own. Your senior reads the trend, not one value <span class="nw"><span class="varies">varies by site</span>.</span><sup class="cite"><a href="#src-20" data-n="20" data-sec="Interfering Factors; Clinical Significance" aria-label="Source 20: Interfering Factors; Clinical Significance">20</a></sup></li><li>Urine: urinalysis, urine sodium, urine creatinine. Collect before fluids or diuretics.<sup class="cite"><a href="#src-1" data-n="1" data-sec="Evaluation" aria-label="Source 1: Evaluation">1</a></sup></li><li>FENa is not reliable after diuretics.<sup class="cite"><a href="#src-4" data-n="4" data-sec="Evaluation" aria-label="Source 4: Evaluation">4</a>,<a href="#src-5" data-n="5" data-sec="Evaluation" aria-label="Source 5: Evaluation">5</a></sup></li><li>Strict I/O, hourly urine output. Chart each tube on its own <span class="nw"><span class="varies">varies by site</span>.</span><sup class="cite"><a href="#src-1" data-n="1" data-sec="Treatment and management" aria-label="Source 1: Treatment and management">1</a>,<a href="#src-9" data-n="9" data-sec="Nursing, Allied Health, and Interprofessional Team…" aria-label="Source 9: Nursing, Allied Health, and Interprofessional Team…">9</a></sup></li><li>Fluids if dry: crystalloid first; your senior sets the volume.<sup class="cite"><a href="#src-1" data-n="1" data-sec="Treatment and management" aria-label="Source 1: Treatment and management">1</a>,<a href="#src-4" data-n="4" data-sec="Treatment and management" aria-label="Source 4: Treatment and management">4</a></sup></li><li>Bleeding: the senior may give blood instead of more crystalloid.<sup class="cite"><a href="#src-3" data-n="3" data-sec="Treatment and management" aria-label="Source 3: Treatment and management">3</a>,<a href="#src-4" data-n="4" data-sec="Treatment and management" aria-label="Source 4: Treatment and management">4</a></sup></li><li>After fluid, recheck HR, BP, urine output and lungs.<sup class="cite"><a href="#src-4" data-n="4" data-sec="Treatment and management" aria-label="Source 4: Treatment and management">4</a></sup></li><li>Do not give starch solutions.<sup class="cite"><a href="#src-6" data-n="6" data-sec="Treatment and management" aria-label="Source 6: Treatment and management">6</a></sup></li><li>Hold NSAIDs and other nephrotoxins, with your senior <span class="nw"><span class="varies">varies by site</span>.</span><sup class="cite"><a href="#src-1" data-n="1" data-sec="Treatment and management" aria-label="Source 1: Treatment and management">1</a></sup></li><li>Ask pharmacy to adjust drug doses for kidney function.<sup class="cite"><a href="#src-1" data-n="1" data-sec="Consultations" aria-label="Source 1: Consultations">1</a></sup></li><li>Kidney and bladder ultrasound for hydronephrosis <span class="nw"><span class="varies">varies by site</span>.</span><sup class="cite"><a href="#src-1" data-n="1" data-sec="Evaluation" aria-label="Source 1: Evaluation">1</a>,<a href="#src-10" data-n="10" data-sec="Evaluation" aria-label="Source 10: Evaluation">10</a></sup></li><li>Leak or ureteral injury suspected: CT urogram with delayed images, with your senior.<sup class="cite"><a href="#src-8" data-n="8" data-sec="Postoperative CT imaging" aria-label="Source 8: Postoperative CT imaging">8</a>,<a href="#src-17" data-n="17" data-sec="Evaluation" aria-label="Source 17: Evaluation">17</a></sup></li><li>IV contrast can hurt the kidney. The senior weighs it.<sup class="cite"><a href="#src-1" data-n="1" data-sec="Pearls and Other Issues" aria-label="Source 1: Pearls and Other Issues">1</a></sup></li><li>Drain output high: send drain fluid creatinine. Far above serum creatinine means urine.<sup class="cite"><a href="#src-17" data-n="17" data-sec="Evaluation" aria-label="Source 17: Evaluation">17</a></sup></li><li>After partial nephrectomy, CT with your senior for:<sup class="cite"><a href="#src-8" data-n="8" data-sec="Postoperative CT imaging" aria-label="Source 8: Postoperative CT imaging">8</a></sup><ul class="sublist"><li>low BP, falling Hgb, flank pain, hematuria, or blood in the drain.</li></ul></li><li>Ileal conduit after cystectomy: no bladder, so no Foley.<sup class="cite"><a href="#src-18" data-n="18" data-sec="Technique" aria-label="Source 18: Technique">18</a></sup></li><li>Check flow from the stoma catheter and stents, if present <span class="nw"><span class="varies">varies by site</span>.</span><sup class="cite"><a href="#src-7" data-n="7" data-sec="Perioperative complications" aria-label="Source 7: Perioperative complications">7</a>,<a href="#src-18" data-n="18" data-sec="Technique" aria-label="Source 18: Technique">18</a></sup></li><li>Neobladder: the team orders regular flushes for mucus and clot.<sup class="cite"><a href="#src-16" data-n="16" data-sec="Post-operative care and complications" aria-label="Source 16: Post-operative care and complications">16</a></sup></li><li>Its Foley crosses the new urethral anastomosis.<sup class="cite"><a href="#src-18" data-n="18" data-sec="Technique" aria-label="Source 18: Technique">18</a></sup></li><li>Do not remove it. Do not try to re-pass it yourself. Call the urology team; they re-pass it, with a guidewire, cystoscope or ultrasound if there is resistance <span class="nw"><span class="varies">varies by site</span>.</span><sup class="cite"><a href="#src-21" data-n="21" data-sec="Abstract" aria-label="Source 21: Abstract">21</a>,<a href="#src-22" data-n="22" data-sec="Methods and Results" aria-label="Source 22: Methods and Results">22</a>,<a href="#src-23" data-n="23" data-sec="Technique" aria-label="Source 23: Technique">23</a>,<a href="#src-24" data-n="24" data-sec="Etiology" aria-label="Source 24: Etiology">24</a></sup></li><li>Looks septic: cultures before antibiotics, if that causes no substantial delay.<sup class="cite"><a href="#src-25" data-n="25" data-sec="Infection" aria-label="Source 25: Infection">25</a></sup></li><li>Sepsis fluids: crystalloid first; your senior sets the volume.<sup class="cite"><a href="#src-25" data-n="25" data-sec="Fluid management, Recommendation 32" aria-label="Source 25: Fluid management, Recommendation 32">25</a></sup></li></ul></section><section class="sec sec-call-senior" id="call-senior" aria-labelledby="h-call-senior"><div class="sec-head"><h2 id="h-call-senior"><a class="anchor" href="#call-senior" aria-label="Link to this section">#</a>Call the senior</h2></div><dl class="sbar"><dt>Situation</dt><dd>Urology, about bed 12, Mr. X, POD 1 after robotic partial nephrectomy. 40 mL urine in 3 hours.</dd><dt>Background</dt><dd>HR 104, BP 112/70, no fever. Foley flushes clear, bladder scan empty, drain output not rising.</dd><dt>Assessment</dt><dd>Not the catheter, no sign of a leak. Worried about bleeding or low volume. Labs sent.</dd><dt>Request</dt><dd>Can you see him now? Fluids or a CT?</dd></dl></section><section class="sec sec-follow-up" id="follow-up" aria-labelledby="h-follow-up"><div class="sec-head"><h2 id="h-follow-up"><a class="anchor" href="#follow-up" aria-label="Link to this section">#</a>Follow up</h2></div><ul class="plain cols"><li>Urine output every hour; vitals after any fluid <span class="nw"><span class="varies">varies by site</span>.</span><sup class="cite"><a href="#src-1" data-n="1" data-sec="Treatment and management" aria-label="Source 1: Treatment and management">1</a>,<a href="#src-4" data-n="4" data-sec="Treatment and management" aria-label="Source 4: Treatment and management">4</a></sup></li><li>Recheck potassium and creatinine. Timing with your senior <span class="nw"><span class="varies">varies by site</span>.</span><sup class="cite"><a href="#src-1" data-n="1" data-sec="Complications" aria-label="Source 1: Complications">1</a>,<a href="#src-6" data-n="6" data-sec="Treatment and management" aria-label="Source 6: Treatment and management">6</a></sup></li><li>Under 0.5 mL/kg/h for 2 hours: monitor more closely.<sup class="cite"><a href="#src-1" data-n="1" data-sec="Enhancing Healthcare Team Outcomes" aria-label="Source 1: Enhancing Healthcare Team Outcomes">1</a></sup></li><li>Ask the nurse to page then, or if HR rises or BP drops <span class="nw"><span class="varies">varies by site</span>.</span><sup class="cite"><a href="#src-4" data-n="4" data-sec="Treatment and management" aria-label="Source 4: Treatment and management">4</a></sup></li><li>Document:<ul class="sublist"><li>page time, exam, bladder scan, flush result</li><li>each tube's output, labs, who was told, the plan</li></ul></li><li>Hand off:<ul class="sublist"><li>output goal, fluid given, pending labs and imaging</li><li>what to do if it changes overnight</li></ul></li></ul></section><section class="sec sec-expected" id="expected" aria-labelledby="h-expected"><div class="sec-head"><h2 id="h-expected"><a class="anchor" href="#expected" aria-label="Link to this section">#</a>Normal or warning sign</h2></div><p class="lead-in">Typical at many centers:</p><dl class="expect"><dt>Expected</dt><dd>A short dip in urine output after surgery. Pain, nausea and surgery raise ADH.<sup class="cite"><a href="#src-1" data-n="1" data-sec="Etiology" aria-label="Source 1: Etiology">1</a>,<a href="#src-6" data-n="6" data-sec="Differential Diagnosis" aria-label="Source 6: Differential Diagnosis">6</a></sup></dd><dt>Expected</dt><dd>Mucus in the neobladder catheter that clears with the ordered flush.<sup class="cite"><a href="#src-16" data-n="16" data-sec="Post-operative care and complications" aria-label="Source 16: Post-operative care and complications">16</a></sup></dd><dt class="not">Not expected</dt><dd>No urine at all, rising creatinine, or drain output rising as urine output falls.<sup class="cite"><a href="#src-5" data-n="5" data-sec="History and Physical" aria-label="Source 5: History and Physical">5</a>,<a href="#src-7" data-n="7" data-sec="Perioperative complications" aria-label="Source 7: Perioperative complications">7</a>,<a href="#src-17" data-n="17" data-sec="History and Physical" aria-label="Source 17: History and Physical">17</a></sup></dd></dl></section><section class="sec sec-avoid" id="avoid" aria-labelledby="h-avoid"><div class="sec-head"><h2 id="h-avoid"><a class="anchor" href="#avoid" aria-label="Link to this section">#</a>Avoid</h2></div><ul class="plain"><li>Don't give a diuretic to a patient who is low on fluid. Restore volume first.<sup class="cite"><a href="#src-1" data-n="1" data-sec="Treatment and management" aria-label="Source 1: Treatment and management">1</a></sup></li><li>Don't keep giving fluid without rechecking. Fluid overload makes AKI worse.<sup class="cite"><a href="#src-1" data-n="1" data-sec="Treatment and management" aria-label="Source 1: Treatment and management">1</a></sup></li><li>Don't give NSAIDs or IV contrast without your senior.<sup class="cite"><a href="#src-1" data-n="1" data-sec="Pearls and Other Issues; Enhancing Healthcare Team Outcomes" aria-label="Source 1: Pearls and Other Issues; Enhancing Healthcare Team Outcomes">1</a>,<a href="#src-6" data-n="6" data-sec="Deterrence and Patient Education" aria-label="Source 6: Deterrence and Patient Education">6</a></sup></li></ul></section><section class="sec sec-questions" id="questions" aria-labelledby="h-questions"><div class="sec-head"><h2 id="h-questions"><a class="anchor" href="#questions" aria-label="Link to this section">#</a>Study questions</h2><button type="button" class="quiz-btn" id="quiz-btn" aria-pressed="false">Quiz me</button></div><div class="qas"><div class="qa"><h3 id="q1">What counts as low urine output?</h3><div class="ans" id="a1"><p>Under 0.5 mL/kg/h. About 35 mL/h in a 70-kg adult. For 6 to 12 hours, it meets KDIGO stage 1 AKI.<sup class="cite"><a href="#src-2" data-n="2" data-sec="Definition/Introduction" aria-label="Source 2: Definition/Introduction">2</a></sup></p></div><button type="button" class="reveal" aria-controls="a1" aria-expanded="false">Show answer</button></div><div class="qa"><h3 id="q2">The creatinine is normal. Is the kidney fine?</h3><div class="ans" id="a2"><p>Not yet known. Creatinine can stay normal until about half of kidney function is lost. Falling urine output may be the only early sign.<sup class="cite"><a href="#src-5" data-n="5" data-sec="Continuing Education Activity" aria-label="Source 5: Continuing Education Activity">5</a>,<a href="#src-6" data-n="6" data-sec="Introduction" aria-label="Source 6: Introduction">6</a></sup></p></div><button type="button" class="reveal" aria-controls="a2" aria-expanded="false">Show answer</button></div><div class="qa"><h3 id="q3">Will a diuretic help the urine output?</h3><div class="ans" id="a3"><p>Only after volume is restored. Diuretics do not turn oliguric AKI into nonoliguric AKI.<sup class="cite"><a href="#src-1" data-n="1" data-sec="Treatment and management" aria-label="Source 1: Treatment and management">1</a>,<a href="#src-5" data-n="5" data-sec="Treatment and management" aria-label="Source 5: Treatment and management">5</a></sup></p></div><button type="button" class="reveal" aria-controls="a3" aria-expanded="false">Show answer</button></div><div class="qa"><h3 id="q4">How do you tell if drain fluid is urine?</h3><div class="ans" id="a4"><p>Send drain fluid creatinine. Urine: far above serum creatinine. Other fluid: close to serum.<sup class="cite"><a href="#src-17" data-n="17" data-sec="Evaluation" aria-label="Source 17: Evaluation">17</a></sup></p></div><button type="button" class="reveal" aria-controls="a4" aria-expanded="false">Show answer</button></div><div class="qa"><h3 id="q5">CT shows bleeding after partial nephrectomy. What happens next?</h3><div class="ans" id="a5"><p>Stable, no active bleeding: often watched. Persistent or heavy bleeding: embolization is the usual minimally invasive treatment. The senior and IR decide.<sup class="cite"><a href="#src-8" data-n="8" data-sec="Haemorrhagic and vascular complications" aria-label="Source 8: Haemorrhagic and vascular complications">8</a></sup></p></div><button type="button" class="reveal" aria-controls="a5" aria-expanded="false">Show answer</button></div><div class="qa"><h3 id="q6">Tense belly and falling urine output after a big open case. What else?</h3><div class="ans" id="a6"><p>Abdominal compartment syndrome (ACS). ACS means sustained intra-abdominal pressure over 20 mm Hg with new organ dysfunction. Standard test: bladder pressure through the Foley <span class="nw"><span class="varies">varies by site</span>.</span> Not reliable after bladder injury, or with a bladder or pelvic hematoma <span class="nw"><span class="varies">varies by site</span>.</span><sup class="cite"><a href="#src-26" data-n="26" data-sec="Continuing Education Activity; Evaluation" aria-label="Source 26: Continuing Education Activity; Evaluation">26</a></sup></p></div><button type="button" class="reveal" aria-controls="a6" aria-expanded="false">Show answer</button></div><div class="qa"><h3 id="q7">A ureteral injury is found on POD 2. Repair now or later?</h3><div class="ans" id="a7"><p>It depends. Found within about 72 hours, early repair is still an option. Later, most teams drain first (a stent if it passes, otherwise a nephrostomy). Some heal on the stent alone. The rest are repaired after at least 6 weeks, often months later, once the inflammation has settled. The cutoff is not strict: injury grade and length, sepsis or urinoma, and how sick the patient is all count. Urology decides.<sup class="cite"><a href="#src-17" data-n="17" data-sec="Treatment and management" aria-label="Source 17: Treatment and management">17</a>,<a href="#src-27" data-n="27" data-sec="Immediate vs" aria-label="Source 27: Immediate vs">27</a>,<a href="#src-28" data-n="28" data-sec="Results, Table 2" aria-label="Source 28: Results, Table 2">28</a></sup></p></div><button type="button" class="reveal" aria-controls="a7" aria-expanded="false">Show answer</button></div></div></section>
+  </article></main>
+  <aside class="rail" id="sources" aria-labelledby="h-sources">
+    <div class="rail-in">
+      <h2 id="h-sources">Sources</h2>
+      <ol class="srcs"><li id="src-1"><span class="src-n">1</span><div class="src-body"><a class="src-title" href="" rel="noopener">Oliguria (Archived)</a><span class="src-auth">Haider MZ, Aslam A</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2023</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-2"><span class="src-n">2</span><div class="src-body"><a class="src-title" href="https://www.ncbi.nlm.nih.gov/books/NBK606132/" rel="noopener">Normal and Abnormal Urine Output and Interpretation</a><span class="src-auth">Al-Kazwini H, Simhadri PK</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2024</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-3"><span class="src-n">3</span><div class="src-body"><a class="src-title" href="https://www.ncbi.nlm.nih.gov/books/NBK470382/" rel="noopener">Hemorrhagic Shock</a><span class="src-auth">Hooper N, Armstrong TJ</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2022</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-4"><span class="src-n">4</span><div class="src-body"><a class="src-title" href="https://www.ncbi.nlm.nih.gov/books/NBK513297/" rel="noopener">Hypovolemia and Hypovolemic Shock</a><span class="src-auth">Taghavi S, Nassar AK, Askari R</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2025</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-5"><span class="src-n">5</span><div class="src-body"><a class="src-title" href="https://www.ncbi.nlm.nih.gov/books/NBK441896/" rel="noopener">Acute Kidney Injury</a><span class="src-auth">Goyal A, Daneshpajouhnejad P, Bashir K</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2026</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-6"><span class="src-n">6</span><div class="src-body"><a class="src-title" href="" rel="noopener">Perioperative Acute Kidney Injury (Archived)</a><span class="src-auth">Rodriguez JD, Hashmi MF, Hithe CC</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2023</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-7"><span class="src-n">7</span><div class="src-body"><a class="src-title" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3142834/" rel="noopener">Perioperative morbidity of radical cystectomy: A review</a><span class="src-auth">Kulkarni JN</span><span class="src-pub">Indian Journal of Urology 27(2):226-. doi:10.4103/0970-1591.82842, 2011</span><span class="src-lic">CC BY-NC-SA 3.0</span></div></li><li id="src-8"><span class="src-n">8</span><div class="src-body"><a class="src-title" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4519814/" rel="noopener">Multidetector CT imaging of complications after laparoscopic nephron-sparing surgery</a><span class="src-auth">Tonolini M, Ierardi AM, Varca V, Incarbone GP, Petullà M, Bianco R</span><span class="src-pub">Insights into Imaging 6(4):465-478. doi:10.1007/s13244-015-0413-1, 2015</span><span class="src-lic">CC BY 4.0</span></div></li><li id="src-9"><span class="src-n">9</span><div class="src-body"><a class="src-title" href="https://www.ncbi.nlm.nih.gov/books/NBK604466/" rel="noopener">Robotic Radical Cystectomy of the Bladder</a><span class="src-auth">Lee M, Eun DD</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2024</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-10"><span class="src-n">10</span><div class="src-body"><a class="src-title" href="https://www.ncbi.nlm.nih.gov/books/NBK558921/" rel="noopener">Obstructive Uropathy</a><span class="src-auth">Bingaman S, Leslie SW, Hinson MR</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2026</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-11"><span class="src-n">11</span><div class="src-body"><a class="src-title" href="https://www.ncbi.nlm.nih.gov/books/NBK557875/" rel="noopener">Bladder Trauma</a><span class="src-auth">Hertz A, Kaufman M, Leslie SW</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2026</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-12"><span class="src-n">12</span><div class="src-body"><a class="src-title" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12102746/" rel="noopener">An Alternative Approach to Managing Urethrovesical Anastomotic Leakage After Robot-Assisted Laparoscopic Radical Prostatectomy: External Urethral Meatus Catheter Fixation</a><span class="src-auth">Miyata Y, Kiuchi H, Yoshioka F, Soda T, Sekii K</span><span class="src-pub">Cureus; PMC12102746, 2025</span><span class="src-lic">CC BY 4.0</span></div></li><li id="src-13"><span class="src-n">13</span><div class="src-body"><a class="src-title" href="https://kingstonhsc.ca/sites/default/files/legacy/files/subsite-basic-page/neobladder_en-april2022-final.pdf" rel="noopener">A New Beginning... Orthotopic Neobladder Care</a><span class="src-auth">Kingston Health Sciences Centre (Ontario)</span><span class="src-pub">Kingston Health Sciences Centre, April 2022, 2022</span><span class="src-lic">Cited only</span></div></li><li id="src-14"><span class="src-n">14</span><div class="src-body"><a class="src-title" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2978457/" rel="noopener">Technical steps of open radical cystectomy and orthotopic neobladder to achieve the goals of &#x27;minimally invasive surgery&#x27;?</a><span class="src-auth">Mandhani A, Dharaskar A, Kapoor R</span><span class="src-pub">Indian Journal of Urology; PMC2978457, 2010</span><span class="src-lic">CC BY</span></div></li><li id="src-15"><span class="src-n">15</span><div class="src-body"><a class="src-title" href="https://www.ncbi.nlm.nih.gov/books/NBK560748/" rel="noopener">Bladder Catheterization</a><span class="src-auth">Haider MZ, Annamaraju P</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2023</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-16"><span class="src-n">16</span><div class="src-body"><a class="src-title" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8988640/" rel="noopener">Orthotopic bladder substitution: Surgical aspects and optimization of outcomes</a><span class="src-auth">Thakare N, Lamb BW, Biers S</span><span class="src-pub">BJUI Compass 2(6):359-369. doi:10.1002/bco2.84, 2021</span><span class="src-lic">CC BY 4.0</span></div></li><li id="src-17"><span class="src-n">17</span><div class="src-body"><a class="src-title" href="https://www.ncbi.nlm.nih.gov/books/NBK507817/" rel="noopener">Ureteral Injury</a><span class="src-auth">Engelsgjerd JS, LaGrange CA</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2023</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-18"><span class="src-n">18</span><div class="src-body"><a class="src-title" href="https://www.ncbi.nlm.nih.gov/books/NBK560483/" rel="noopener">Urinary Diversions and Neobladders</a><span class="src-auth">Chesnut GT, Rentea RM, Leslie SW</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2024</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-19"><span class="src-n">19</span><div class="src-body"><a class="src-title" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10853429/" rel="noopener">Perioperative myocardial injury and infarction after noncardiac surgery: a review of pathophysiology, diagnosis, and management</a><span class="src-auth">Kashlan B, Kinno M, Syed M</span><span class="src-pub">Front Cardiovasc Med 11:1323425. doi:10.3389/fcvm.2024.1323425. PMID 38343871, 2024</span><span class="src-lic">CC BY 4.0</span></div></li><li id="src-20"><span class="src-n">20</span><div class="src-body"><a class="src-title" href="https://www.ncbi.nlm.nih.gov/books/NBK507805/" rel="noopener">Analytical and Clinical Aspects of Troponin Testing</a><span class="src-auth">Zubair M, Sharma S</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2026</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-21"><span class="src-n">21</span><div class="src-body"><a class="src-title" href="https://europepmc.org/article/MED/25177393" rel="noopener">Transrectal ultrasound guidance for early transurethral recatheterization after radical prostatectomy</a><span class="src-auth">Raber M</span><span class="src-pub">Journal of Ultrasound; PMC4142131; PMID 25177393, 2014</span><span class="src-lic">Cited only</span></div></li><li id="src-22"><span class="src-n">22</span><div class="src-body"><a class="src-title" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3431173/" rel="noopener">Safe Removal of the Urethral Catheter 2 Days Following Laparoscopic Radical Prostatectomy</a><span class="src-auth">James P, Glackin A, Doherty A</span><span class="src-pub">ISRN Oncology; PMC3431173, 2012</span><span class="src-lic">CC BY</span></div></li><li id="src-23"><span class="src-n">23</span><div class="src-body"><a class="src-title" href="https://www.ncbi.nlm.nih.gov/books/NBK564404/" rel="noopener">Difficult Foley Catheterization</a><span class="src-auth">Bianchi A, Leslie SW, Chesnut GT</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2026</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-24"><span class="src-n">24</span><div class="src-body"><a class="src-title" href="https://www.ncbi.nlm.nih.gov/books/NBK564297/" rel="noopener">Urethral Strictures</a><span class="src-auth">Abdeen BM, Leslie SW, Badreldin AM</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2024</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-25"><span class="src-n">25</span><div class="src-body"><a class="src-title" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8486643/" rel="noopener">Surviving sepsis campaign: international guidelines for management of sepsis and septic shock 2021</a><span class="src-auth">Evans L, Rhodes A, Alhazzani W, et al.</span><span class="src-pub">Intensive Care Medicine 47(11):1181-1247 (PMC8486643), 2021</span><span class="src-lic">PMC open access (COVID-19 reuse terms)</span></div></li><li id="src-26"><span class="src-n">26</span><div class="src-body"><a class="src-title" href="https://www.ncbi.nlm.nih.gov/books/NBK430932/" rel="noopener">Abdominal Compartment Syndrome</a><span class="src-auth">Popowicz P, Newman RK, Dominique E</span><span class="src-pub">StatPearls, NCBI Bookshelf, 2025</span><span class="src-lic">CC BY-NC-ND 4.0</span></div></li><li id="src-27"><span class="src-n">27</span><div class="src-body"><a class="src-title" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6565405" rel="noopener">Iatrogenic ureteral injury after gynecological surgery</a><span class="src-auth">Smith AP, Bazinet A, Liberman D</span><span class="src-pub">Canadian Urological Association Journal 13(6 Suppl 4):S51-S55; PMC6565405, 2019</span><span class="src-lic">Cited only</span></div></li><li id="src-28"><span class="src-n">28</span><div class="src-body"><a class="src-title" href="https://www.ceju.online/baza/tmp/man/man_1782/ceju_1782.pdf" rel="noopener">Ureteral injury during abdominal and pelvic surgery: immediate versus deferred repair</a><span class="src-auth">Aguilera A, Gomez Rivas J, Quintana Franco LM, Quesada-Olarte J, Carrion DM, Martinez-Pineiro L</span><span class="src-pub">Central European Journal of Urology 72(3):312-318; PMC6830481, 2019</span><span class="src-lic">CC BY-NC-SA 4.0</span></div></li></ol>
+      <p class="key"><span class="varies">varies by site</span> Local practice differs. Follow your site protocol.</p>
+    </div>
+  </aside>
+</div>
+<footer class="foot"><div class="foot-grid"><div class="foot-text"><p>Personal study notes, shared for education only. Not medical advice; always follow local protocols and your supervising team. Not endorsed by any institution. Corrections welcome via <a href="https://sashajoo.github.io/">my homepage</a>.</p></div><p class="foot-links"><a href="https://sashajoo.github.io/">sashajoo.github.io</a><a href="index.html#call-8">All notes</a><a href="low-urine-output-card.html">Pocket card for printing</a></p></div></footer>
+</div>
+<div class="pop" id="pop" role="tooltip" hidden></div>
+<script type="application/json" id="src-data">{"1": {"short": "StatPearls: Oliguria (archived, 2023)"}, "2": {"short": "StatPearls: Normal and Abnormal Urine Output (2024)"}, "3": {"short": "StatPearls: Hemorrhagic Shock (2022)"}, "4": {"short": "StatPearls: Hypovolemia and Hypovolemic Shock (2025)"}, "5": {"short": "StatPearls: Acute Kidney Injury (2026)"}, "6": {"short": "StatPearls: Perioperative AKI (archived, 2023)"}, "7": {"short": "Kulkarni, Indian J Urol 2011"}, "8": {"short": "Tonolini, Insights Imaging 2015"}, "9": {"short": "StatPearls: Robotic Radical Cystectomy of the Bladder (2024)"}, "10": {"short": "StatPearls: Obstructive Uropathy (2026)"}, "11": {"short": "StatPearls: Bladder Trauma (2026)"}, "12": {"short": "Miyata 2025, Cureus: Urethrovesical anastomotic leak after RALP, meatal catheter fixation"}, "13": {"short": "Kingston HSC: Orthotopic Neobladder Care patient booklet (2022)"}, "14": {"short": "Mandhani 2010, Indian J Urol: Open radical cystectomy and orthotopic neobladder technique"}, "15": {"short": "StatPearls: Bladder Catheterization (2023)"}, "16": {"short": "Thakare, BJUI Compass 2021"}, "17": {"short": "StatPearls: Ureteral Injury (2023)"}, "18": {"short": "StatPearls: Urinary Diversions and Neobladders (2024)"}, "19": {"short": "Kashlan, Front Cardiovasc Med 2024: myocardial injury after noncardiac surgery (review)"}, "20": {"short": "StatPearls: Analytical and Clinical Aspects of Troponin Testing (2026)"}, "21": {"short": "Raber 2014, J Ultrasound: TRUS guidance for early recatheterization after radical prostatectomy"}, "22": {"short": "James 2012, ISRN Oncol: Catheter removal 2 days after laparoscopic radical prostatectomy"}, "23": {"short": "StatPearls: Difficult Foley Catheterization (2026)"}, "24": {"short": "StatPearls: Urethral Strictures (2024)"}, "25": {"short": "Surviving Sepsis Campaign 2021"}, "26": {"short": "StatPearls: Abdominal Compartment Syndrome (2025)"}, "27": {"short": "Smith 2019, CUAJ: Iatrogenic ureteral injury after gynecological surgery"}, "28": {"short": "Aguilera 2019, CEJU: Ureteral injury, immediate versus deferred repair"}}</script>
+
+<script>(function(){
+  var root=document.documentElement, btn=document.getElementById('theme-btn'), val=document.getElementById('theme-val');
+  var names={system:'Auto',light:'Light',dark:'Dark'};
+  function setting(){var s=localStorage.getItem('theme');return (s==='light'||s==='dark')?s:'system';}
+  function apply(s){
+    var t=s==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):s;
+    root.setAttribute('data-theme-setting',s);root.setAttribute('data-theme',t);
+    if(val)val.textContent=names[s];
+  }
+  var q=new URLSearchParams(location.search).get('theme');
+  apply(q==='light'||q==='dark'?q:setting());
+  if(btn)btn.addEventListener('click',function(){
+    var s=setting(), next=s==='system'?'light':(s==='light'?'dark':'system');  /* same cycle as the homepage */
+    localStorage.setItem('theme',next);apply(next);
+  });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(){apply(setting());});
+})();
+(function(){
+  /* table of contents: active section + phone bar */
+  var toc=document.getElementById('toc'), bar=document.getElementById('toc-bar'), cur=document.getElementById('toc-cur');
+  var links=[].slice.call(toc.querySelectorAll('a[data-target]'));
+  var targets=links.map(function(a){return document.getElementById(a.dataset.target);});
+  function spy(){
+    var y=window.innerHeight*0.28, idx=-1;
+    var n=window.innerWidth>=1440?targets.length-1:targets.length;   /* at 1440 and up the sources sit in the rail */
+    for(var i=0;i<n;i++){ if(targets[i] && targets[i].getBoundingClientRect().top<=y) idx=i; }
+    if(window.innerHeight+window.scrollY>=document.body.scrollHeight-4 && window.innerWidth<1440) idx=targets.length-1;
+    links.forEach(function(a,i){a.classList.toggle('active',i===idx);});
+    cur.textContent=idx>=0?links[idx].textContent:'';
+  }
+  document.addEventListener('scroll',spy,{passive:true}); window.addEventListener('resize',spy); spy();
+  bar.addEventListener('click',function(){var o=toc.classList.toggle('open');bar.setAttribute('aria-expanded',o);});
+  links.forEach(function(a){a.addEventListener('click',function(){toc.classList.remove('open');bar.setAttribute('aria-expanded','false');});});
+
+  /* citation popover */
+  var data=JSON.parse(document.getElementById('src-data').textContent), pop=document.getElementById('pop'), shown=null;
+  var touch=matchMedia('(hover: none)').matches;
+  function show(a){
+    var d=data[a.dataset.n]; if(!d) return;
+    pop.innerHTML='<span class="pn">'+a.dataset.n+'</span>'+d.short.replace(/&/g,'&amp;').replace(/</g,'&lt;')+
+      (a.dataset.sec?'<span class="ps">Section: '+a.dataset.sec+'</span>':'');
+    pop.hidden=false;
+    var r=a.getBoundingClientRect(), w=pop.offsetWidth, h=pop.offsetHeight;
+    var left=Math.min(Math.max(8,r.left+r.width/2-w/2),document.documentElement.clientWidth-w-8);
+    var top=r.top-h-8<8? r.bottom+8 : r.top-h-8;
+    pop.style.left=(left+window.scrollX)+'px'; pop.style.top=(top+window.scrollY)+'px';
+    if(shown)shown.classList.remove('on'); a.classList.add('on'); shown=a;
+    var li=document.getElementById('src-'+a.dataset.n); if(li && window.innerWidth>=1440) li.classList.add('flash');
+  }
+  function hide(){
+    pop.hidden=true; if(shown)shown.classList.remove('on'); shown=null;
+    [].forEach.call(document.querySelectorAll('.srcs li.flash'),function(li){li.classList.remove('flash');});
+  }
+  [].forEach.call(document.querySelectorAll('sup.cite a'),function(a){
+    a.addEventListener('mouseenter',function(){show(a);}); a.addEventListener('mouseleave',hide);
+    a.addEventListener('focus',function(){show(a);}); a.addEventListener('blur',hide);
+    a.addEventListener('click',function(e){ if(touch && shown!==a){e.preventDefault();show(a);} });
+  });
+  document.addEventListener('click',function(e){ if(shown && !e.target.closest('sup.cite')) hide(); });
+  document.addEventListener('scroll',function(){ if(shown && !touch) hide(); },{passive:true});
+
+  /* quiz me: hide answers until asked */
+  var qb=document.getElementById('quiz-btn'), qsec=document.getElementById('questions');
+  if(qb&&qsec){
+  qb.addEventListener('click',function(){
+    var on=qsec.classList.toggle('quiz'); qb.setAttribute('aria-pressed',on); qb.textContent=on?'Show all answers':'Quiz me';
+    [].forEach.call(qsec.querySelectorAll('.qa'),function(q){q.classList.remove('open');q.querySelector('.reveal').setAttribute('aria-expanded','false');});
+  });
+  [].forEach.call(qsec.querySelectorAll('.reveal'),function(b){
+    b.addEventListener('click',function(){b.closest('.qa').classList.add('open');b.setAttribute('aria-expanded','true');});
+  });
+  }
+})();
+</script>
+<script>
+(function(){
+  if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}
+  fetch('version.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+    var s=document.getElementById('stale'); if(s && v.build!=='0.1.0-20261011151922') s.hidden=false;
+  }).catch(function(){});
+})();
+</script>
+</body>
+</html>
