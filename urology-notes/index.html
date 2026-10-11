@@ -184,6 +184,14 @@ details.blk summary{cursor:pointer;min-height:44px;display:flex;align-items:cent
 .rung span{text-align:left}
 .rung{grid-template-columns:2.2em 1fr}
 .ladder.wide .rung{grid-template-columns:9.5em 1fr}
+
+/* clinical page figures */
+.blk.sick{border-left:3px solid var(--accent-fill);padding-left:12px}
+.blk.pivot{background:var(--tint);border-radius:3px;padding:10px 14px}
+.blk.pivot ul{list-style:none;padding:0}
+.blk.pivot li{padding:4px 0;border-top:1px solid var(--rule)}
+.blk.pivot li:first-child{border-top:0}
+.blk.pivot strong{color:var(--accent)}
 </style>
 </head>
 <body id="top">
@@ -209,16 +217,16 @@ details.blk summary{cursor:pointer;min-height:44px;display:flex;align-items:cent
   </section>
 </main>
 <footer class="site-foot">
-  <p>My personal study notes. Not official in any way, and not medical advice. I am not responsible for how they are used. Found an error? <a href="/">Contact me through my homepage</a>.</p>
+  <p>Personal study notes, shared for education only. Not medical advice; always follow local protocols and your supervising team. Not endorsed by any institution. Corrections welcome via <a href="/">my homepage</a>.</p>
   <details><summary>Changelog</summary><ul><li><b>v0.1.0</b> · 2026-10-11 · First version. The 6 steps and the patient-safety basics. Clinical pages in progress.</li></ul></details>
-  <p class="ver">Version 0.1.0 · build 0.1.0-20261011052556</p>
+  <p class="ver">Version 0.1.0 · build 0.1.0-20261011053748</p>
 </footer>
 </div>
 <script>
 (function(){
   if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}
   fetch('version.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
-    if(v.build!=='0.1.0-20261011052556')document.getElementById('stale').hidden=false;
+    if(v.build!=='0.1.0-20261011053748')document.getElementById('stale').hidden=false;
   }).catch(function(){});
   var q=document.getElementById('q');
   if(!q)return;
