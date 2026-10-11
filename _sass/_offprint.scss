@@ -976,6 +976,14 @@ html[data-theme="dark"] {
 .post li {
   max-width: 75ch;
 }
+// Prose is justified with hyphenation, so the right edge of a paragraph is as
+// straight as the left and lines up with the rules and boxes around it (her ask, 11 Oct 2026).
+.container[role="main"] p:not(.caption):not(.gc-sub):not(.plate-caption):not(.post-meta):not(.desc) {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  text-wrap: pretty;
+}
 .publications ol.bibliography li {
   max-width: 90ch;
 }
@@ -987,7 +995,8 @@ html[data-theme="dark"] {
   background: var(--offprint-desk);
   padding: 14px 18px;
   margin: 22px 0 8px;
-  max-width: 75ch;
+  // Spans the column, so its right edge lines up with the identity rules above it (11 Oct 2026).
+  max-width: none;
   text-decoration: none !important;
   .gc-label { display: block; font: 600 12px/1.3 $offprint-sans; letter-spacing: .12em; text-transform: uppercase; color: var(--offprint-meta); margin-bottom: 4px; }
   .gc-title { display: block; font: 600 21px/1.25 $offprint-serif; color: var(--offprint-accent); }
