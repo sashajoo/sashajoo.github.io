@@ -976,6 +976,12 @@ html[data-theme="dark"] {
 .post li {
   max-width: 75ch;
 }
+// On the About page (article.offprint) prose fills the column, so no section
+// leaves empty space on the right (her ask, 11 Oct 2026). Other pages keep the 75ch cap.
+article.offprint p:not(.caption),
+article.offprint li {
+  max-width: none;
+}
 // Prose is justified with hyphenation, so the right edge of a paragraph is as
 // straight as the left and lines up with the rules and boxes around it (her ask, 11 Oct 2026).
 .container[role="main"] p:not(.caption):not(.gc-sub):not(.plate-caption):not(.post-meta):not(.desc) {
