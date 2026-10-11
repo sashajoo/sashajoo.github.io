@@ -6,7 +6,7 @@
 // cache, and nothing else on sashajoo.github.io is touched. Pages and the install copy skip
 // the browser's HTTP cache (GitHub Pages sends max-age=600), so a deploy shows at once.
 const PREFIX = "uro-guide@" + new URL(self.registration.scope).pathname + "@";
-const CACHE = PREFIX + "0.1.0-20261011151922";
+const CACHE = PREFIX + "0.1.0-20261011153104";
 const ASSETS = ["./", "./index.html", "./cards.html", "./manifest.webmanifest", "./icon-180.png", "./icon-512.png", "./favicon.ico", "./fonts/Inter.cc390e0f18.woff2", "./fonts/SourceSerif4.c6da53156b.woff2", "./post-op-tachycardia.html", "./post-op-hypotension.html", "./obstructing-stone.html", "./torsion.html", "./priapism.html", "./fournier.html", "./tur-syndrome.html", "./low-urine-output.html", "./post-op-fever.html", "./clot-retention.html", "./difficult-foley.html", "./retention-consult.html", "./paraphimosis.html", "./ileus.html", "./three-pages.html", "./post-op-tachycardia-card.html", "./post-op-hypotension-card.html", "./obstructing-stone-card.html", "./torsion-card.html", "./priapism-card.html", "./fournier-card.html", "./tur-syndrome-card.html", "./low-urine-output-card.html", "./post-op-fever-card.html", "./clot-retention-card.html", "./difficult-foley-card.html", "./retention-consult-card.html", "./paraphimosis-card.html", "./ileus-card.html", "./three-pages-card.html"];
 const TIMEOUT_MS = 3500;   // weak hospital wifi: after this, show the saved copy instead of waiting
 const mine = k => k.startsWith(PREFIX) || /^uro-guide-\d/.test(k);   // second test: caches from before 0.1.1
