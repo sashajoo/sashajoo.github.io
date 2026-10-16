@@ -12,12 +12,17 @@ Curious, opinionated, and convinced that every time I sit down to study, I becom
   /* Each row is one height and fills the width. A photo's share of the row is its own shape, so nothing is cropped. */
   .cat-row { display: flex; gap: 1rem; margin-top: 1rem; }
   .cat-row figure { margin: 0; }
+  /* The intro line fills the column, no empty space on the right. */
+  .post p:not(.caption) { max-width: none; }
   @media (max-width: 575px) { .cat-row { flex-direction: column; } }
 </style>
 
 <div class="cat-row">
   <div style="flex: 0.567 1 0">
     {% include figure.liquid path="assets/img/beyond_work/python/python_looking_up.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+  </div>
+  <div style="flex: 0.800 1 0">
+    {% include figure.liquid path="assets/img/beyond_work/python/python_toothbrush.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
   </div>
   <div style="flex: 1.500 1 0">
     {% include figure.liquid path="assets/img/beyond_work/python/IMG_0096.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
