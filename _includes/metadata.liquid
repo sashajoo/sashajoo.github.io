@@ -231,11 +231,12 @@
         "author":
         {
             "@type": "Person",
-            "name": "{{ author_name }}"
+            "name": "{{ author_name }}",
+            "alternateName": "Sasha Zhu"
         },
         "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
         "@type": "{% if is_blog_post %}BlogPosting{% else %}WebSite{% endif %}",
-        "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
+        "description": {% if page.description %}{{ page.description | strip | jsonify }}{% else %}{{ site.description | strip | jsonify }}{% endif %},
         "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
         {% if sameaslinks != blank %}
         "sameAs": {{ sameaslinks | jsonify }},
