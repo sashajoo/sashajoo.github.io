@@ -586,7 +586,7 @@ html[data-theme="dark"] .fig .node{fill-opacity:.12}
 (function(){
   if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}
   fetch('version.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
-    var s=document.getElementById('stale'); if(s && v.build!=='0.1.1-20261012104734') s.hidden=false;
+    var s=document.getElementById('stale'); if(s && v.build!=='0.1.2-20261031201612') s.hidden=false;
   }).catch(function(){});
 })();
 </script>
