@@ -273,6 +273,7 @@ sup.cite a:hover,sup.cite a:focus-visible,sup.cite a.on{color:var(--accent)}
 
 .index{container-type:inline-size;min-width:0}
 .index .post-head{padding-top:32px}
+.index .post-head .sub{font:400 19px/1.45 var(--serif);color:var(--ink);margin:6px 0 12px;max-width:90ch}
 @media (min-width:1024px){.index .post-head{padding-top:40px}}
 .index h2{font:600 23px/1.22 var(--serif);letter-spacing:-.01em;margin:0}
 @media (min-width:600px){.index h2{font-size:27px}}
@@ -586,7 +587,7 @@ html[data-theme="dark"] .fig .node{fill-opacity:.12}
 (function(){
   if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}
   fetch('version.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
-    var s=document.getElementById('stale'); if(s && v.build!=='0.1.2-20261031201612') s.hidden=false;
+    var s=document.getElementById('stale'); if(s && v.build!=='0.1.3-20261102203025') s.hidden=false;
   }).catch(function(){});
 })();
 </script>
