@@ -24,7 +24,7 @@ latest_posts:
 
 <a class="guide-callout" href="/urology-notes/">
   <span class="gc-label">Study notes</span>
-  <span class="gc-title">Paging Sasha →</span>
+  <span class="gc-title"><span aria-hidden="true">📟</span> Paging Sasha →</span>
   <span class="gc-sub">My study notes on urology emergencies and common floor calls, written as I prepare for intern year. Work in progress.</span>
 </a>
 
