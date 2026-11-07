@@ -250,6 +250,12 @@ defaults:
       path: "lab-tools"
     values:
       sitemap: false
+  # Paging Sasha: only the notes index is in the sitemap (its own front matter says sitemap: true);
+  # topic pages and pocket cards stay out of search (her call, 7 Nov 2026).
+  - scope:
+      path: "urology-notes"
+    values:
+      sitemap: false
 
 sass:
   style: compressed
