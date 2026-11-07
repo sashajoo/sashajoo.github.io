@@ -25,7 +25,7 @@ latest_posts:
 <a class="guide-callout" href="/urology-notes/">
   <span class="gc-label">Study notes</span>
   <span class="gc-title"><span aria-hidden="true">📟</span> Paging Sasha →</span>
-  <span class="gc-sub">My study notes on urology emergencies and common floor calls, written as I prepare for intern year. Work in progress.</span>
+  <span class="gc-sub">My case-based notes on urology emergencies and common floor calls: what to check first, when to escalate, and what to have ready before I call. A work in progress as I prepare for intern year.</span>
 </a>
 
 
