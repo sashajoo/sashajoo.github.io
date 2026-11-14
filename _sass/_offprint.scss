@@ -197,6 +197,13 @@ code {
     margin-right: 16px;
   }
 
+  // The list itself too: its line box sets the row height around the search
+  // and theme buttons, and in rem it grew with the text size.
+  .navbar .navbar-nav {
+    font-size: 16.32px;
+    line-height: 28.0704px;
+  }
+
   .navbar .navbar-nav .nav-link {
     font-size: 11.2px;
     line-height: 19.264px;
