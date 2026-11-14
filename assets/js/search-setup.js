@@ -15,3 +15,10 @@ const openSearchModal = () => {
   }
   ninjaKeys.open();
 };
+
+// Paging Sasha (/urology-notes/) has the same menu bar but no search of its own.
+// Its search icon links to "/#search", which opens the search here (14 Nov 2026).
+if (location.hash === "#search") {
+  history.replaceState(null, "", location.pathname + location.search);
+  window.addEventListener("load", () => setTimeout(openSearchModal, 200));
+}

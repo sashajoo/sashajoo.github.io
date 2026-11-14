@@ -179,6 +179,70 @@ code {
   }
 }
 
+// The wide bar uses fixed px sizes (14 Nov 2026). A reader whose browser has a
+// larger default text size (Sasha's Chrome is set to 20 px) got every rem size
+// 25% bigger, and the last items ran off the right edge at a 1280 px window.
+// The values are the 16 px sizes, so a default browser sees no change.
+// The Paging Sasha bar (urology-guide/templates/style.css .sitebar) copies them.
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 8px 16px;
+  }
+
+  .navbar .navbar-brand {
+    font-size: 20px;
+    line-height: 34.4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 16px;
+  }
+
+  .navbar .navbar-nav .nav-link {
+    font-size: 11.2px;
+    line-height: 19.264px;
+    padding: 8px;
+  }
+
+  .navbar .nav-section .nav-link {
+    font-size: 12.8px;
+    line-height: 22.016px;
+  }
+
+  .navbar .navbar-nav > .nav-item.active > .nav-link::after {
+    left: 8px;
+    right: 8px;
+    bottom: 2.4px;
+  }
+
+  .navbar .nav-divider {
+    height: 13.6px;
+    margin: 0 8.8px;
+  }
+
+  .navbar #search-toggle,
+  .navbar #light-toggle {
+    font-size: 16.32px;
+    line-height: 28.0704px;
+  }
+
+  .navbar #search-toggle .nav-link {
+    font-size: 0;
+  }
+
+  .navbar #search-toggle .nav-link i {
+    font-size: 12.8px;
+  }
+
+  .navbar #light-toggle i {
+    font-size: 16.32px;
+  }
+
+  .navbar #light-toggle {
+    width: 32px;
+    height: 32px;
+  }
+}
+
 .navbar .search-word {
   display: none;
 }
